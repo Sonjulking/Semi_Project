@@ -1,127 +1,326 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+pageEncoding="UTF-8"%> <%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:set var="loginCheck" value="0" />
 <c:if test="${!empty sessionScope.LoginCheck}">
-	<c:set var="loginCheck" value="${sessionScope.LoginCheck}" />
+  <c:set var="loginCheck" value="${sessionScope.LoginCheck}" />
 </c:if>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>겜만추</title>
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-3.6.1.js"></script>
-<!-- fontawesome cdn -->
-<link rel="stylesheet" type="text/css"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-<link href="https://unpkg.com/nes.css@latest/css/nes.min.css"
-	rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>겜만추</title>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.1.js"
+    ></script>
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="css/main.css" />
-<link rel="stylesheet" href="css/nav.css " />
-</head>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/nav.css " />
+  </head>
 
-<body>
-	<%@ include file="include/header.jsp"%>
+  <body>
+    <%@ include file="include/header.jsp"%>
 
-	<div class="main_wrap">
-		<!-- <img class="ruru" src="img/rurupixel.png" alt="" title="귀여운 루루">
-
+    <div class="main_wrap">
+      <!-- <img class="ruru" src="img/rurupixel.png" alt="" title="귀여운 루루">
 		<img class="nar" src="img/nar.png" alt="" title="포악한 나르"> <img
 			class="timo" src="img/timo.png" alt="" title="혐모"> <img
 			class="youme" src="img/youme.png" alt="" title="버스충 유미"> -->
 
-		<div
-			class="pop_post_wrap main_box1 nes-container is-rounded is-dark with-title is-centered">
+      <div
+        class="pop_post_wrap main_box1 nes-container is-rounded is-dark with-title is-centered"
+      >
+        
+        <form id="myForm" method="post" action="<%=request.getContextPath()%>/hot_hit1.do">
+		  <input type="hidden" name="hiddenParam" value="hot_hit1">
+		</form>
+		<form id="myForm1" method="post" action="<%=request.getContextPath()%>/hot_thumbs1.do">
+		  <input type="hidden" name="hiddenParam" value="hot_thumbs1">
+		</form>
+        <c:set var="freeHit" value="${free1Hit }"/>
+        <c:set var="freeHitComment" value="${free1HitComment }"/>
+        
+        <p class="box_text title">실시간 인기글</p>
+        <a href="<%=request.getContextPath() %>/board_content_main.do?type=${freeHit.getBoard_type()}&no=${freeHit.getBoard_index() }">
+        <c:if test="${!empty freeHit }">
 
-
-			<p class="box_text title">실시간 인기글</p>
-			<a href="<%=request.getContextPath()%>/hot_free1.do">
-				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">1</div>
-					<img src="" class="sumimg" />
-					<div class="title_con">
-						<div class="item-title">야스오 강의</div>
-						<div class="date_writer_con">
-							<div class="date">2023-09-16</div>
-							<div class="writer">실버 판테온</div>
-						</div>
-					</div>
-					<div class="comment">[65]</div>
-				</div>
-			</a> <a href="<%=request.getContextPath()%>/hot_free2.do">
-				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">2</div>
-					<img src="" class="sumimg" />
-					<div class="title_con">
-						<div class="item-title">야스오 강의</div>
-						<div class="date_writer_con">
-							<div class="date">2023-09-16</div>
-							<div class="writer">실버 판테온</div>
-						</div>
-					</div>
-					<div class="comment">[65]</div>
-				</div>
-			</a> <a href="<%=request.getContextPath()%>/hot_legend1.do">
-				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">3</div>
-					<img src="" class="sumimg" />
-					<div class="title_con">
-						<div class="item-title">야스오 강의</div>
-						<div class="date_writer_con">
-							<div class="date">2023-09-16</div>
-							<div class="writer">실버 판테온</div>
-						</div>
-					</div>
-					<div class="comment">[65]</div>
-				</div>
-			</a> <a href="<%=request.getContextPath()%>/hot_legend2.do">
-				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">4</div>
-					<img src="" class="sumimg" />
-					<div class="title_con">
-						<div class="item-title">야스오 강의</div>
-						<div class="date_writer_con">
-							<div class="date">2023-09-16</div>
-							<div class="writer">실버 판테온</div>
-						</div>
-					</div>
-					<div class="comment">[65]</div>
-				</div>
-			</a>
-
-		</div>
-		<div
-			class="pop_post_wrap main_box1 nes-container is-rounded is-dark with-title is-centered">
-
-			<p class="box_text title">실시간 매칭</p>
-			<div>
-				<!-- <img class="matching-img" src="../WebContent/img/1.png" /> -->
-			</div>
-			<c:if test="${loginCheck == 0 }">
-				<button type="button" id="match-btn1"
-					class="PleaseLogin nes-container is-rounded is-dark">
-					매칭하기</button>
-			</c:if>
-
-			<c:if test="${loginCheck > 0 }">
-				<button type="button" id="match-btn2"
-					class="matching-btn  nes-container is-rounded is-dark ">매칭하기</button>
-			</c:if>
-		</div>
-	</div>
-
-	<!-- 매칭 창 팝업 js -->
-	<script type="text/javascript" src="matching/pop.js"></script>
-	<script type="text/javascript" src="matching/pop2.js"></script>
-
-	<%@ include file="include/footer.jsp"%>
+          <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">1</div>
+            <img src="${freeHit.getUpload_file() }" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">${freeHit.getBoard_title() }</div>
+              <div class="date_writer_con">
+                <div class="date">
+                   <c:if test="${empty freeHit.getBoard_update() }">
+						${freeHit.getBoard_date() } 
+					</c:if>
 	
+					<c:if test="${!empty freeHit.getBoard_update() }">
+						${freeHit.getBoard_update() }
+					</c:if>
+                 </div>
+                <div class="writer">${freeHit.getBoard_writer_nickname() }</div>
+              </div>
+            </div>
+            <div class="comment">[${freeHitComment }]</div>
+          </div>
+        </a>
+        </c:if>
+        
+        <c:if test="${empty freeHit }">
+        <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">1</div>
+            <img src="" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">야스오 강의</div>
+               <div class="date_writer_con">
+                <div class="date">2023-09-16</div>
+                <div class="writer">실버 판테온</div>
+              </div>
+            </div>
+            <div class="comment">[65]</div>
+          </div>
+        </c:if>
+        
+        
+        
+        <c:set var="freeThumbs" value="${free1Thumbs }"/>
+        <c:set var="freeThumbsComment" value="${free1ThumbsComment }"/>
+        <c:if test="${!empty freeThumbs }">
+         <a href="<%=request.getContextPath() %>/board_content_main.do?type=${freeThumbs.getBoard_type()}&no=${freeThumbs.getBoard_index() }">
+
+          <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">2</div>
+            <img src="${freeThumbs.getUpload_file() }" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">${freeThumbs.getBoard_title() }</div>
+              <div class="date_writer_con">
+                <div class="date">
+                    <c:if test="${empty freeThumbs.getBoard_update() }">
+						${freeThumbs.getBoard_date() } 
+					</c:if>
 	
-</body>
+					<c:if test="${!empty freeThumbs.getBoard_update() }">
+						${freeThumbs.getBoard_update() }
+					</c:if>
+                </div>
+                <div class="writer">${freeThumbs.getBoard_writer_nickname() }</div>
+              </div>
+            </div>
+            <div class="comment">[${freeThumbsComment }]</div>
+          </div>
+        </a>
+        </c:if>
+        
+        
+        
+        <c:if test="${empty freeThumbs }">
+        <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">2</div>
+            <img src="" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">야스오 강의</div>
+               <div class="date_writer_con">
+                <div class="date">2023-09-16</div>
+                <div class="writer">실버 판테온</div>
+              </div>
+            </div>
+            <div class="comment">[65]</div>
+          </div>
+        </c:if>
+        
+        
+        <c:set var="legendHit" value="${legend1Hit }"/>
+        <c:set var="legendHitComment" value="${legend1HitComment }"/>
+        <c:if test="${!empty legendHit }">
+        <a href="<%=request.getContextPath() %>/board_content_main.do?type=${legendHit.getBoard_type()}&no=${legendHit.getBoard_index() }">
+          <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">3</div>
+            <img src="${legendHit.getUpload_file() }" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">${legendHit.getBoard_title() }</div>
+               <div class="date_writer_con">
+                <div class="date">
+                 <c:if test="${empty legendHit.getBoard_update() }">
+						${legendHit.getBoard_date() } 
+					</c:if>
+	
+					<c:if test="${!empty legendHit.getBoard_update() }">
+						${legendHit.getBoard_update() }
+					</c:if>
+                </div>
+                <div class="writer">${legendHit.getBoard_writer_nickname() }</div>
+              </div>
+            </div>
+            <div class="comment">[${legendHitComment }]</div>
+          </div>
+        </a>
+        </c:if>
+        
+        <c:if test="${empty legendHit }">
+        <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">3</div>
+            <img src="" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">야스오 강의</div>
+               <div class="date_writer_con">
+                <div class="date">2023-09-16</div>
+                <div class="writer">실버 판테온</div>
+              </div>
+            </div>
+            <div class="comment">[65]</div>
+          </div>
+        </c:if>
+        
+       <c:set var="legendThumbs" value="${legend1Thumbs }"/>
+       <c:set var="legendThumbsComment" value="${legend1ThumbsComment }"/>
+        <c:if test="${!empty legendThumbs }">
+        <a href="<%=request.getContextPath() %>/board_content_main.do?type=${legendThumbs.getBoard_type()}&no=${legendThumbs.getBoard_index() }">
+          <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">4</div>
+            <img src="${legendThumbs.getUpload_file() }" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">${legendThumbs.getBoard_title() }</div>
+               <div class="date_writer_con">
+                <div class="date">
+                 <c:if test="${empty legendThumbs.getBoard_update() }">
+						${legendThumbs.getBoard_date() } 
+					</c:if>
+	
+					<c:if test="${!empty legendThumbs.getBoard_update() }">
+						${legendThumbs.getBoard_update() }
+					</c:if>
+                </div>
+                <div class="writer">${legendThumbs.getBoard_writer_nickname() }</div>
+              </div>
+            </div>
+            <div class="comment">[${legendThumbsComment }]</div>
+          </div>
+        </a>
+        </c:if>
+        
+        <c:if test="${empty legendThumbs }">
+        <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">4</div>
+            <img src="" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">야스오 강의</div>
+               <div class="date_writer_con">
+                <div class="date">2023-09-16</div>
+                <div class="writer">실버 판테온</div>
+              </div>
+            </div>
+            <div class="comment">[65]</div>
+          </div>
+        </c:if>
+        
+        <c:set var="etcHit" value="${etc1Hit }"/>
+        <c:set var="etcHitComment" value="${etc1HitComment }"/>
+        <c:if test="${!empty etcHit }">
+        <a href="<%=request.getContextPath() %>/board_content_main.do?type=${etcHit.getBoard_type()}&no=${etcHit.getBoard_index() }">
+          <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">5</div>
+            <img src="" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">${etcHit.getBoard_title() }</div>
+              <div class="date_writer_con">
+                <div class="date">
+                <c:if test="${empty etcHit.getBoard_update() }">
+						${etcHit.getBoard_date() } 
+					</c:if>
+	
+					<c:if test="${!empty etcHit.getBoard_update() }">
+						${etcHit.getBoard_update() }
+					</c:if>
+                </div>
+                <div class="writer">${etcHit.getBoard_writer_nickname() }</div>
+              </div>
+            </div>
+            <div class="comment">[${etcHitComment }]</div>
+          </div>
+        </a>
+        </c:if>
+        
+        <c:if test="${empty etcHit }">
+
+          <div class="item nes-container is-rounded is-dark">
+            <div class="ranking">5</div>
+            <img src="" class="sumimg" />
+            <div class="title_con">
+              <div class="item-title">야스오 강의</div>
+              <div class="date_writer_con">
+                <div class="date">2023-09-16</div>
+                <div class="writer">실버 판테온</div>
+              </div>
+            </div>
+            <div class="comment">[65]</div>
+          </div>
+        </c:if>
+      </div>
+
+      <div
+        class="pop_post_wrap main_box1 nes-container is-rounded is-dark with-title is-centered"
+      >
+        <p class="box_text title">실시간 매칭</p>
+        <div>
+          <!-- <img class="matching-img" src="../WebContent/img/1.png" /> -->
+        </div>
+        <c:if test="${loginCheck == 0 }">
+          <button
+            type="button"
+            id="match-btn1"
+            class="PleaseLogin nes-container is-rounded is-dark"
+          >
+            매칭하기
+          </button>
+        </c:if>
+
+        <c:if test="${loginCheck > 0 }">
+          <button
+            type="button"
+            id="match-btn2"
+            class="matching-btn nes-btn is-primary"
+          >
+            매칭하기
+          </button>
+        </c:if>
+      </div>
+    </div>
+
+    <!-- 매칭 창 팝업 js -->
+    <script type="text/javascript" src="matching/pop.js"></script>
+    <script type="text/javascript" src="matching/pop2.js"></script>
+	<script type="text/javascript">
+	  // set time limit in milliseconds
+	  var timeLimit1 = 3000; // 3 seconds
+	  var timeLimit2 = 5000; // 5 seconds
+	
+	  // wait for the specified time and then submit the form
+	  setTimeout(function() {
+	    // submit the first form
+	    document.getElementById("myForm").submit();
+	    
+	    // wait for the specified time and then submit the second form
+	    setTimeout(function() {
+	      document.getElementById("myForm1").submit();
+	    }, timeLimit2 - timeLimit1);
+	  }, timeLimit1);
+	</script>
+    <%@ include file="include/footer.jsp"%>
+  </body>
 </html>
