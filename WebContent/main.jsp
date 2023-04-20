@@ -40,21 +40,21 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
     <div class="main_wrap">
       <!-- <img class="ruru" src="img/rurupixel.png" alt="" title="귀여운 루루">
-		<img class="nar" src="img/nar.png" alt="" title="포악한 나르"> <img
-			class="timo" src="img/timo.png" alt="" title="혐모"> <img
-			class="youme" src="img/youme.png" alt="" title="버스충 유미"> -->
+      <img class="nar" src="img/nar.png" alt="" title="포악한 나르"> <img
+         class="timo" src="img/timo.png" alt="" title="혐모"> <img
+         class="youme" src="img/youme.png" alt="" title="버스충 유미"> -->
 
       <div
         class="pop_post_wrap main_box1 nes-container is-rounded is-dark with-title is-centered"
       >
         
         <form id="myForm" method="post" action="<%=request.getContextPath()%>/hot_hit1.do">
-		  <input type="hidden" name="hot_hit1" value="hot_hit1">
-		</form>
-		<form id="myForm1" method="post" action="<%=request.getContextPath()%>/hot_thumbs1.do">
-		  <input type="hidden" name="hot_thumbs1" value="hot_thumbs1">
-		</form>
-		
+        <input type="hidden" name="hot_hit1" value="hot_hit1">
+      </form>
+      <form id="myForm1" method="post" action="<%=request.getContextPath()%>/hot_thumbs1.do">
+        <input type="hidden" name="hot_thumbs1" value="hot_thumbs1">
+      </form>
+      
         <c:set var="freeHit" value="${free1Hit }"/>
         <c:set var="freeHitComment" value="${free1HitComment }"/>
         
@@ -70,12 +70,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="date_writer_con">
                 <div class="date">
                    <c:if test="${empty freeHit.getBoard_update() }">
-						${freeHit.getBoard_date() } 
-					</c:if>
-	
-					<c:if test="${!empty freeHit.getBoard_update() }">
-						${freeHit.getBoard_update() }
-					</c:if>
+                  ${freeHit.getBoard_date() } 
+               </c:if>
+   
+               <c:if test="${!empty freeHit.getBoard_update() }">
+                  ${freeHit.getBoard_update() }
+               </c:if>
                  </div>
                 <div class="writer">${freeHit.getBoard_writer_nickname() }</div>
               </div>
@@ -115,12 +115,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="date_writer_con">
                 <div class="date">
                     <c:if test="${empty freeThumbs.getBoard_update() }">
-						${freeThumbs.getBoard_date() } 
-					</c:if>
-	
-					<c:if test="${!empty freeThumbs.getBoard_update() }">
-						${freeThumbs.getBoard_update() }
-					</c:if>
+                  ${freeThumbs.getBoard_date() } 
+               </c:if>
+   
+               <c:if test="${!empty freeThumbs.getBoard_update() }">
+                  ${freeThumbs.getBoard_update() }
+               </c:if>
                 </div>
                 <div class="writer">${freeThumbs.getBoard_writer_nickname() }</div>
               </div>
@@ -160,12 +160,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                <div class="date_writer_con">
                 <div class="date">
                  <c:if test="${empty legendHit.getBoard_update() }">
-						${legendHit.getBoard_date() } 
-					</c:if>
-	
-					<c:if test="${!empty legendHit.getBoard_update() }">
-						${legendHit.getBoard_update() }
-					</c:if>
+                  ${legendHit.getBoard_date() } 
+               </c:if>
+   
+               <c:if test="${!empty legendHit.getBoard_update() }">
+                  ${legendHit.getBoard_update() }
+               </c:if>
                 </div>
                 <div class="writer">${legendHit.getBoard_writer_nickname() }</div>
               </div>
@@ -202,12 +202,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                <div class="date_writer_con">
                 <div class="date">
                  <c:if test="${empty legendThumbs.getBoard_update() }">
-						${legendThumbs.getBoard_date() } 
-					</c:if>
-	
-					<c:if test="${!empty legendThumbs.getBoard_update() }">
-						${legendThumbs.getBoard_update() }
-					</c:if>
+                  ${legendThumbs.getBoard_date() } 
+               </c:if>
+   
+               <c:if test="${!empty legendThumbs.getBoard_update() }">
+                  ${legendThumbs.getBoard_update() }
+               </c:if>
                 </div>
                 <div class="writer">${legendThumbs.getBoard_writer_nickname() }</div>
               </div>
@@ -244,12 +244,12 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <div class="date_writer_con">
                 <div class="date">
                 <c:if test="${empty etcHit.getBoard_update() }">
-						${etcHit.getBoard_date() } 
-					</c:if>
-	
-					<c:if test="${!empty etcHit.getBoard_update() }">
-						${etcHit.getBoard_update() }
-					</c:if>
+                  ${etcHit.getBoard_date() } 
+               </c:if>
+   
+               <c:if test="${!empty etcHit.getBoard_update() }">
+                  ${etcHit.getBoard_update() }
+               </c:if>
                 </div>
                 <div class="writer">${etcHit.getBoard_writer_nickname() }</div>
               </div>
@@ -297,7 +297,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <button
             type="button"
             id="match-btn2"
-            class="matching-btn nes-btn is-primary"
+            class="matching-btn nes-container is-rounded is-dark"
           >
             매칭하기
           </button>
@@ -308,32 +308,32 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <!-- 매칭 창 팝업 js -->
     <script type="text/javascript" src="matching/pop.js"></script>
     <script type="text/javascript" src="matching/pop2.js"></script>
-	<!-- <script type="text/javascript">
-	  // set time limit in milliseconds
-	  var timeLimit = 1800000; // 30 minutes
-		
-	  // submit the form after the specified time and then set a new timer
-	  setInterval(function() {
-	    document.getElementById("myForm").submit();
-	    setTimeout(function() {
-	      document.getElementById("myForm1").submit();
-	    }, 2000); // wait 2 seconds before submitting the second form
-	  }, timeLimit);
-	  
-	  // submit the form immediately when the page is loaded
-	  window.onload = function() {
-	    document.getElementById("myForm").submit();
-	    setTimeout(function() {
-	      document.getElementById("myForm1").submit();
-	    }, 2000); // wait 2 seconds before submitting the second form
-	  };
-	</script> -->
-		<script type="text/javascript">
-	  // set time limit in milliseconds
-	  if(${empty free1Hit}) {		  
-		 $("#myForm").submit();
-	  }
-	</script>
+   <!-- <script type="text/javascript">
+     // set time limit in milliseconds
+     var timeLimit = 1800000; // 30 minutes
+      
+     // submit the form after the specified time and then set a new timer
+     setInterval(function() {
+       document.getElementById("myForm").submit();
+       setTimeout(function() {
+         document.getElementById("myForm1").submit();
+       }, 2000); // wait 2 seconds before submitting the second form
+     }, timeLimit);
+     
+     // submit the form immediately when the page is loaded
+     window.onload = function() {
+       document.getElementById("myForm").submit();
+       setTimeout(function() {
+         document.getElementById("myForm1").submit();
+       }, 2000); // wait 2 seconds before submitting the second form
+     };
+   </script> -->
+      <script type="text/javascript">
+     // set time limit in milliseconds
+     if(${empty free1Hit}) {        
+       $("#myForm").submit();
+     }
+   </script>
     <%@ include file="include/footer.jsp"%>
   </body>
 </html>

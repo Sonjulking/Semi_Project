@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* 스타일 시트 */
+@font-face {
+	font-family: "pixel"; /* 사용하고 싶은 font-family명을 지정 */
+	src: url("./font/neodgm.woff") format("opentype"); /* 폰트파일 불러오기 */
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+	font-family: "pixel", sans-serif;
+}
+
+
+form {
+	position:absolute;
+	top:30px;
+	left:50%;
+	transform: translate(-50%);
+/* 	margin: auto; */
+	width: 400px;
+	padding: 20px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-family: "pixel", sans-serif;
+}
+
+.container {
+	padding: 16px;
+	font-family: "pixel", sans-serif;
+}
