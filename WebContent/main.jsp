@@ -307,8 +307,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script type="text/javascript" src="matching/pop2.js"></script>
 	<script type="text/javascript">
 	  // set time limit in milliseconds
-	  var timeLimit1 = 3000; // 3 seconds
-	  var timeLimit2 = 5000; // 5 seconds
+	  var timeLimit1 = 30000000; // 3 seconds
+	  var timeLimit2 = 50000000; // 5 seconds
 	
 	  // wait for the specified time and then submit the form
 	  setTimeout(function() {
