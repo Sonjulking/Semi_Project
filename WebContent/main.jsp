@@ -18,6 +18,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       type="text/javascript"
       src="https://code.jquery.com/jquery-3.6.1.js"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    
     <!-- fontawesome cdn -->
     <link
       rel="stylesheet"
@@ -52,6 +54,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 		<form id="myForm1" method="post" action="<%=request.getContextPath()%>/hot_thumbs1.do">
 		  <input type="hidden" name="hot_thumbs1" value="hot_thumbs1">
 		</form>
+		
         <c:set var="freeHit" value="${free1Hit }"/>
         <c:set var="freeHitComment" value="${free1HitComment }"/>
         
@@ -305,21 +308,31 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <!-- 매칭 창 팝업 js -->
     <script type="text/javascript" src="matching/pop.js"></script>
     <script type="text/javascript" src="matching/pop2.js"></script>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 	  // set time limit in milliseconds
-	  var timeLimit1 = 30000000; // 3 seconds
-	  var timeLimit2 = 50000000; // 5 seconds
-	
-	  // wait for the specified time and then submit the form
-	  setTimeout(function() {
-	    // submit the first form
+	  var timeLimit = 1800000; // 30 minutes
+		
+	  // submit the form after the specified time and then set a new timer
+	  setInterval(function() {
 	    document.getElementById("myForm").submit();
-	    
-	    // wait for the specified time and then submit the second form
 	    setTimeout(function() {
 	      document.getElementById("myForm1").submit();
-	    }, timeLimit2 - timeLimit1);
-	  }, timeLimit1);
+	    }, 2000); // wait 2 seconds before submitting the second form
+	  }, timeLimit);
+	  
+	  // submit the form immediately when the page is loaded
+	  window.onload = function() {
+	    document.getElementById("myForm").submit();
+	    setTimeout(function() {
+	      document.getElementById("myForm1").submit();
+	    }, 2000); // wait 2 seconds before submitting the second form
+	  };
+	</script> -->
+		<script type="text/javascript">
+	  // set time limit in milliseconds
+	  if(${empty free1Hit}) {		  
+		 $("#myForm").submit();
+	  }
 	</script>
     <%@ include file="include/footer.jsp"%>
   </body>
