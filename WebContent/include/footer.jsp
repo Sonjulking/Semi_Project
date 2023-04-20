@@ -12,6 +12,6 @@
 		<address>E-Mail : gamemanchoo@gmail.com</address>
 		<p>Copyright &copy; All right reserved</p>
 	</footer>
-
+	<script src="${pageContext.request.contextPath}/js/kawaii.js"></script>
 </body>
 </html>

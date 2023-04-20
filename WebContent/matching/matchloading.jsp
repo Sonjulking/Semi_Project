@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -149,7 +150,7 @@
 					alert("매칭안잡힘!" + data);
 				}
 			},
-			
+			 
 			error : function(data) {
 				console.log("데이터 오류");
 			}
@@ -171,6 +172,5 @@
 	}
 	
 	</script>
-	
 </body>
 </html>
