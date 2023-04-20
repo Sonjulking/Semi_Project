@@ -47,10 +47,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       >
         
         <form id="myForm" method="post" action="<%=request.getContextPath()%>/hot_hit1.do">
-		  <input type="hidden" name="hiddenParam" value="hot_hit1">
+		  <input type="hidden" name="hot_hit1" value="hot_hit1">
 		</form>
 		<form id="myForm1" method="post" action="<%=request.getContextPath()%>/hot_thumbs1.do">
-		  <input type="hidden" name="hiddenParam" value="hot_thumbs1">
+		  <input type="hidden" name="hot_thumbs1" value="hot_thumbs1">
 		</form>
         <c:set var="freeHit" value="${free1Hit }"/>
         <c:set var="freeHitComment" value="${free1HitComment }"/>
@@ -307,8 +307,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
     <script type="text/javascript" src="matching/pop2.js"></script>
 	<script type="text/javascript">
 	  // set time limit in milliseconds
-	  var timeLimit1 = 3000; // 3 seconds
-	  var timeLimit2 = 5000; // 5 seconds
+	  var timeLimit1 = 30000000; // 3 seconds
+	  var timeLimit2 = 50000000; // 5 seconds
 	
 	  // wait for the specified time and then submit the form
 	  setTimeout(function() {

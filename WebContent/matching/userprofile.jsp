@@ -34,6 +34,11 @@
 				<th>카카오톡 아이디</th>
 				<td>${odto.getKakao_id()}</td>
 			</tr>
+			
+			<tr>
+				<th>채팅방 입장하기</th>
+				<td><a href="./chat/chat_room.jsp">채팅방</a></td>
+			</tr>
 
 		</table>
 
