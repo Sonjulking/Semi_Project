@@ -70,53 +70,7 @@ h2 {
 			<c:set var="dto" value="${Cont }" />
 			<input type="hidden" name="id" value="${dto.getMember_id() }">
 
-<<<<<<< HEAD
-	// 로딩 화면 숨기기
-	function hideLoading() {
-	  var loadingWrapper = document.querySelector('.loading-wrapper');
-	  loadingWrapper.style.display = 'none';
-	}
 
-	// 취소 버튼 클릭 시 이벤트 핸들러
-	function onCancel() {
-	  // 취소 버튼 클릭 시 수행할 작업을 여기에 추가합니다.
-	  hideLoading(); // 예시로, 로딩 화면을 숨기는 함수를 호출합니다.
-	}
-
-	// 취소 버튼에 이벤트 핸들러 추가
-	var cancelBtn = document.querySelector('#cancel-btn');
-	cancelBtn.addEventListener('click', onCancel);
-	
-	
-	// 5초마다 매칭 조건 검색하여 매칭 돌리기
-	let playmatching = setInterval(function() {
-		
-		$.ajax({
-			type : "post",
-			url : "./matching/matchingCheck.jsp",
-			data : $('#check').serialize(),
-			datatype : "jsp",
-			success : function(data) {
-				if(data == 1){	// 나중에 alert는 삭제해도 될듯하다. 유저가 많으면 검색을 더 많이해야하니 매칭 주기를 1.5초 정도로 줄이는게 좋아보임
-					alert("매칭잡힘!" + data);
-					location.href = "./matching/matchingYesOrNo.jsp";
-				}else{
-					alert("매칭안잡힘!" + data);
-				}
-			},
-			 
-			error : function(data) {
-				console.log("데이터 오류");
-			}
-		});
-		
-	}, 5000);
-	
-	
-	// 여기에 매칭 안잡힐시 매칭취소버튼 자동클릭 넣으면 될듯?
-	// 30초 후에 () 함수를 호출하여 setInterval() 함수를 종료시킴.
-	setTimeout(function() {
-=======
 			<%-- 새로운 세션 만들어야함 --%>
 			<c:set var="mdto" value="${Match }" />
 			<input type="hidden" name="gamename" value="${mdto.getGame_name() }">
@@ -206,7 +160,7 @@ h2 {
 		// 여기에 매칭 안잡힐시 매칭취소버튼 자동클릭 넣으면 될듯?
 		// 30초 후에 () 함수를 호출하여 setInterval() 함수를 종료시킴.
 		setTimeout(function() {
->>>>>>> 6395814a9cdc49c19be735fe83949f54b031854f
+
 			clearInterval(playmatching);
 		}, 20000);
 
@@ -216,9 +170,6 @@ h2 {
 			}, 40000); // 40초 후에 자동 클릭
 		}
 	</script>
-<<<<<<< HEAD
-=======
 
->>>>>>> 6395814a9cdc49c19be735fe83949f54b031854f
 </body>
 </html>
