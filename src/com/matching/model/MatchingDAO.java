@@ -448,6 +448,7 @@ public class MatchingDAO {
 			dto.setMatching_user_nikname(rs.getString("matching_user_nickname"));
 			dto.setDiscord_nikname(rs.getString("discord_nickname"));
 			dto.setKakao_id(rs.getString("kakao_id"));
+			dto.setGame_name(rs.getString("game_name"));
 			
 		
 		} catch (SQLException e) {

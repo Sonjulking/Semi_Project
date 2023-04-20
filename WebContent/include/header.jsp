@@ -52,7 +52,7 @@
 		<ul class="navcolor nes-container">
 			<li><img id="jinx" class="kawaii" src="./img/assets/jinx.png" /><a
 				href="<%=request.getContextPath()%>/board_list.do?type=free"
-				class="nes-text is-primary"> FreeBoard</a>    </li>
+				class="nes-text is-primary"> FreeBoard</a></li>
 			<li><img id="murshroom" class="kawaii"
 				src="./img/assets/teemo_murshroom.png" /><a
 				href="<%=request.getContextPath()%>/board_list.do?type=legend"

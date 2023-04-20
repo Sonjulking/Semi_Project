@@ -1,6 +1,5 @@
 @charset "UTF-8";
-
-/*
+/* 
 .loading-wrapper {
   display: flex;
   flex-direction: column;
@@ -29,8 +28,8 @@
 
 .arrow {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 25%;
   width: 30px;
   height: 30px;
   border-top: 10px solid #ffffff;
@@ -54,8 +53,12 @@
   background-color: #cccccc;
 }
 
+.timo {
+	size : 20px;
+}
+
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-*/
+ */
