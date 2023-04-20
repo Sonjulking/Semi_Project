@@ -52,13 +52,9 @@ public class BoardHit1Action implements Action {
 		System.out.println(legend+"레전드내용");
 		System.out.println(etc+"기타내용");
 
-        ActionForward forward = new ActionForward();
+       
 		
-		forward.setRedirect(false);
-		
-		forward.setPath("main.jsp");
-		
-		return forward;
+		return new BoardThumbs1Action().execute(request, response);
 	}
 
 }
