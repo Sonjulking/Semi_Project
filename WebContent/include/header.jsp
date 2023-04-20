@@ -32,8 +32,6 @@
 					<span class="Join"> / <a
 						href="<%=request.getContextPath()%>/myPage.do?loginId=${member_id}"
 						class="nes-text is-error">MyPage</a></span>
-					<a href="<%=request.getContextPath()%>/chat.do"><i
-						class="fa fa-envelope" aria-hidden="true"></i></a>
 				</c:if>
 			</div>
 		</div>
