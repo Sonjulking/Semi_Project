@@ -33,8 +33,8 @@ public class BoardThumbs1Action implements Action {
 		
 		BoardDAO dao = BoardDAO.getInstance();
 		
-		BoardDTO free = dao.boardHit1Content(board_free);
-		BoardDTO legend = dao.boardHit1Content(board_legend);
+		BoardDTO free = dao.boardThumbs1Content(board_free);
+		BoardDTO legend = dao.boardThumbs1Content(board_legend);
 		
 		int free_comment = dao.commentCountThumbs(board_free);
 		int legend_comment = dao.commentCountThumbs(board_legend);
