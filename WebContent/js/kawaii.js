@@ -5,15 +5,15 @@ $(document).ready(function() {
 		$('#bie').fadeOut();
 	});
 	$('.navcolor li:nth-child(3)').hover(function() {
-		$('#coin').fadeIn();
+		$('#lux').fadeIn();
 	}, function() {
-		$('#coin').fadeOut();
+		$('#lux').fadeOut();
 	});
 
 	$('.navcolor li:nth-child(2)').hover(function() {
-		$('#murshroom').fadeIn();
+		$('#teemo').fadeIn();
 	}, function() {
-		$('#murshroom').fadeOut();
+		$('#teemo').fadeOut();
 	});
 	$('.navcolor li:nth-child(1)').hover(function() {
 		$('#jinx').fadeIn();
