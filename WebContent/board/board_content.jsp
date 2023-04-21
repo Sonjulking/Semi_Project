@@ -170,40 +170,7 @@
 	   		
 	   		<h3>댓글 목록</h3>
 		    <div class="list">
-		    <li>전체 댓글 목록 : ${totalRecord }</li>
 		      
-		    </div>
-    	<nav>
-			<ul class="pagination">
-				<li class="page-item"><a class="page-link"
-					href="${check }nowpage=1&no=${dto.getBoard_index() }&type=${dto.getBoard_type() }">First</a></li>
-			 <c:if test="${page != 1 }">
-				<li><a class="page-link" href="${check }nowpage=${nowpage -1}&no=${dto.getBoard_index() }&type=${dto.getBoard_type() }">Previous</a>
-				</li>
-		     </c:if>
-
-				<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
-					<c:if test="${i == nowpage }">
-						<li class="page-item active" aria-current="nowpage"><a
-							class="page-link" href="${check }nowpage=${i }&no=${dto.getBoard_index() }&type=${dto.getBoard_type() }">${i }</a></li>
-					</c:if>
-
-					<c:if test="${i != page }">
-						<li class="page-item"><a class="page-link"
-							href="${check }nowpage=${i }&no=${dto.getBoard_index() }&type=${dto.getBoard_type() }">${i }</a></li>
-					</c:if>
-				</c:forEach>
-
-				  <c:if test="${page != allPage }">
-					<li class="page-item"><a class="page-link"
-						href="${check }nowpage=${nowpage + 1 }&no=${dto.getBoard_index() }&type=${dto.getBoard_type() }">Next</a></li>
-				</c:if>
-
-					<li class="page-item"><a class="page-link"
-						href="${check }nowpage=${allPage }&no=${dto.getBoard_index() }&type=${dto.getBoard_type() }">End</a></li>
-			</ul>
-		</nav>
-    	</div>
 	</div>
 	
 	
@@ -220,10 +187,12 @@
 </script>  
 
 	<script type="text/javascript" src="<%=request.getContextPath() %>/js/boardContent.min.js"></script>
-
+		
+	<span class="page_link"></span>	
+		
 	 <jsp:include page="../include/footer.jsp"></jsp:include>
 
-
+	
 
 </body>
 </html>
