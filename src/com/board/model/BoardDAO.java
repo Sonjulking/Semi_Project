@@ -587,18 +587,22 @@ public class BoardDAO {
 		return result;
 	}
 	
-	public String getReplyList(int no, String type) {
+public String getReplyList(int no, String type, int page, int pageSize) {
 		
 		String res = "";
 		
 		try {
 			openConn();
 			
-			sql = "select * from "+type+"_comment where board_comment_index = ? order by comment_date desc";
+			sql = "select * from "+type+"_comment where board_comment_index = ? order by comment_date desc limit ?, ?";
 			
 			pstmt = con.prepareStatement(sql);
 			
 			pstmt.setInt(1, no);
+			
+			int offset = (page - 1) * pageSize; // offset 계산
+			pstmt.setInt(2, offset);
+			pstmt.setInt(3, pageSize);
 			
 			rs = pstmt.executeQuery();
 			
@@ -1034,6 +1038,32 @@ public class BoardDAO {
     	
     	
     	return count;
+    }
+    
+    
+ // 댓글 총 페이지 수 조회
+    public int getReplyTotalPage(int no, String type, int pageSize) {
+        int totalPage = 0;
+
+        try {
+            openConn();
+
+            sql = "select count(*) from " + type + "_comment where board_comment_index = ?";
+            pstmt = con.prepareStatement(sql);
+            pstmt.setInt(1, no);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                int totalCount = rs.getInt(1);
+                totalPage = (int) Math.ceil((double) totalCount / pageSize);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeConn(rs, pstmt, con);
+        }
+
+        return totalPage;
     }
     
 }   
