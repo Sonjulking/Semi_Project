@@ -794,6 +794,141 @@ public class BoardDAO {
     	return res;
     }
     
+    public BoardDTO boardThumbs1Content(String type) {
+    	BoardDTO dto = null;
+    	
+    	try {
+    		openConn();
+    		
+    		sql = "select * from "+type+"_board where board_thumbs = (select max(board_thumbs) from "+type+"_board LIMIT 1)";
+    		pstmt = con.prepareStatement(sql);
+    		
+			rs = pstmt.executeQuery();
+			
+			
+			if(rs.next()) {
+					dto = new BoardDTO();
+					System.out.println(type+"인기글");
+					dto.setBoard_type(rs.getString("board_type"));
+					dto.setBoard_index(rs.getInt("board_index"));
+					dto.setBoard_title(rs.getString("board_title"));
+					dto.setBoard_cont(rs.getString("board_cont"));
+					dto.setBoard_writer_id(rs.getString("board_writer_id"));
+					dto.setBoard_writer_nickname(rs.getString("board_writer_nickname"));
+					dto.setUpload_file(rs.getString("upload_file"));
+					dto.setUpload_fileImg(rs.getString("upload_fileImg"));
+					dto.setBoard_heading(rs.getString("board_heading"));
+					dto.setBoard_hit(rs.getInt("board_hit"));
+					dto.setBoard_thumbs(rs.getInt("board_thumbs"));
+					dto.setBoard_date(rs.getString("board_date"));
+					dto.setBoard_update(rs.getString("board_update"));
+					
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+    	
+    	return dto;
+    }
+    
+    public int commentCountThumbs(String type) {
+    	int count = 0;
+    	try {
+    		
+    		openConn();
+    		
+    		sql = "select count(board_comment_index) from "+type+"_comment where board_comment_index = (select board_index from "+type+"_board where board_thumbs = (select max(board_thumbs) from "+type+"_board) LIMIT 1)";
+			
+    		pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt("count(board_comment_index)");
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+    	
+    	return count;
+    }
+    
+    public BoardDTO boardHit1Content(String type) {
+    	BoardDTO dto = null;
+    	
+    	try {
+    		openConn();
+    		
+    		sql = "select * from "+type+"_board where board_hit = (select max(board_hit) from "+type+"_board)";
+    		
+    		pstmt = con.prepareStatement(sql);
+    		
+			rs = pstmt.executeQuery();
+
+			
+			if(rs.next()) {
+					dto = new BoardDTO();
+					System.out.println(type+"인기글");
+
+					dto.setBoard_type(rs.getString("board_type"));
+					dto.setBoard_index(rs.getInt("board_index"));
+					dto.setBoard_title(rs.getString("board_title"));
+					dto.setBoard_cont(rs.getString("board_cont"));
+					dto.setBoard_writer_id(rs.getString("board_writer_id"));
+					dto.setBoard_writer_nickname(rs.getString("board_writer_nickname"));
+					dto.setUpload_file(rs.getString("upload_file"));
+					dto.setUpload_fileImg(rs.getString("upload_fileImg"));
+					dto.setBoard_heading(rs.getString("board_heading"));
+					dto.setBoard_hit(rs.getInt("board_hit"));
+					dto.setBoard_thumbs(rs.getInt("board_thumbs"));
+					dto.setBoard_date(rs.getString("board_date"));
+					dto.setBoard_update(rs.getString("board_update"));
+					
+				}
+		    } catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+    	
+    	return dto;
+    }
+    
+    public int commentCount(String type) {
+    	int count = 0;
+    	try {
+    		
+    		openConn();
+    		
+    		sql = "select count(board_comment_index) from "+type+"_comment where board_comment_index = (select board_index from "+type+"_board where board_hit = (select max(board_hit) from "+type+"_board) LIMIT 1)";
+			
+    		pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				count = rs.getInt("count(board_comment_index)");
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+    	
+    	
+    	return count;
+    }
+    
 }   
     
     

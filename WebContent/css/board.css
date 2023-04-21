@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+h1 {
+	color: aliceblue;
+	font-weight: 500;
+}
+
+th {
+	color: aliceblue;
+}
+
+th, td, td a {
+	color: aliceblue;
+}
+
