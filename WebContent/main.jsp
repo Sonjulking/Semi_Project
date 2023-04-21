@@ -30,7 +30,9 @@
 <link rel="stylesheet" href="css/nav.css " />
 </head>
 
+
 <body>
+
 	<%@ include file="include/header.jsp"%>
 
 	<div class="main_wrap">
@@ -38,6 +40,9 @@
       <img class="nar" src="img/nar.png" alt="" title="포악한 나르"> <img
          class="timo" src="img/timo.png" alt="" title="혐모"> <img
          class="youme" src="img/youme.png" alt="" title="버스충 유미"> -->
+
+
+
 
 		<div
 			class="pop_post_wrap main_box1 nes-container is-rounded is-dark with-title is-centered">
@@ -51,8 +56,10 @@
 			<c:set var="freeHitComment" value="${free1HitComment }" />
 
 			<p class="box_text title">실시간 인기글</p>
+
 				<c:if test="${!empty freeHit }">
-			<a
+
+			<img id="bmo" src="./img/assets/bmo.png"> <a
 				href="<%=request.getContextPath() %>/board_content_main.do?type=${freeHit.getBoard_type()}&no=${freeHit.getBoard_index() }">
 
 					<div class="item nes-container is-rounded is-dark">
@@ -275,20 +282,34 @@
 		<div
 			class="pop_post_wrap main_box1 nes-container is-rounded is-dark with-title is-centered">
 			<p class="box_text title">실시간 매칭</p>
+			<img id="dva" src="./img/assets/dva.png">
 			<div>
 				<!-- <img class="matching-img" src="../WebContent/img/1.png" /> -->
+				<img class="overdot" src="img/assets/overdot2.gif" alt="" title="">
 			</div>
 			<c:if test="${loginCheck == 0 }">
-				<button type="button" id="match-btn1"
-					class="PleaseLogin nes-container is-rounded is-dark">
-					매칭하기</button>
+				<br>
+				<br>
+				<a type="button" id="match-btn1" class="PleaseLogin btn-a"> <img
+					id="start-btn1" src="img/assets/start.png" alt="">
+				</a>
 			</c:if>
 
 			<c:if test="${loginCheck > 0 }">
-				<button type="button" id="match-btn2"
-					class="matching-btn nes-container is-rounded is-dark">
-					매칭하기</button>
+				<br>
+				<br>
+				<button type="button" id="match-btn2" class="matching-btn">
+					<img id="start-btn2" src="img/assets/start.png" alt="">
+				</button>
 			</c:if>
+			<br>
+			<br>
+			<br>
+			<br> <img class="joy" id="crossbtn" src="img/assets/joy3.png"
+				alt="" title="">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img class="joy" id="joybuttons" src="img/assets/joybuttons2.png"
+				alt="" title="">
 		</div>
 	</div>
 
