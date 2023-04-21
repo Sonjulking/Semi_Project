@@ -1,6 +1,7 @@
 package com.matching.action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +28,11 @@ public class FinalDeleteOkAction implements Action {
 		
 		int check2 = dao.deleteMatching(mdto);
 		
+		PrintWriter out = response.getWriter();
+		
+		out.println("<script>");
+		out.println("history.back()");
+		out.println("</script>");
 		/*
 		 * ActionForward forward = new ActionForward();
 		 * 

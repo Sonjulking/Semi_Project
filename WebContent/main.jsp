@@ -286,7 +286,7 @@
 			<c:if test="${loginCheck == 0 }">
 				<button type="button" id="match-btn1"
 					class="PleaseLogin nes-container is-rounded is-dark">
-					매칭하기</button>
+ 					매칭하기</button>
 			</c:if>
 
 			<c:if test="${loginCheck > 0 }">
