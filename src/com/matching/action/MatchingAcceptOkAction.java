@@ -25,7 +25,7 @@ public class MatchingAcceptOkAction implements Action {
 		String tier = request.getParameter("tier").trim();
 
 		// 아이디 값 확인 출력
-		System.out.println(matching_user_id);
+		System.out.println("신청자 아이디 >> " +matching_user_id);
 
 		MatchingDAO dao = MatchingDAO.getInstance();
 
@@ -48,6 +48,7 @@ public class MatchingAcceptOkAction implements Action {
 		
 		
 		if (res == 1) {
+			dao.memberPointUpdate(matching_user_id);
 
 			forward.setRedirect(false);
 

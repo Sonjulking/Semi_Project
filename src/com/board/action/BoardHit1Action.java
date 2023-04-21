@@ -52,9 +52,25 @@ public class BoardHit1Action implements Action {
 		System.out.println(legend+"레전드내용");
 		System.out.println(etc+"기타내용");
 
-       
+		BoardDTO freeT = dao.boardThumbs1Content(board_free);
+		BoardDTO legendT = dao.boardThumbs1Content(board_legend);
+	
+		int free_commentT = dao.commentCountThumbs(board_free);
+		int legend_commentT = dao.commentCountThumbs(board_legend);
+		HttpSession sessionT = request.getSession();
+		sessionT.setAttribute("free1Thumbs", freeT);
+		sessionT.setAttribute("free1ThumbsComment", free_commentT);
 		
-		return new BoardThumbs1Action().execute(request, response);
+		session.setAttribute("legend1Thumbs", legendT);
+		session.setAttribute("legend1ThumbsComment", legend_commentT);
+		
+		ActionForward forward = new ActionForward();
+		
+		forward.setRedirect(false);
+		
+		forward.setPath("main.jsp");
+		
+		return forward;
 	}
 
 }

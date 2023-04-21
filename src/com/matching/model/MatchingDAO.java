@@ -356,6 +356,58 @@ public class MatchingDAO {
 		}
 		return dto;
 	} // contentMatching() 메서드 end
+	
+	
+	public int memberPointCheck(String id) {
+	      
+	      int res = 0;
+	      try {
+	         openConn();
+	         
+	         sql = "select member_point from member where member_id = ?";
+	         
+	         pstmt = con.prepareStatement(sql);
+	         
+	         pstmt.setString(1, id);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         if(rs.next()) {
+	            if(rs.getInt("member_point") == 0) {
+	               res = -1;
+	            }
+	         }
+	           
+	      } catch (SQLException e) {
+	         // TODO Auto-generated catch block
+	         e.printStackTrace();
+	      } finally {
+	         closeConn(rs, pstmt, con);
+	      }
+	      return res;
+	   }
+	
+	public void memberPointUpdate(String id) {
+	      
+	      try {
+	         openConn();
+	         
+	          sql = "update member set member_point = member_point - 1 where member_id = ?";
+	          
+	          pstmt = con.prepareStatement(sql);
+	          
+	          pstmt.setString(1, id);
+	        
+	          pstmt.executeUpdate();
+	      } catch (SQLException e) {
+		         // TODO Auto-generated catch block
+		         e.printStackTrace();
+	      } finally {
+	         closeConn(rs, pstmt, con);
+	     }
+		    
+	   }
+	      
 
 	// 매칭 수락을 누른 유저의 accept를 0에서 1로 수정하며
 	// accept가 둘다 1로 같은지 확인해 값을 반환하는 메서드

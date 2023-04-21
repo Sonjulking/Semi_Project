@@ -168,6 +168,7 @@ public class BoardDAO {
 	} // getBoardList() end
 	
 	
+	
 	public int insertBoard(BoardDTO dto, String type) {
 		
 		int result = 0, count = 0;
@@ -213,7 +214,41 @@ public class BoardDAO {
 		return result;
 	} // insertBoard() end
 	
-	
+	public int memberPointUpdate(String id) {
+		
+		int res = 0;
+		try {
+			openConn();
+			
+			sql = "select member_point from member where member_id = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				if(rs.getInt("member_point") == 0) {
+					res = -1;
+				}
+			} else {
+				
+				sql = "update member set member_point = member_point - 1 where member_id = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, id);
+			}
+
+	        
+	        
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		return res;
+	}
 	
 	// board 테이블의 게시물 번호에 해당하는 게시글을 수정하는 메서드
 	public int updateBoard(BoardDTO dto, String type) {
@@ -481,6 +516,76 @@ public class BoardDAO {
 	}// getTotalRecord() end
 	
 	
+	public List<CommentDTO> getCommentList(int page, int rowsize ,String type, int no) {
+		List<CommentDTO> list = new ArrayList<CommentDTO>();
+		
+		// 해당 페이지에서 시작 번호 
+		int startNo = (page * rowsize) - (rowsize - 1);
+		
+		// 해당 페이지에서 끝 번호 
+		int endNo = (page * rowsize);
+		
+		try {
+			openConn();
+			
+			sql = "select * from (select row_number() over(order by board_comment_index desc) rnum, b.* from "+type+"_comment b) b_rownum where rnum >= ? and rnum <= ? and board_comment_index = "+no;
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, startNo);
+			pstmt.setInt(2, endNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				CommentDTO dto = new CommentDTO();
+				
+				dto.setBoard_comment_index(rs.getInt("board_comment_index"));
+				dto.setComment_index(rs.getInt("comment_index"));
+				dto.setComment_cont(rs.getString("comment_cont"));
+				dto.setComment_writer_id(rs.getString("comment_writer_id"));
+				dto.setComment_writer_nickname(rs.getString("comment_writer_nickname"));
+				dto.setCommemt_date("commemt_date");
+				dto.setCommemt_update(rs.getString("commemt_update"));
+				dto.setComment_hit(rs.getInt("comment_hit"));
+				
+				list.add(dto);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		return list;
+	}
+	
+	public int getReplyCount(String type, int index) {
+		
+		int result = 0;
+		
+		openConn();
+		
+		try {
+		     sql = "select count(*) from "+type+"_comment where board_comment_index = "+index;
+			
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		return result;
+	}
 	
 	public String getReplyList(int no, String type) {
 		
@@ -843,7 +948,9 @@ public class BoardDAO {
     		sql = "select count(board_comment_index) from "+type+"_comment where board_comment_index = (select board_index from "+type+"_board where board_thumbs = (select max(board_thumbs) from "+type+"_board) LIMIT 1)";
 			
     		pstmt = con.prepareStatement(sql);
-			
+    		
+    		openConn();
+
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {

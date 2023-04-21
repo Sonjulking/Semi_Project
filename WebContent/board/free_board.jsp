@@ -89,30 +89,32 @@
 		<%-- 페이징 처리 영역 --%>
 		<nav>
 			<ul class="pagination">
+			 <c:if test="${page != 1 }">
 				<li class="page-item"><a class="page-link"
-					href="${check }page=1">First</a></li>
-				<li><a class="page-link" href="${check }page=${page -1 }">Previous</a>
+					href="${check }page=1&type=free">First</a></li>
+		     </c:if>
+				<li><a class="page-link" href="${check }page=${page -1}&type=free">Previous</a>
 				</li>
 
 				<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
 					<c:if test="${i == page }">
 						<li class="page-item active" aria-current="page"><a
-							class="page-link" href="${check }page=${i }">${i }</a></li>
+							class="page-link" href="${check }page=${i }&type=free">${i }</a></li>
 					</c:if>
 
 					<c:if test="${i != page }">
 						<li class="page-item"><a class="page-link"
-							href="${check }page=${i }">${i }</a></li>
+							href="${check }page=${i }&type=free">${i }</a></li>
 					</c:if>
 				</c:forEach>
 
-				<c:if test="${endBlock < allPage }">
+				  <c:if test="${page != allPage }">
 					<li class="page-item"><a class="page-link"
-						href="${check }page=${page + 1 }">Next</a></li>
+						href="${check }page=${page + 1 }&type=free">Next</a></li>
+				</c:if>
 
 					<li class="page-item"><a class="page-link"
-						href="${check }page=${allPage }">End</a></li>
-				</c:if>
+						href="${check }page=${allPage }&type=free">End</a></li>
 			</ul>
 		</nav>
 	</div>

@@ -15,7 +15,7 @@ $(function() {
 		$.ajax({
 			ContentType: "application/x-www-form-urlencoded; charset=UTF-8",
 			type: "post",
-			url: "/Semi_Prj/idCheck.do",
+			url: "/Semi_Project/idCheck.do",
 			data: { id: $("#username").val() },
 			datatype: "text",
 			success: function(data) {

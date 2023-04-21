@@ -46,18 +46,14 @@
 				action="<%=request.getContextPath()%>/hot_hit1.do">
 				<input type="hidden" name="hot_hit1" value="hot_hit1">
 			</form>
-			<form id="myForm1" method="post"
-				action="<%=request.getContextPath()%>/hot_thumbs1.do">
-				<input type="hidden" name="hot_thumbs1" value="hot_thumbs1">
-			</form>
-
+			
 			<c:set var="freeHit" value="${free1Hit }" />
 			<c:set var="freeHitComment" value="${free1HitComment }" />
 
 			<p class="box_text title">실시간 인기글</p>
+				<c:if test="${!empty freeHit }">
 			<a
 				href="<%=request.getContextPath() %>/board_content_main.do?type=${freeHit.getBoard_type()}&no=${freeHit.getBoard_index() }">
-				<c:if test="${!empty freeHit }">
 
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">1</div>
@@ -81,7 +77,7 @@
 					</div>
 			</a>
 			</c:if>
-
+			
 			<c:if test="${empty freeHit }">
 				<div class="item nes-container is-rounded is-dark">
 					<div class="ranking">1</div>
@@ -96,8 +92,7 @@
 					<div class="comment">[65]</div>
 				</div>
 			</c:if>
-
-
+			
 
 			<c:set var="freeThumbs" value="${free1Thumbs }" />
 			<c:set var="freeThumbsComment" value="${free1ThumbsComment }" />

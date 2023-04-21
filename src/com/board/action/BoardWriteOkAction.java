@@ -111,21 +111,30 @@ public class BoardWriteOkAction implements Action {
 		dto.setBoard_writer_nickname(board_writer_nickname);
 
 		BoardDAO dao = BoardDAO.getInstance();
-
-		int check = dao.insertBoard(dto, board_type);
-
 		PrintWriter out = response.getWriter();
 
-		if (check > 0) {
+		int pCheck = dao.memberPointUpdate(board_writer_id);
+		if(pCheck == -1) {
 			out.println("<script>");
-			out.println("alert('게시글 추가 성공')");
-			out.println("location.href='board_list.do?type="+board_type+"'");
-			out.println("</script>");
-		} else {
-			out.println("<script>");
-			out.println("alert('게시글 추가 실패')");
+			out.println("alert('포인트가 부족합니다~')");
 			out.println("history.back()");
 			out.println("</script>");
+		} else {
+			
+			int check = dao.insertBoard(dto, board_type);
+			
+			
+			if (check > 0) {
+				out.println("<script>");
+				out.println("alert('게시글 추가 성공')");
+				out.println("location.href='board_list.do?type="+board_type+"'");
+				out.println("</script>");
+			} else {
+				out.println("<script>");
+				out.println("alert('게시글 추가 실패')");
+				out.println("");
+				out.println("</script>");
+			}
 		}
 
 		return null;

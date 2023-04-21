@@ -45,10 +45,10 @@
 			<button class="login" type="submit">로그인</button>
 
 			<h6 class="lostpwd">
-				<a href="/Semi_Prj/member/findPwd.jsp">비밀번호를 잊으셨나요?</a>
+				<a href="/Semi_Project/member/findPwd.jsp">비밀번호를 잊으셨나요?</a>
 			</h6>
 
-			<a href="/Semi_Prj/member/join.jsp"><button class="signup" type="button">회원가입</button></a>
+			<a href="/Semi_Project/member/join.jsp"><button class="signup" type="button">회원가입</button></a>
 
 
 		</div>
