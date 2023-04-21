@@ -94,7 +94,6 @@
 					<div class="comment">[65]</div>
 				</div>
 			</a>
-
 		</div>
 		<div
 			class="pop_post_wrap main_box1 nes-container is-rounded is-dark with-title is-centered">
