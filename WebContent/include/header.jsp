@@ -20,7 +20,8 @@
 <body>
 	<header>
 		<div class="main_header_wrap">
-			<span id="main_logo_text"><a id="logo_link" href="main.jsp">겜만추</a><i
+			<span
+				id="main_logo_text"><a id="logo_link" href="main.jsp">겜만추</a><i
 				class="snes-jp-logo"></i></span>
 
 			<!-- <img id="logo" src="../WebContent/img/thumbup.png" alt=""> -->
@@ -53,11 +54,10 @@
 			<li><img id="jinx" class="kawaii" src="./img/assets/jinx.png" /><a
 				href="<%=request.getContextPath()%>/board_list.do?type=free"
 				class="nes-text is-primary"> FreeBoard</a></li>
-			<li><img id="murshroom" class="kawaii"
-				src="./img/assets/teemo_murshroom.png" /><a
+			<li><img id="teemo" class="kawaii" src="./img/assets/teemo.png" /><a
 				href="<%=request.getContextPath()%>/board_list.do?type=legend"
 				class="nes-text is-success">Legend</a></li>
-			<li><i id="coin" class="nes-icon coin is-smallmedium kawaii"></i><a
+			<li><img id="lux" class="kawaii" src="./img/assets/lux.png" /><a
 				href="<%=request.getContextPath()%>/board_list.do?type=notice"
 				class="nes-text is-warning">Notice</a></li>
 			<li><img id="bie" class="kawaii" src="./img/assets/bie.png" /><a

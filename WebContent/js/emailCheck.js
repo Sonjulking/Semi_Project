@@ -16,7 +16,7 @@ $(function() {
 		$.ajax({
 			ContentType: "application/x-www-form-urlencoded; charset=UTF-8",
 			type: "post",
-			url: "/Semi_Prj/emailCheck.do",
+			url: "/Semi_Project/emailCheck.do",
 			data: { email: $("#email").val() }, /*키 : 밸류 */
 			datatype: "text",
 			success: function(data) {

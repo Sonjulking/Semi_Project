@@ -63,7 +63,7 @@
 			
 			
 			<h6 class="lostpwd">
-				<a href="/Semi_Prj/member/findPwd.jsp">비밀번호를 잊으셨나요?</a>
+				<a href="/Semi_Project/member/findPwd.jsp">비밀번호를 잊으셨나요?</a>
 			</h6>
 			
 			

@@ -49,7 +49,7 @@
 			<c:set var="list" value="${List }"/>
 			<c:if test="${!empty list }" >
 				<c:forEach items="${list }" var="dto">
-				<c:if test="${dto.getBoard_type().equals('legend') }">
+				<c:if test="${dto.getBoard_type().equals('etc') }">
 					<tr>
 						<td> ${dto.getBoard_index() } </td>
 						<td> 
@@ -94,36 +94,32 @@
 		<%-- 페이징 처리 영역 --%>
 		<nav>
 			<ul class="pagination">
-				<li class="page-item">
-					<a class="page-link" href="${check }page=1">First</a>
+				<li class="page-item"><a class="page-link"
+					href="${check }page=1&type=etc">First</a></li>
+			 <c:if test="${page != 1 }">
+				<li><a class="page-link" href="${check }page=${page -1}&type=etc">Previous</a>
 				</li>
-				<li>
-					<a class="page-link" href="${check }page=${page -1 }">Previous</a>
-				</li>
-				
+		     </c:if>
+
 				<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
 					<c:if test="${i == page }">
-						<li class="page-item active" aria-current="page">
-							<a class="page-link" href="${check }page=${i }">${i }</a>
-						</li>
+						<li class="page-item active" aria-current="page"><a
+							class="page-link" href="${check }page=${i }&type=etc">${i }</a></li>
 					</c:if>
-					
+
 					<c:if test="${i != page }">
-						<li class="page-item">
-							<a class="page-link" href="${check }page=${i }">${i }</a>
-						</li>
+						<li class="page-item"><a class="page-link"
+							href="${check }page=${i }&type=etc">${i }</a></li>
 					</c:if>
 				</c:forEach>
-				
-				<c:if test="${endBlock < allPage }">
-					<li class="page-item">
-						<a class="page-link" href="${check }page=${page + 1 }">Next</a>
-					</li>
-					
-					<li class="page-item">
-						<a class="page-link" href="${check }page=${allPage }">End</a>
-					</li>
+
+				  <c:if test="${page != allPage }">
+					<li class="page-item"><a class="page-link"
+						href="${check }page=${page + 1 }&type=etc">Next</a></li>
 				</c:if>
+
+					<li class="page-item"><a class="page-link"
+						href="${check }page=${allPage }&type=etc">End</a></li>
 			</ul>
 		</nav>
 	</div>

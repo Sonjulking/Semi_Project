@@ -33,7 +33,7 @@ public class BoardListAction implements Action {
 		
 		// 현재 페이지 변수
 		int page = 0;
-		
+
 		if(request.getParameter("page") != null) {
 			page = Integer.parseInt(request.getParameter("page").trim());
 		}else {
@@ -57,7 +57,7 @@ public class BoardListAction implements Action {
 		BoardDAO dao = BoardDAO.getInstance();
 		String board_type = request.getParameter("type");
 		System.out.println(board_type);
-		StringTokenizer st = new StringTokenizer(board_type, "'");
+		//StringTokenizer st = new StringTokenizer(board_type, "'");
 		System.out.println(board_type);
 
 		totalRecord = dao.getBoardCount(board_type);
@@ -69,6 +69,8 @@ public class BoardListAction implements Action {
 		if(endBlock > allPage) { // 페이지수에 맞춰 마지막 블럭 수 제한
 			endBlock = allPage;
 		}
+		
+		
 		
 		// 현재 페이지에 해당하는 게시물을 가져오는 메서드 호출
 		List<BoardDTO> pageList = dao.getBoardList(page, rowsize ,board_type);

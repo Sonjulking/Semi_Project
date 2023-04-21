@@ -1,6 +1,7 @@
 package com.board.action;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.board.model.BoardDAO;
 import com.board.model.BoardDTO;
+import com.board.model.CommentDTO;
 import com.project.controller.Action;
 import com.project.controller.ActionForward;
 
@@ -30,7 +32,7 @@ public class BoardContentAction implements Action {
 		
 		request.setAttribute("content", cont);
 		request.setAttribute("Page", page);
-		
+
 		ActionForward forward = new ActionForward();
 		
 		forward.setRedirect(false);

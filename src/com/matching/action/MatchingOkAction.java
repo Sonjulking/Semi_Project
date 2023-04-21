@@ -49,30 +49,39 @@ public class MatchingOkAction implements Action {
 		
 		mdto.setMember_id(member_id);
 		mdto.setMember_nickname(nickname);
+		PrintWriter out = response.getWriter();
+
 		
-		int check = dao.insertMatching(dto, mdto);
+		int pCheck = dao.memberPointCheck(member_id);
+		if(pCheck == -1) {
+			out.println("<script>");
+			out.println("alert('포인트가 부족합니다~')");
+			out.println("history.back()");
+			out.println("</script>");
+			return null;
+		} else {
+			dao.insertMatching(dto, mdto);
 		
-		
-		
-		// matching 세션
-		MatchingDTO match = dao.contentMatching(member_id);
-		
-		HttpSession session = request.getSession();
-		session.setAttribute("match_gamename", match_gamename);
-		session.setAttribute("match_tier", match_tier);
-		
-		session.setAttribute("Match", match);
-		
-		// PrintWriter out = response.getWriter();
-		
-		ActionForward forward = new ActionForward();
-		
-		forward.setRedirect(false);
-		
-		forward.setPath("matching/matchloading.jsp");
-		
-		return forward;
-		
+			// matching 세션
+			MatchingDTO match = dao.contentMatching(member_id);
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("match_gamename", match_gamename);
+			session.setAttribute("match_tier", match_tier);
+			
+			session.setAttribute("Match", match);
+			
+			// PrintWriter out = response.getWriter();
+			
+			ActionForward forward = new ActionForward();
+			
+			forward.setRedirect(false);
+			
+			forward.setPath("matching/matchloading.jsp");
+			
+			return forward;
+			
+		}
 	}
 
 }
