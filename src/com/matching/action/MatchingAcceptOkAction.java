@@ -35,13 +35,19 @@ public class MatchingAcceptOkAction implements Action {
 		dto.setMatched(matched);
 		dto.setGame_name(game_name);
 		dto.setTier(tier);
+		
+		// 로그인한 내 정보
+		MatchingDTO my = dao.contentMatching(matching_user_id);
+		
+		request.setAttribute("My", my);
 
 		int res = dao.MachingAccept(matching_user_id, matched, game_name, tier);
 		
 		System.out.println("Acceept res값 >>> " + res);
 
 		ActionForward forward = new ActionForward();
-
+		
+		// 상대 유저 정보
 		MatchingDTO opponent = dao.opponentContent(matching_user_id, matched, game_name, tier);
 		
 		request.setAttribute("Op", opponent);

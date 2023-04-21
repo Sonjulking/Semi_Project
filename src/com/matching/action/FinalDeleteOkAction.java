@@ -11,7 +11,7 @@ import com.member.model.MemberDTO;
 import com.project.controller.Action;
 import com.project.controller.ActionForward;
 
-public class JustDeleteOkAction implements Action {
+public class FinalDeleteOkAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
@@ -25,17 +25,17 @@ public class JustDeleteOkAction implements Action {
 		
 		mdto.setMember_id(member_id);
 		
-		int check = dao.deleteMatching(mdto);
+		int check2 = dao.deleteMatching(mdto);
 		
-		// PrintWriter out = response.getWriter();
-		
-		ActionForward forward = new ActionForward();
-		
-		forward.setRedirect(false);
-		
-		forward.setPath("matching/userprofile.jsp");
-		
-		return forward;
+		/*
+		 * ActionForward forward = new ActionForward();
+		 * 
+		 * forward.setRedirect(false);
+		 * 
+		 * forward.setPath("matching/matching.jsp");
+		 */
+		return null;
+
 		
 	}
 
