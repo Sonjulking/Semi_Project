@@ -70,51 +70,62 @@
 		</table>
 
 		<br>
+		<br>
 
+
+	
 		<form method="post"
 			action="<%=request.getContextPath()%>/board_search.do?type=free">
-			<input type="hidden" name="page" value="${page }"> <select
-				name="field">
-				<option value="board_title">제목</option>
-				<option value="board_cont">내용</option>
-				<option value="board_title_cont">제목+내용</option>
-				<option value="board_writer_nickname">작성자</option>
-			</select> <input type="text" name="keyword">&nbsp;&nbsp; <input
-				type="submit" value="검색">
+			<input type="hidden" name="page" value="${page }">
+			<div style="display: inline-block;"
+				style="background-color: #212529;  width: calc(5% + 8px)">
+				<div class="nes-select is-dark">
+					<select name="field" id="dark_select">
+						<option value="board_title">제목</option>
+						<option value="board_cont">내용</option>
+						<option value="board_title_cont">제목+내용</option>
+						<option value="board_writer_nickname">작성자</option>
+					</select>
+				</div>
+			</div>
+				<div style="display: inline-block; background-color: #212529;"
+			class="nes-field is-inline">
+			<input style = "width: 300px;"type="text" name="keyword" id="dark_field" class="nes-input is-dark"> 
+				</div>&nbsp;&nbsp;<input style ="margin-bottom : 10px;"
+				type="submit" class="nes-btn is-success" value="검색">
 		</form>
-		<br>
-		<br> <input type="button" value="게시글 작성"
+		<br> <br> <input type="button" value="게시글 작성" class ="nes-btn is-primary"
 			onclick="location.href='board_write.do'"> <br> <br>
 
 		<%-- 페이징 처리 영역 --%>
 		<nav>
 			<ul class="pagination">
-			 <c:if test="${page != 1 }">
-				<li class="page-item"><a class="page-link"
-					href="${check }page=1&type=free">First</a></li>
-		     </c:if>
-				<li><a class="page-link" href="${check }page=${page -1}&type=free">Previous</a>
-				</li>
+				<c:if test="${page != 1 }">
+					<li class="page-item"><a class="page-link"
+						href="${check }page=1&type=free"><<</a></li>
+				</c:if>
+				<li><a class="page-link"
+					href="${check }page=${page -1}&type=free"><</a></li>
 
 				<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
 					<c:if test="${i == page }">
 						<li class="page-item active" aria-current="page"><a
-							class="page-link" href="${check }page=${i }&type=free">${i }</a></li>
+							class="page-link pbt" href="${check }page=${i }&type=free">${i }</a></li>
 					</c:if>
 
 					<c:if test="${i != page }">
-						<li class="page-item"><a class="page-link"
+						<li class="page-item nump"><a class="page-link"
 							href="${check }page=${i }&type=free">${i }</a></li>
 					</c:if>
 				</c:forEach>
 
-				  <c:if test="${page != allPage }">
-					<li class="page-item"><a class="page-link"
-						href="${check }page=${page + 1 }&type=free">Next</a></li>
+				<c:if test="${page != allPage }">
+					<li class="page-item pbt"><a class="page-link"
+						href="${check }page=${page + 1 }&type=free">></a></li>
 				</c:if>
 
-					<li class="page-item"><a class="page-link"
-						href="${check }page=${allPage }&type=free">End</a></li>
+				<li class="page-item pbt"><a class="page-link"
+					href="${check }page=${allPage }&type=free">>></a></li>
 			</ul>
 		</nav>
 	</div>

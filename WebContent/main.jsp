@@ -291,27 +291,22 @@
 				<img class="overdot" src="img/assets/overdot2.gif" alt="" title="">
 			</div>
 			<c:if test="${loginCheck == 0 }">
-
 				<br>
 				<br>
 				<a type="button" id="match-btn1" class="PleaseLogin btn-a"> <img
 					id="start-btn1" src="img/assets/start.png" alt="">
 				</a>
-
 			</c:if>
 
 			<c:if test="${loginCheck > 0 }">
 				<br>
 				<br>
-				<button type="button" id="match-btn2" class="matching-btn">
-					<img id="start-btn2" src="img/assets/start.png" alt="">
-				</button>
+				<a type="button" id="match-btn2" class="matching-btn btn-a"> <img
+					id="start-btn2" src="img/assets/start.png" alt="">
+				</a>
 			</c:if>
-			<br>
-			<br>
-			<br>
-			<br> <img class="joy" id="crossbtn" src="img/assets/joy3.png"
-				alt="" title="">
+			<br> <br> <br> <br> <img class="joy"
+				id="crossbtn" src="img/assets/joy3.png" alt="" title="">
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<img class="joy" id="joybuttons" src="img/assets/joybuttons2.png"
 				alt="" title="">

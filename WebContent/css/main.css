@@ -146,7 +146,7 @@ body {
 	background-color: rgb(172, 172, 172);
 }
 
-#match-btn2 {
+/* #match-btn2 {
 	color: aliceblue;
 	margin-top: 100px;
 	box-sizing: border-box;
@@ -155,7 +155,7 @@ body {
 	height: 50px;
 	text-align: center !important;
 	padding-bottom: 40px !important;
-}
+} */
 
 #match-btn2:hover {
 	width: 139px;
@@ -226,6 +226,22 @@ body {
 }
 
 #match-btn1>img:hover {
+	border-radius: 5px;
+	background-color: rgb(172, 172, 172);
+	width: 139px;
+	height: 50px;
+}
+#match-btn2 {
+	width: 139px;
+	height: 50px;
+}
+
+#match-btn2>img {
+	width: 139px;
+	height: 50px;
+}
+
+#match-btn2>img:hover {
 	border-radius: 5px;
 	background-color: rgb(172, 172, 172);
 	width: 139px;
