@@ -13,7 +13,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- JQuery 라이브러리 CDN -->
+<!-- <!-- JQuery 라이브러리 CDN -->
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 
 <!-- Latest compiled and minified CSS -->
@@ -34,91 +34,150 @@
 	integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
 	crossorigin="anonymous"></script>
 
-<script type="text/javascript">
-	function check() {
-		if (f.board_type.value == '') {
-			alert('게시판을 선택하세요');
-			return false;
-		}
-	}
 
-	function check() {
-		if (f.board_heading.value == '') {
-			alert('말머리를 선택하세요');
-			return false;
-		}
-	}
+<style>
+.wrtie-con {
+	width: 1300px;
+}
 
-	$(function() {
-		$("#board_type").on("change", function() {
-			$(".board_heading1, .board_heading2, .board_heading3").hide();
+.write-center {
+	display: flex;
+	justify-content: center;
+}
 
-			let state = $("#board_type option:selected").val();
-			if (state == 'free') {
-				$(".board_heading1").show();
-			} else if (state == 'legend') {
-				$(".board_heading2").show();
-			} else if (state == 'etc') {
-				$(".board_heading3").show();
-			}
-		});
-	});
-</script>
+textarea {
+	color: #212529;
+	border: 2px solid aliceblue;
+	border-radius: 5px;
+	background: #ccc;
+	border: 2px solid aliceblue;
+}
+</style>
+
 </head>
 <body>
 
-	    <%@ include file="../include/header.jsp"%>
+	<%@ include file="../include/header.jsp"%>
+	<div class="write-center">
 
-	<div align="center">
-		<hr width="50%" color="gray">
-		<h3>board 테이블 게시판 글쓰기</h3>
-		<hr width="50%" color="gray">
-		<br>
-	
-		<%-- enctype : 파일을 업로드하기 위한 속성, 값: --%>
-		<form method="post" enctype="multipart/form-data" name="f"
-			action="<%=request.getContextPath()%>/board_write_ok.do"
-			onsubmit="return check()">
-			<input type="hidden" name="board_writer_id" value="${member_id }"> 
-			<input type="hidden"
-				name="board_writer_nickname" value="${nickname }">
-			
-			<select name="board_type" id="board_type">
-				<option value="">게시판선택</option>
-				<option value="free">자유게시판</option>
-				<option value="legend">레전드게시판</option>
-				<option value="etc">ETC</option>
-			</select> <select name="board_heading">
-				<option value="">말머리선택</option>
+		<div align="center" class="wrtie-con nes-container is-dark with-title">
 
-				<option class="board_heading1" value="humor">유머</option>
-				<option class="board_heading1" value="life">일상</option>
-				<option class="board_heading1" value="info">정보</option>
-				<option class="board_heading1" value="etc1">기타</option>
 
-				<option class="board_heading2" value="league">리그오브레전드</option>
-				<option class="board_heading2" value="battle">배틀그라운드</option>
-				<option class="board_heading2" value="over">오버워치2</option>
+			<%-- enctype : 파일을 업로드하기 위한 속성, 값: --%>
+			<form method="post" enctype="multipart/form-data" name="f"
+				action="<%=request.getContextPath()%>/board_write_ok.do"
+				onsubmit="return check()">
+				<input type="hidden" name="board_writer_id" value="${member_id }">
+				<input type="hidden" name="board_writer_nickname"
+					value="${nickname }">
 
-				<option class="board_heading3" value="police">신고</option>
-				<option class="board_heading3" value="etc2">기타</option>
-			</select> <input type="text" name="board_title" placeholder="제목을 입력해주세요">
-			<br>
 
-			<textarea rows="20" cols="150" name="board_cont"></textarea>
 
-			<input type="file" name="upload_file"> <input type="button"
-				value="취소"
-				onclick="if(confirm('정말로 취소하시겠습니까?')) {
+				<!-- 		<div style="display: inline-block;"
+				style="background-color: #212529;  width: calc(5% + 8px)">
+				<div class="nes-select is-dark">
+					<select name="field" id="dark_select">
+						<option value="board_title">제목</option>
+						<option value="board_cont">내용</option>
+						<option value="board_title_cont">제목+내용</option>
+						<option value="board_writer_nickname">작성자</option>
+					</select>
+				</div>
+			</div>
+ -->
+
+				<div style="display: inline-block;"
+					style="background-color: #212529;  width: calc(5% + 8px);">
+					<div class="nes-select is-dark">
+						<select name="board_type" id="board_type dark_select">
+							<option value="">게시판선택</option>
+							<option value="free">자유게시판</option>
+							<option value="legend">레전드게시판</option>
+							<option value="etc">ETC</option>
+						</select>
+					</div>
+				</div>
+				&nbsp;
+				<div style="display: inline-block;"
+					style="background-color: #212529;  width: calc(5% + 8px)">
+					<div class="nes-select is-dark">
+						<select name="board_heading">
+							<option value="">말머리선택</option>
+
+							<option class="board_heading1" value="humor">유머</option>
+							<option class="board_heading1" value="life">일상</option>
+							<option class="board_heading1" value="info">정보</option>
+							<option class="board_heading1" value="etc1">기타</option>
+
+							<option class="board_heading2" value="league">리그오브레전드</option>
+							<option class="board_heading2" value="battle">배틀그라운드</option>
+							<option class="board_heading2" value="over">오버워치2</option>
+
+							<option class="board_heading3" value="police">신고</option>
+							<option class="board_heading3" value="etc2">기타</option>
+						</select>
+					</div>
+				</div>
+				<!-- 			<div style="display: inline-block; background-color: #212529;"
+				class="nes-field is-inline">
+				<input style="width: 300px;" type="text" name="keyword"
+					id="dark_field" class="nes-input is-dark">
+			</div> -->
+				&nbsp;
+				<div
+					style="display: inline-block; background-color: #212529; width: 700px;"
+					class="nes-field is-inline">
+					<input type="text" name="board_title" placeholder="제목을 입력해주세요"
+						id="dark_field" class="nes-input is-dark">
+				</div>
+				<br> <br>
+
+				<textarea rows="20" cols="130" name="board_cont"></textarea>
+				<br><br>
+		
+				</label> <input type="file" name="upload_file"> <br> <input class="nes-btn is-warning" type="button"
+					value="취소"
+					onclick="if(confirm('정말로 취소하시겠습니까?')) {
 														location.href='history.back()'
 														}else {return; }">
-			<input type="submit" value="글쓰기">&nbsp;
+				<input type="submit" class ="nes-btn is-primary" value="글쓰기">&nbsp;
 
 
 
-		</form>
+			</form>
+			<br>
+		</div>
 	</div>
-		    <%@ include file="../include/footer.jsp"%>
-	
+	<%@ include file="../include/footer.jsp"%>
+	<script type="text/javascript">
+		function check() {
+			if (f.board_type.value == '') {
+				alert('게시판을 선택하세요');
+				return false;
+			}
+		}
+
+		function check() {
+			if (f.board_heading.value == '') {
+				alert('말머리를 선택하세요');
+				return false;
+			}
+		}
+
+		$(function() {
+			$("#board_type").on("change", function() {
+				$(".board_heading1, .board_heading2, .board_heading3").hide();
+
+				let state = $("#board_type option:selected").val();
+				if (state == 'free') {
+					$(".board_heading1").show();
+				} else if (state == 'legend') {
+					$(".board_heading2").show();
+				} else if (state == 'etc') {
+					$(".board_heading3").show();
+				}
+			});
+		});
+	</script>
 </body>
 </html>
