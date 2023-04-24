@@ -8,7 +8,7 @@ const button1 = document.querySelector('#match-btn1');
 
 
 button1.addEventListener("click", function() {
-	window.open("matching/PleaseLogin.jsp", "팝업1", "width=450, height=600");
+	window.open("matching/PleaseLogin.jsp", "팝업1", "width=450, height=620");
 });
 
 

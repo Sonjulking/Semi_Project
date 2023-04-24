@@ -1,106 +1,118 @@
-  /* 스타일 시트 */
-  body {
-    background-color: #ffffff;
-    }
-    
-    /* 로고 및 텍스트 영역 */
-    .container1 {
-        position: fixed;
-        transform: translate(+260px, +200px);
-        width: 310px;
-    }
-    
-    .container1 .text1 {
-        margin-left: 5px;
-    }
-    /* 제목 및 로고 */
-    .title {
-        font-size: 70px;
-    }
-    
-    /* 로그인 컨테이너 영역 */
-    .container2 {
-    position: fixed;
-    transform: translate(+200%, +12%);
-    margin: 50px auto;
-    width: 300px;
-    padding: 20px;
-    background-color: rgb(214, 209, 209);
-    border-radius: 40px;
-    box-shadow: 0px 0px 5px 0px #dcdcdc;
-    }
-    
-    h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    }
-    
-    #username, #password, #name, #phone{
-    width: 70%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    }
+.join-con{
 
-    /* 입력란 조절 */
-   .username {
-    margin-right: 40px;
-   }
-   .password {
-    margin-right: 20px;
-   }
-   .name {
-    margin-right: 12px;
-   }
-   .phone {
-    margin-right: 10px;
-   }
-    
-    
-    /* 회원가입 버튼 */
-    .signup {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%);
-        background-color: #4CAF50;
-        color: white;
-        padding: 14px 20px; 
-        margin: 8px 0;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        width: 60%;
-       
-    }
-    
-    /* 선호게임 선택  */
-    .game-title {
-        top: 10%;
-        transform: translate(-10%);
-    }
-    .game1 {
-        position: relative;
-        left: 40%;
-        transform: translate(-40%, -10%);
-    }
-    .game2 {
-        position: relative;
-        left: 20%;
-        transform: translate(-40%, -10%);
-    }
-    .game3 {
-        position: relative;
-        left: 40%;
-        transform: translate(-40%, -10%);
-    }
-    .check_join {
-        position: relative;
-        top: 10%;
-        left: 35%;
-        transform: translate(-40%, -20%);
-    }
-   
+	position: absolute;
+	top:10px;
+	left: 50%;
+	width: 450px;
+	
+	font-family: "pixel", sans-serif;
+
+}
+
+#pixeldva{
+	display: inline-block;
+	width: 105px;
+	height: 100px;
+	
+}
+
+.snes-jp-logo{
+	width:300px;
+	height: 300px;
+}
+.join-wrap{
+	display: flex;
+	justify-content: space-around; 
+	
+	
+}
+
+.pwd-wrap{
+	display:flex;
+	justify-content: space-around;
+	flex-direction : row;
+}
+
+
+.join-text{
+	position : relative;
+ font-size: 25pt !important;
+ top:-15px;
+}
+
+/* 스타일 시트 */
+@font-face {
+	font-family: "pixel"; /* 사용하고 싶은 font-family명을 지정 */
+	src: url("./font/neodgm.woff") format("opentype"); /* 폰트파일 불러오기 */
+}
+
+body {
+	background-color: #212529 !important;
+}
+
+/* 로고 및 텍스트 영역 */
+.container1 {
+	position: fixed;
+	transform: translate(+260px, +200px);
+	width: 450px;
+	font-family: "pixel", sans-serif;
+	color: white;
+}
+
+.container1 .text1 {
+	margin-left: 5px;
+	font-size: 22px;
+}
+/* 제목  */
+.title {
+	font-size: 100px;
+}
+/* 커비 */
+.nes-kirby {
+	position: relative;
+	display: inline-block;
+	transform: translate(+15px, +20px);
+}
+
+/* 로그인 컨테이너 영역 */
+.container2 {
+	position: fixed;
+	transform: translate(+330%, +30%);
+	margin: 50px auto;
+	width: 300px;
+	padding: 20px;
+	font-family: "pixel", sans-serif;
+}
+
+title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/* 아이디 비밀번호 라벨 */
+.userID {
+	margin: 0px;
+}
+
+.userPWD {
+	margin: 0px;
+}
+
+
+
+/* 로그인 버튼 */
+.login {
+	width: 60%;
+	margin-bottom: 10px;
+}
+
+/* 회원가입 버튼 */
+.signup {
+	width: 40%;
+}
+
+/* 비밀번호 잊음 */
+.lostpwd {
+	text-align: center;
+	margin-bottom: 10px;
+}

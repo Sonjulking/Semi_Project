@@ -103,13 +103,14 @@ $(".joinForm").validate({
 
 
 	},
+	
 	errorElement: "p",
 	errorClass: "bad",
 	validClass: "good",
 
 	success: function(label) {
 		// This function is called when a field passes validation
-		label.text("✓").addClass("okayValid");
+		label.text("👍").addClass("okayValid");
 	},
 	onkeyup: function(element) {
 		// Trigger validation on keyup event

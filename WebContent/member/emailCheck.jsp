@@ -7,6 +7,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/emailchk.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/main.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/nav.css" />
+<link href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+	rel="stylesheet" />
+
 <body>
 	<div align="center">
 		<form method="post" enctype="multipart/form-data"
@@ -24,10 +34,21 @@
 			<input type="hidden" name="email_key" value="${AuthenticationKey }">
 
 
-			<input type="text" name="temp_key">
+			<div
+				class="temp-con nes-container with-title is-rounded is-dark join-con2">
+				<p class="title temp-text">임시인증키 확인</p>
+				<p>인증번호가 담긴 이메일을 전송했습니다.</p>
+				<p>메일이 도착안했다면, 스팸메일 함이나</p>
+				<p>메일주소를 다시한번 확인해주세요.</p>
+				<input type="text" name="temp_key" class ="nes-input is-dark input-temp"> <br><br>
 
-			<button id="signup-btn" class="signup submit-btn" type="submit"
-				name="join">임시키 제출</button>
+
+
+				<button id="signup-btn" class="signup submit-btn nes-btn is-success" type="submit"
+					name="join">키번호 제출</button>
+
+
+			</div>
 		</form>
 	</div>
 	<script type="text/javascript"
