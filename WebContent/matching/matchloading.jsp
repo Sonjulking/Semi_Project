@@ -38,8 +38,6 @@ form {
 	height: 608px;
 	padding: 20px;
 	background-color: white;
-	border: 1px solid #ccc;
-	border-radius: 5px;
 	font-family: "pixel", sans-serif;
 }
 
@@ -155,14 +153,14 @@ h2 {
 				}
 			});
 
-		}, 5000);
+		}, 15000);
 
 		// 여기에 매칭 안잡힐시 매칭취소버튼 자동클릭 넣으면 될듯?
 		// 30초 후에 () 함수를 호출하여 setInterval() 함수를 종료시킴.
 		setTimeout(function() {
 
 			clearInterval(playmatching);
-		}, 20000);
+		}, 35000);
 
 		function autoClick() {
 			setTimeout(function() {
