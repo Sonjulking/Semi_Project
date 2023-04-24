@@ -92,7 +92,12 @@
 		</form>
 		<br>	
 		
-		<input type="button" value="게시글 작성" onclick="location.href='board_write.do'">
+		<input type="button" value="게시글 작성" onclick="if(${loginCheck } == 0){
+						alert('로그인이 필요합니다');
+						location.href='member/login.jsp'
+					}else {
+						location.href='board_write.do'
+					}">
 		<br>
 		<br>
 		

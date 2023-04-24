@@ -89,8 +89,8 @@ textarea {
 				<div style="display: inline-block;"
 					style="background-color: #212529;  width: calc(5% + 8px);">
 					<div class="nes-select is-dark">
-						<select name="board_type" id="board_type dark_select">
-							<option value="">게시판선택</option>
+						<select name="board_type" id="board_type">
+							<option value="" hidden>게시판선택</option>
 							<option value="free">자유게시판</option>
 							<option value="legend">레전드게시판</option>
 							<option value="etc">ETC</option>
@@ -101,8 +101,8 @@ textarea {
 				<div style="display: inline-block;"
 					style="background-color: #212529;  width: calc(5% + 8px)">
 					<div class="nes-select is-dark">
-						<select name="board_heading">
-							<option value="">말머리선택</option>
+						<select name="board_heading" id="board_heading">
+							<option value="" hidden>말머리선택</option>
 
 							<option class="board_heading1" value="humor">유머</option>
 							<option class="board_heading1" value="life">일상</option>
@@ -149,35 +149,6 @@ textarea {
 		</div>
 	</div>
 	<%@ include file="../include/footer.jsp"%>
-	<script type="text/javascript">
-		function check() {
-			if (f.board_type.value == '') {
-				alert('게시판을 선택하세요');
-				return false;
-			}
-		}
-
-		function check() {
-			if (f.board_heading.value == '') {
-				alert('말머리를 선택하세요');
-				return false;
-			}
-		}
-
-		$(function() {
-			$("#board_type").on("change", function() {
-				$(".board_heading1, .board_heading2, .board_heading3").hide();
-
-				let state = $("#board_type option:selected").val();
-				if (state == 'free') {
-					$(".board_heading1").show();
-				} else if (state == 'legend') {
-					$(".board_heading2").show();
-				} else if (state == 'etc') {
-					$(".board_heading3").show();
-				}
-			});
-		});
-	</script>
+	<script type="text/javascript" src="<%=request.getContextPath() %>/js/board_write.js"> </script>
 </body>
 </html>

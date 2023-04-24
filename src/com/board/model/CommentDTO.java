@@ -7,8 +7,8 @@ public class CommentDTO {
 	private String comment_cont;
 	private String comment_writer_id;
 	private String comment_writer_nickname;
-	private String commemt_date;
-	private String commemt_update;
+	private String comment_date;
+	private String comment_update;
 	private int comment_hit;
 	
 	
@@ -42,17 +42,18 @@ public class CommentDTO {
 	public void setComment_writer_nickname(String comment_writer_nickname) {
 		this.comment_writer_nickname = comment_writer_nickname;
 	}
-	public String getCommemt_date() {
-		return commemt_date;
+	
+	public String getComment_date() {
+		return comment_date;
 	}
-	public void setCommemt_date(String commemt_date) {
-		this.commemt_date = commemt_date;
+	public void setComment_date(String comment_date) {
+		this.comment_date = comment_date;
 	}
-	public String getCommemt_update() {
-		return commemt_update;
+	public String getComment_update() {
+		return comment_update;
 	}
-	public void setCommemt_update(String commemt_update) {
-		this.commemt_update = commemt_update;
+	public void setComment_update(String comment_update) {
+		this.comment_update = comment_update;
 	}
 	public int getComment_hit() {
 		return comment_hit;
