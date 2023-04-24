@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: "pixel"; /* 사용하고 싶은 font-family명을 지정 */
+	src: url("./font/neodgm.woff") format("opentype"); /* 폰트파일 불러오기 */
+}  
+.content {
+	color: white! important;
+}
+
+h3 {
+	color: white! important;
+}
+
+.modify, .delete, .list, .write {
+	border-radius: 6px;
+}
+
+.content {
+	width: 60%;
+}
+
+.jungmax{
+	display:flex;
+	justify-content: center;
+	flex-direction: column;
+}
