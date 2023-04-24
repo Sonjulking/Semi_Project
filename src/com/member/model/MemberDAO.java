@@ -111,7 +111,7 @@ public class MemberDAO {
 	            count = rs.getInt(1) + 1;
 	         }
 
-	         sql = "insert ignore into member values(?, ?, ?, ?, ?, 100, now() ,? ,? ,? ,? ,?)";
+	         sql = "insert ignore into member values(?, ?, ?, ?, ?, 100, date_add(now(), interval 9 hour), ? ,? ,? ,? ,?)";
 
 	         pstmt = con.prepareStatement(sql);
 
@@ -374,9 +374,11 @@ public class MemberDAO {
 					pstmt.setString(6, dto.getMember_profile());
 
 					result = pstmt.executeUpdate();
+				} else if(rs.getString("member_pwd") == null) {
+					result = 1;
 				} else {
 					// 비밀번호가 틀린 경우
-					result = -1;
+					result = -1;					
 				}
 			}
 

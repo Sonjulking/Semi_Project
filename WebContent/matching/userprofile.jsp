@@ -98,6 +98,9 @@
 		
 		<br>
 		<br>
+		<br>
+		<br>
+		<br>
 		
 		<div class="profilelist">
 		  <ul class="nes-list is-disc">
@@ -108,12 +111,6 @@
 		  
 		  <br>
 		  <br>
-		</div>
-		
-		<div class="wrapper">
-			<a href="./chat/chat_room.jsp" class="chat nes-badge">
-			<span class="is-dark">채팅방 입장</span> 
-			</a>
 		</div>
 		
 	<input type="submit" id="cancel-btn2" value="취소"
