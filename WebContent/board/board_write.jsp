@@ -52,12 +52,23 @@ textarea {
 	background: #ccc;
 	border: 2px solid aliceblue;
 }
+
+#press-start {
+	justify-content: center; width : 525px;
+	height: 104px;
+	width: 272px;
+}
 </style>
 
 </head>
 <body>
 
 	<%@ include file="../include/header.jsp"%>
+
+	<div style="text-align: center;">
+		<img id="press-start"
+			src="${pageContext.request.contextPath}/img/assets/press2.gif">
+	</div>
 	<div class="write-center">
 
 		<div align="center" class="wrtie-con nes-container is-dark with-title">
@@ -133,14 +144,13 @@ textarea {
 				<br> <br>
 
 				<textarea rows="20" cols="130" name="board_cont"></textarea>
-				<br><br>
-		
-				</label> <input type="file" name="upload_file"> <br> <input class="nes-btn is-warning" type="button"
-					value="취소"
+				<br>
+				<br> </label> <input type="file" name="upload_file"> <br>
+				<input class="nes-btn is-warning" type="button" value="취소"
 					onclick="if(confirm('정말로 취소하시겠습니까?')) {
 														location.href='history.back()'
 														}else {return; }">
-				<input type="submit" class ="nes-btn is-primary" value="글쓰기">&nbsp;
+				<input type="submit" class="nes-btn is-primary" value="글쓰기">&nbsp;
 
 
 
