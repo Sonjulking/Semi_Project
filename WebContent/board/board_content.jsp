@@ -179,7 +179,7 @@
 	    	</table>
 	    	<br>
 	   		
-	   		<h3>댓글 목록</h3>
+	   		<h3>댓글 갯수 : <span class="commentCount">0</span></h3>
 		    <div class="list"> </div>
 		      
 	</div>
