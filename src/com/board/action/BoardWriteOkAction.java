@@ -132,7 +132,7 @@ public class BoardWriteOkAction implements Action {
 			} else {
 				out.println("<script>");
 				out.println("alert('게시글 추가 실패')");
-				out.println("");
+				out.println("history.back()");
 				out.println("</script>");
 			}
 		}

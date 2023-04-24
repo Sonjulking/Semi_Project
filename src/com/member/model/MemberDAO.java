@@ -163,6 +163,7 @@ public class MemberDAO {
 			} else {
 
 				result = -1; // 아이디가없음
+				System.out.println("아이디 없을 때  dao"+result);
 			}
 		} catch (SQLException e) {
 			// TODO 자동 생성된 catch 블록
