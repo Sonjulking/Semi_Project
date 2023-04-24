@@ -20,22 +20,22 @@ public class FindPwdOkAction implements Action {
 
 		//
 		String userId = request.getParameter("userId");
-		String tempPwd = request.getParameter("tempPwd").trim();
+		String TempPwd = request.getParameter("tempPwd");
 		String modify_pwd1 = request.getParameter("modify_pwd1").trim();
 
 		PrintWriter out = response.getWriter();
 
 		System.out.println(userId);
-		System.out.println(tempPwd);
+		System.out.println(TempPwd);
 		System.out.println(modify_pwd1);
 
 		MemberDAO dao = MemberDAO.getInstance();
-		System.out.println(tempPwd.equals(modify_pwd1));
-		if (tempPwd.equals(modify_pwd1)) {
-			dao.updatePwd(tempPwd, userId);
+		System.out.println("임시비번 잘 입력했는지" +TempPwd.equals(modify_pwd1));
+		if (TempPwd.equals(modify_pwd1)) {
+			dao.updatePwd(TempPwd, userId);
 			out.println("<script>");
 			out.println("alert('임시 비밀번호로 로그인해주세요.')");
-			out.println("location.href='member/myPage.jsp'");
+			out.println("location.href='member/login.jsp'");
 			out.println("</script>");
 		} else {
 			out.println("<script>");

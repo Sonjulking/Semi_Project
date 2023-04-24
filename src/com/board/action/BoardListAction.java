@@ -6,9 +6,11 @@ import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.board.model.BoardDAO;
 import com.board.model.BoardDTO;
+import com.board.model.CommentDTO;
 import com.project.controller.Action;
 import com.project.controller.ActionForward;
 
@@ -69,8 +71,6 @@ public class BoardListAction implements Action {
 		if(endBlock > allPage) { // 페이지수에 맞춰 마지막 블럭 수 제한
 			endBlock = allPage;
 		}
-		
-		
 		
 		// 현재 페이지에 해당하는 게시물을 가져오는 메서드 호출
 		List<BoardDTO> pageList = dao.getBoardList(page, rowsize ,board_type);

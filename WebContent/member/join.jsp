@@ -37,18 +37,18 @@
 			class="joinForm">
 			<span>프로필 사진 : </span> <input type="file" name="profile_img"
 				value="프로필 사진"><br> <br> <label class="userId "
-				for="Id">ID</label><br> <input type="text" id="username"
+				for="Id">ID</label><br> <input type="text" id="username" class ="input-wd"
 				name="id" size="20" placeholder="아이디 / 영문 + 숫자">
 			<p id="id_check"></p>
 			<br> <label class="name " for="name">NickName</label><br> <input
-				type="text" id="name" name="name" placeholder="닉네임 입력"> <span
+				type="text" id="name" class="input-wd" name="name" placeholder="닉네임 입력"> <span
 				id="name_check"></span> <br> <br> <label class="password"
 				for="password1">PWD</label><br> <input type="password"
-				id="password1" class="inputpwd" name="pwd"
+				id="password1" class="inputpwd input-wd" name="pwd"
 				placeholder="비밀번호 / 6~12자">
 			<p id="pwd_check"></p>
 			<label class="password" for="password2">PWD2</label><br> <input
-				type="password" class="inputpwd" id="password2" class="inputpwd"
+				type="password" class="inputpwd input-wd" id="password2" class="inputpwd"
 				name="pwd_recheck" placeholder="비밀번호 / 6~12자"><br>
 			<p id="pwd_recheck"></p>
 
@@ -56,9 +56,9 @@
 
 
 			<br> <label class="email" for="email">Email</label><br> <input
-				type="text" id="email" name="email" placeholder="Email"><span
+				type="text" id="email" class ="input-wd" name="email" placeholder="Email"><span
 				id="email_check"></span> <br> <label class="phone" for="phone">Phone</label><br>
-			<input type="text" id="phone" name="phone" placeholder="전화번호">
+			<input type="text" id="phone" class = "input-wd" name="phone" placeholder="전화번호">
 			<br> <br> 
 			
 			<div style="text-align: center;">

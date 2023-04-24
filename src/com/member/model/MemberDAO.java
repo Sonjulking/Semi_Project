@@ -163,6 +163,7 @@ public class MemberDAO {
 			} else {
 
 				result = -1; // 아이디가없음
+				System.out.println("아이디 없을 때  dao"+result);
 			}
 		} catch (SQLException e) {
 			// TODO 자동 생성된 catch 블록
@@ -245,6 +246,42 @@ public class MemberDAO {
 		return res;
 	}
 	// checkMemberId() end
+	
+	//nickChangeCheck()
+	public String nickChangeCheck(String name, MemberDTO dto) {
+		String res = "사용 가능";
+
+		try {
+			openConn();
+
+			sql = "select * from member where member_nickname = ?";
+
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1, name);
+
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				System.out.println("고친 닉 : "+name);
+				System.out.println("세션 닉 : "+dto.getMember_nickname() );
+				if(name.equals(dto.getMember_nickname())) {
+					return res;
+				}
+					// 중복 값 존재함
+					res = "중복";
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+
+		return res;
+
+	}
+	// nickChangeCheck() end
 
 	// nickCheck() start
 	public String nickCheck(String name) {

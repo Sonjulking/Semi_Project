@@ -46,6 +46,7 @@
 					</tr>
 				</thead>
 				<c:set var="list" value="${List }" />
+				<c:set var="replycount" value="${Replycount }" />
 				<c:if test="${!empty list }">
 					<c:forEach items="${list }" var="dto">
 						<c:if test="${dto.getBoard_type().equals('free') }">
@@ -103,8 +104,14 @@
 			&nbsp;&nbsp;<input style="margin-bottom: 10px;" type="submit"
 				class="nes-btn is-success" value="검색">
 		</form>
-		<br> <br> <input type="button" value="게시글 작성"
-			class="nes-btn is-primary" onclick="location.href='board_write.do'">
+		<br> <br> <input type="button" value="게시글 작성" class="nes-btn is-primary" 
+					onclick="if(${loginCheck } == 0){
+						alert('로그인이 필요합니다');
+						location.href='member/login.jsp'
+					}else {
+						location.href='board_write.do'
+					}">
+			
 		<br> <br>
 
 		<%-- 페이징 처리 영역 --%>
@@ -114,9 +121,10 @@
 					<li class="page-item"><a class="page-link"
 						href="${check }page=1&type=free"><<</a></li>
 				</c:if>
+				<c:if test="${page != 1 }">
 				<li><a class="page-link"
 					href="${check }page=${page -1}&type=free"><</a></li>
-
+				</c:if>
 				<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
 					<c:if test="${i == page }">
 						<li class="page-item active" aria-current="page"><a
@@ -132,10 +140,10 @@
 				<c:if test="${page != allPage }">
 					<li class="page-item pbt"><a class="page-link"
 						href="${check }page=${page + 1 }&type=free">></a></li>
-				</c:if>
 
 				<li class="page-item pbt"><a class="page-link"
 					href="${check }page=${allPage }&type=free">>></a></li>
+				</c:if>
 			</ul>
 		</nav>
 	</div>

@@ -8,9 +8,14 @@
 	font-family: "pixel", sans-serif;
 
 }
+.input-wd{
+	width:250px !important;
+}
 
 #pixeldva{
 	display: inline-block;
+	position:relative;
+	left:5px;
 	width: 105px;
 	height: 100px;
 	

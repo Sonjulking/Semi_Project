@@ -103,10 +103,17 @@
 			&nbsp;&nbsp;<input style="margin-bottom: 10px;" type="submit"
 				class="nes-btn is-success" value="검색">
 		</form>
-		<br> <br> <input type="button" value="게시글 작성"
-			class="nes-btn is-primary" onclick="location.href='board_write.do'">
-		<br> <br>
-
+		<br>	
+		
+		<input type="button" value="게시글 작성" onclick="if(${loginCheck } == 0){
+						alert('로그인이 필요합니다');
+						location.href='member/login.jsp'
+					}else {
+						location.href='board_write.do'
+					}">
+		<br>
+		<br>
+		
 		<%-- 페이징 처리 영역 --%>
 		<nav>
 			<ul class="pagination">

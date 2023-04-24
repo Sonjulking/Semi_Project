@@ -30,7 +30,7 @@ public class EmailConfirm implements Action {
 		String to_email = request.getParameter("email_confirm");
 
 		String user = "gamemanchoo@gmail.com";
-		String password = "xcuodnzxqegxyvkg";
+		String password = "xgbwrtmrplholaqi";
 		Properties prop = new Properties();
 
 		prop.put("mail.smtp.host", "smtp.gmail.com");
