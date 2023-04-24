@@ -28,7 +28,7 @@ public class findIdAction implements Action {
 		// 
 		// mail server 설정
 				String user = "gamemanchoo@gmail.com";
-				String password = "xcuodnzxqegxyvkg";// 호스트 패스워드
+				String password = "xgbwrtmrplholaqi";// 호스트 패스워드
 
 				// 메일 받을 주소
 				/* String to_email = m.getEmail(); */
