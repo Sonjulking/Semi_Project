@@ -10,6 +10,7 @@
 
 </head>
 <body>
+    <jsp:include page="../include/header.jsp"></jsp:include>
 	<div align="center">
 		<c:set var="dto" value="${memCont}" />
 
@@ -39,7 +40,7 @@
 				</tr>
 				<tr>
 					<th>닉네임</th>
-					<td><input type="text" name="nickname"
+					<td><input type="text" name="name" id="name"
 						value="${dto.getMember_nickname() }"></td>
 				</tr>
 
@@ -54,11 +55,11 @@
 				</tr>
 				<tr>
 					<th>비밀번호 변경</th>
-					<td><input type="password" name="modify_pwd1"></td>
+					<td><input type="password" name="modify_pwd1" value="${dto.getMember_pwd() }"></td>
 				</tr>
 				<tr>
 					<th>비밀번호 확인</th>
-					<td><input type="password" name="modify_pwd2"></td>
+					<td><input type="password" name="modify_pwd2" value="${dto.getMember_pwd() }"></td>
 				</tr>
 				<tr>
 					<th>현재 비밀번호</th>
@@ -86,6 +87,7 @@
 			</table>
 		</form>
 	</div>
+	<jsp:include page="../include/footer.jsp"></jsp:include>
 
 </body>
 </html>

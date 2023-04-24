@@ -20,6 +20,7 @@ public class BoardReplyDeleteAction implements Action {
 		String member_id = request.getParameter("member_id").trim();
 		String board_type = request.getParameter("type").trim();
 		
+		
 		BoardDAO dao = BoardDAO.getInstance();
 		
 		int res = dao.replyDelete(no, member_id, board_type);

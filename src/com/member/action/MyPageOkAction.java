@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.member.model.MemberDAO;
 import com.member.model.MemberDTO;
@@ -49,7 +50,7 @@ public class MyPageOkAction implements Action {
 
 		String member_id = multi.getParameter("id").trim();
 		String member_pwd = multi.getParameter("db_pwd").trim();
-		String member_nickname = multi.getParameter("nickname").trim();
+		String member_nickname = multi.getParameter("name").trim();
 //		String member_email = multi.getParameter("email").trim();
 //		String member_phone = multi.getParameter("phone").trim();
 		String prefer_lol = multi.getParameter("lol");
@@ -77,13 +78,26 @@ public class MyPageOkAction implements Action {
 		dto.setPrefer_battle_ground(prefer_battle_ground);
 		dto.setPrefer_overwatch(prefer_overwatch);
 		dto.setMember_profile(profile_image);
+		System.out.println(member_nickname);
 		// getFilesystemName()
 		// ==> 업로드될 파일의 이름을 문자열로 반환해 주는 메서드.
 
 		MemberDAO dao = MemberDAO.getInstance();
 
 		PrintWriter out = response.getWriter();
+	    HttpSession session = request.getSession();
+	    MemberDTO mdto = (MemberDTO) session.getAttribute("Cont");
 
+		
+		String check = dao.nickChangeCheck(member_nickname, mdto);
+		 //String check = dao.nickCheck(member_nickname);
+		 if (check.equals("중복")) {
+			 out.println("<script>");
+			 out.println("alert('닉네임 중복')");
+		     out.println("history.back()"); 
+		     out.println("</script>"); 
+		  }
+		 
 		int res = dao.updateMypage(dto, curr_pwd, modify_pwd1);
 
 		if (res > 0) {
@@ -96,7 +110,7 @@ public class MyPageOkAction implements Action {
 			out.println("alert('회원 비번 틀림')");
 			out.println("history.back()");
 			out.println("</script>");
-		} else {
+		}  else {
 			out.println("<script>");
 			out.println("alert('수정실패')");
 			out.println("history.back()");

@@ -26,6 +26,8 @@ public class BoardReplyInsertAction implements Action {
 		String reply_cont = request.getParameter("cont").trim();
 		String board_type = request.getParameter("type").trim();
 		int reply_bno = Integer.parseInt(request.getParameter("bno").trim());
+		
+		
 		System.out.println(reply_writer_id);
 		System.out.println(reply_writer_nickname);
 		System.out.println(reply_cont);
