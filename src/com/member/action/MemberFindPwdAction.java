@@ -37,7 +37,7 @@ public class MemberFindPwdAction implements Action {
 		 */
 		// mail server 설정
 		String user = "gamemanchoo@gmail.com";
-		String password = "xcuodnzxqegxyvkg";// 호스트 패스워드
+		String password = "xgbwrtmrplholaqi";// 호스트 패스워드
 
 		// 메일 받을 주소
 		/* String to_email = m.getEmail(); */
@@ -144,13 +144,13 @@ public class MemberFindPwdAction implements Action {
 		 */
 		String userId = request.getParameter("id");
 		HttpSession session1 = request.getSession();
-		session1.setAttribute("UserId", userId);
-		request.setAttribute("TempPwd", temp);
 		
 		int check = dao.emailCheck(to_email);
 		int id = dao.findId(userId, to_email);
 		PrintWriter out = response.getWriter();
 		if (check == 1 && id == 1) {
+			session1.setAttribute("UserId", userId);
+			session1.setAttribute("TempPwd", temp);
 			out.println("<script>");
 			out.println("alert('받은메일함과 스팸메일함에서 아이디를 확인하세요~')");
 			out.println("location.href='member/changePwd.jsp'");

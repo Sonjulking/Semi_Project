@@ -266,8 +266,8 @@
 			</c:if>
 
 			<c:if test="${empty etcHit }">
-
-				<div class="item nes-container is-rounded is-dark">
+              <a href="<%=request.getContextPath() %>/main.jsp">
+  				<div class="item nes-container is-rounded is-dark">
 					<div class="ranking">5</div>
 					<img src="" class="sumimg" />
 					<div class="title_con">
@@ -279,6 +279,7 @@
 					</div>
 					<div class="comment">[65]</div>
 				</div>
+				</a>
 			</c:if>
 		</div>
 

@@ -68,7 +68,7 @@
 			
 			
 			<div align="center">
-				<a href="/Semi_Prj/member/join.jsp">
+				<a href="/Semi_Project/member/join.jsp">
 				<button class="signup nes-btn is-success" type="button">회원가입</button>
 				</a>
 			</div>
