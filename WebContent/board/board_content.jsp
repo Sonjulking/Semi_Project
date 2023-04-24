@@ -142,10 +142,21 @@
 		</c:if>
 		<br>
 		
-		<input type="button" value="글 수정" onclick="location.href='board_modify.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'">&nbsp;&nbsp;
-		<input type="button" value="글 삭제" onclick="if(confirm('정말로 삭제하시겠습니까?')) {
-														location.href='board_delete.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
-													}else { retrun; }">&nbsp;&nbsp;
+		<input type="button" value="글 수정" 
+		onclick="if(${loginCheck } == 0){
+						alert('로그인이 필요합니다');
+						location.href='member/login.jsp'
+					}else {
+						location.href='board_modify.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
+					}">
+		<input type="button" value="글 삭제" 
+		onclick="if(${loginCheck } == 0){
+						alert('로그인이 필요합니다');
+						location.href='member/login.jsp'
+					}else {
+						if(confirm('정말로 삭제하시겠습니까?')) {
+							location.href='board_delete.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
+							}else { retrun;}}">
 		<input type="button" value="전체목록" onclick="location.href='board_list.do?type=${dto.getBoard_type() }'">
 		<br>
 		<br>
@@ -169,7 +180,7 @@
 	    	<br>
 	   		
 	   		<h3>댓글 목록</h3>
-		    <div class="list">
+		    <div class="list"> </div>
 		      
 	</div>
 	

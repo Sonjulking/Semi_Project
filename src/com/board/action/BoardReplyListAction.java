@@ -20,22 +20,20 @@ public class BoardReplyListAction implements Action {
 		String board_type = request.getParameter("type").trim();
 		String nickname = request.getParameter("nickname").trim();
 		
-		int page = 0;
+		int page = 1;
 		
 		int pageSize = 5;
 		
 		if(request.getParameter("page") != null) {
 			page = Integer.parseInt(request.getParameter("page").trim());
-		}else {
-			// 처음으로 "전체 게시물 목록" a 태그를 클릭한 경우
-			page = 1;
 		}
-		
 		
 		BoardDAO dao = BoardDAO.getInstance();
 		
 		String str = dao.getReplyList(board_no, board_type, page, pageSize);
-		int totalPage = dao.getReplyTotalPage(board_no, board_type, pageSize);
+		int[] result = dao.getReplyTotalPage(board_no, board_type, pageSize);
+		int totalCount = result[0];
+		int totalPage = result[1];
 		
 		
 		
@@ -44,6 +42,7 @@ public class BoardReplyListAction implements Action {
 		out.println("<data>");
 		out.println("<nickname>" + nickname + "</nickname>");
 		out.println("<reply_list>" + str + "</reply_list>");
+		out.println("<total_count>" + totalCount + "</total_count>");
 		out.println("<total_page>" + totalPage + "</total_page>");
 		out.println("<page>" + page + "</page>");
 		out.println("</data>");

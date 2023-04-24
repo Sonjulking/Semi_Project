@@ -545,8 +545,8 @@ public class BoardDAO {
 				dto.setComment_cont(rs.getString("comment_cont"));
 				dto.setComment_writer_id(rs.getString("comment_writer_id"));
 				dto.setComment_writer_nickname(rs.getString("comment_writer_nickname"));
-				dto.setCommemt_date("commemt_date");
-				dto.setCommemt_update(rs.getString("commemt_update"));
+				dto.setComment_date("comment_date");
+				dto.setComment_update(rs.getString("comment_update"));
 				dto.setComment_hit(rs.getInt("comment_hit"));
 				
 				list.add(dto);
@@ -1040,8 +1040,9 @@ public class BoardDAO {
     
     
  // 댓글 총 페이지 수 조회
-    public int getReplyTotalPage(int no, String type, int pageSize) {
-        int totalPage = 0;
+    public int[] getReplyTotalPage(int no, String type, int pageSize) {
+        
+    	int result[] = new int[2];
 
         try {
             openConn();
@@ -1052,8 +1053,8 @@ public class BoardDAO {
             rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                int totalCount = rs.getInt(1);
-                totalPage = (int) Math.ceil((double) totalCount / pageSize);
+                result[0] = rs.getInt(1);
+                result[1] = (int) Math.ceil((double) result[0] / pageSize);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -1061,7 +1062,7 @@ public class BoardDAO {
             closeConn(rs, pstmt, con);
         }
 
-        return totalPage;
+        return result ;
     }
     
 }   

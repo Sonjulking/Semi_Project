@@ -100,8 +100,8 @@ textarea {
 				<div style="display: inline-block;"
 					style="background-color: #212529;  width: calc(5% + 8px);">
 					<div class="nes-select is-dark">
-						<select name="board_type" id="board_type dark_select" class="board_type">
-							<option value="">게시판선택</option>
+						<select name="board_type" id="board_type">
+							<option value="" hidden>게시판선택</option>
 							<option value="free">자유게시판</option>
 							<option value="legend">레전드게시판</option>
 							<option value="etc">ETC</option>
@@ -112,8 +112,8 @@ textarea {
 				<div style="display: inline-block;"
 					style="background-color: #212529;  width: calc(5% + 8px)">
 					<div class="nes-select is-dark">
-						<select name="board_heading" class="board_heading">
-							<option value="">말머리선택</option>
+						<select name="board_heading" id="board_heading">
+							<option value="" hidden>말머리선택</option>
 
 							<option class="board_heading1" value="humor">유머</option>
 							<option class="board_heading1" value="life">일상</option>
@@ -160,6 +160,9 @@ textarea {
 		</div>
 	</div>
 	<%@ include file="../include/footer.jsp"%>
+<<<<<<< HEAD
+	<script type="text/javascript" src="<%=request.getContextPath() %>/js/board_write.js"> </script>
+=======
 	<script type="text/javascript">
 		function check() {
 			if (f.board_type.value == '') {
@@ -205,5 +208,6 @@ textarea {
 			});
 		});
 	</script>
+>>>>>>> 6360defbe1713b60a53a1a7bc05a9e80dddb1286
 </body>
 </html>
