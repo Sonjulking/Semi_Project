@@ -1,6 +1,6 @@
 조장 
 git init : 깃 임시 저장소 생성
-git remote add origin https://github.com/Sonjulking/Semi_Prj.git
+git remote add origin https://github.com/Sonjulking/Semi_Project.git
 git add . : 전체다 임시 저장소에 저장
 
 git commit -m "커밋명"  : 커밋(등록)

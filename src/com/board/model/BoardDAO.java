@@ -587,7 +587,7 @@ public class BoardDAO {
 		return result;
 	}
 	
-public String getReplyList(int no, String type, int page, int pageSize) {
+    public String getReplyList(int no, String type, int page, int pageSize) {
 		
 		String res = "";
 		
@@ -632,8 +632,6 @@ public String getReplyList(int no, String type, int page, int pageSize) {
 		
 		return res;
 	}  // getReplyList() 메서드 end
-	
-	
 	
 	// 답변 내용을 tbl_reply 테이블에 저장하는 메서드.
 	public int replyInsert(CommentDTO dto, String type) {

@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.board.model.BoardDAO;
 import com.project.controller.Action;
@@ -33,6 +34,8 @@ public class BoardReplyListAction implements Action {
 		int[] result = dao.getReplyTotalPage(board_no, board_type, pageSize);
 		int totalCount = result[0];
 		int totalPage = result[1];
+		
+		
 		
 		PrintWriter out = response.getWriter();
 		

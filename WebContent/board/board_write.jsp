@@ -52,12 +52,23 @@ textarea {
 	background: #ccc;
 	border: 2px solid aliceblue;
 }
+
+#press-start {
+	justify-content: center; width : 525px;
+	height: 104px;
+	width: 272px;
+}
 </style>
 
 </head>
 <body>
 
 	<%@ include file="../include/header.jsp"%>
+
+	<div style="text-align: center;">
+		<img id="press-start"
+			src="${pageContext.request.contextPath}/img/assets/press2.gif">
+	</div>
 	<div class="write-center">
 
 		<div align="center" class="wrtie-con nes-container is-dark with-title">
@@ -137,10 +148,10 @@ textarea {
 		
 				</label> <input type="file" name="upload_file"> <br> <input class="nes-btn is-warning" type="button"
 					value="취소"
-					onclick="if(confirm('정말로 취소하시겠습니까?')) {
-														location.href='history.back()'
+					onclick="if(confirm('정말로 취소하시겠습니까?'))
+					                                   {location.href='board_write.do'
 														}else {return; }">
-				<input type="submit" class ="nes-btn is-primary" value="글쓰기">&nbsp;
+				<input type="submit" class="nes-btn is-primary" value="글쓰기">&nbsp;
 
 
 
@@ -149,6 +160,54 @@ textarea {
 		</div>
 	</div>
 	<%@ include file="../include/footer.jsp"%>
+<<<<<<< HEAD
 	<script type="text/javascript" src="<%=request.getContextPath() %>/js/board_write.js"> </script>
+=======
+	<script type="text/javascript">
+		function check() {
+			if (f.board_type.value == '') {
+				alert('게시판을 선택하세요');
+				return false;
+			}
+		}
+
+		function check() {
+			if (f.board_heading.value == '') {
+				alert('말머리를 선택하세요');
+				return false;
+			}
+		}
+
+		$(function() {
+			$(".board_type").on("change", function() {
+				$(".board_heading1, .board_heading2, .board_heading3").hide();
+
+				let state = $(".board_type option:selected").val();
+				if (state == 'free') {
+					$(".board_heading1").show();
+				} else if (state == 'legend') {
+					$(".board_heading2").show();
+				} else if (state == 'etc') {
+					$(".board_heading3").show();
+				}
+			});
+		});
+		
+		$(function() {
+			$(".board_heading").on("change", function() {
+				$("free, legend, etc").hide();
+
+				let state = $(".board_heading option:selected").val();
+				if (state == 'board_heading1') {
+					$("free").show();
+				} else if (state == 'board_heading2') {
+					$("legend").show();
+				} else if (state == 'board_heading3') {
+					$("etc").show();
+				}
+			});
+		});
+	</script>
+>>>>>>> 6360defbe1713b60a53a1a7bc05a9e80dddb1286
 </body>
 </html>
