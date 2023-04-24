@@ -95,7 +95,7 @@
 								<option class="board_heading1" value="life" ${dto.getBoard_heading() == 'life' ? 'selected' : ''}>일상</option>
 								<option class="board_heading1" value="info" ${dto.getBoard_heading() == 'info' ? 'selected' : ''}>정보</option>
 								<option class="board_heading1" value="etc1" ${dto.getBoard_heading() == 'etc1' ? 'selected' : ''}>기타</option>
-							</c:if>	
+							</c:if>
 							
 							<c:if test="${dto.getBoard_type() == 'legend'}">
 								<option class="board_heading2" value="league" ${dto.getBoard_heading() == 'league' ? 'selected' : ''}>리그오브레전드</option>

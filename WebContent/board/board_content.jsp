@@ -194,6 +194,7 @@
 	let nickname = "${nickname }";
 	let bno = "${dto.getBoard_index() }";
 	let type = "${dto.getBoard_type()}";
+	let page = "1";
 	
 </script>  
 
