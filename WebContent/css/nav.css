@@ -218,5 +218,5 @@ nav ul li {
 	height: 45px;
 }
 .nes-table.is-dark::before{
-	z-index: -1;
+	z-index: -10;
 }
