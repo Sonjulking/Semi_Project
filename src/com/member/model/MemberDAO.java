@@ -362,6 +362,8 @@ public class MemberDAO {
 
 			if (rs.next()) {
 				if (curr_pwd.equals(rs.getString("member_pwd"))) {
+					openConn();
+					
 					sql = "update ignore member set member_nickname = ?, member_pwd = ?, prefer_game1 = ? , prefer_game2 = ? , prefer_game3 = ?, member_profile = ?";
 
 					pstmt = con.prepareStatement(sql);
