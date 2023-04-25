@@ -27,7 +27,7 @@
 		
 		<!-- 글자 컨테이너  -->
 		<div class="container1">
-			<span class="title">겜만추</span><i class="nes-kirby"></i> 
+			<span class="title"><a href="../main.jsp">겜만추</a></span><i class="nes-kirby"></i> 
 			<br> <br> 
 			<span class="text1">겜만추에서
 			수 많은 사람들과 플레이하고,</span> <span class="text1">레전드 순간을 함께하세요!</span>
