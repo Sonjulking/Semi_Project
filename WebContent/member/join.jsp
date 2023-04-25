@@ -30,7 +30,7 @@
 	</div>
 
 	<div
-		class="join-con nes-container with-title is-rounded is-dark join-con2">
+		class="pw-con nes-container with-title is-rounded is-dark join-con2">
 		<p class="title join-text">회원가입</p>
 		<form method="post" enctype="multipart/form-data"
 			action="<%=request.getContextPath()%>/email_member.do"

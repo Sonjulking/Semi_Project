@@ -23,19 +23,20 @@
 
 		<%@ include file="../include/header.jsp"%>
 		
-	<div align="center">
+	<div class="total" align="center">
 		<c:set var="dto" value="${Modify }"/>
-		<hr width="50%" color="lightgray">
-			<h3>${dto.getBoard_writer_nickname() }의 수정페이지</h3>
-		<hr width="50%" color="lightgray">
+		
+		<br>
+			<h2>게시글 수정 페이지</h2>
+		<br>
 		
 		<form method="post" enctype="multipart/form-data" name="f" action="<%=request.getContextPath() %>/board_modify_ok.do?no=${dto.getBoard_index() }&old_type=${old_type }" onsubmit="return check()">
 		<input type="hidden" name="num" value="${dto.getBoard_index() }">
 		<input type="hidden" name="page" value="${Page }">
 		
-			<table border="1" cellspacing="0" width="300">
+			<table class="nes-table is-bordered is-dark my-table" border="1" cellspacing="0">
 				<tr>
-					<th>게시판종류</th>
+					<th class ="my-th-1">게시판종류</th>
 					
 					<td>
 						<select name="type" id="board_type">
@@ -90,7 +91,7 @@
 				</tr>
 				<tr>
 					<th>글 내용</th>
-					<td><textarea rows="7" cols="25" name="cont">${dto.getBoard_cont() }</textarea>
+					<td><textarea class="textcontent" rows="7" cols="25" name="cont">${dto.getBoard_cont() }</textarea>
 				</tr>
 
 				<tr>
@@ -104,8 +105,8 @@
 				
 				<tr>
 					<td colspan="2" align="center">
-						<input type="submit" value="수정완료">&nbsp;
-						<input type="reset" value="초기화">
+						<input type="submit" class="modify nes-btn is-success" value="수정완료">&nbsp;
+						<input type="reset" class="delete nes-btn is-error" value="초기화">
 					</td>
 				</tr>
 				

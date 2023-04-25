@@ -18,10 +18,10 @@
 		<c:set var="dto" value="${memCont}" />
 
 		<%-- enctype : 파일을 업로드하기 위한 속성 --%>
-		<hr width="40%" color="white">
-		<h3>${dto.getMember_nickname() }님의MyPage</h3>
-		<hr width="40%" color="white">
-
+		<br>
+			<h3>${dto.getMember_nickname() }님의MyPage</h3>
+		<br>
+		
 		<form method="post" action="<%=request.getContextPath()%>/myPageOk.do"
 			enctype="multipart/form-data">
 
