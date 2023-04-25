@@ -74,8 +74,9 @@
 
 							<%-- 조회수 --%>
 
-							<span>조회수: ${dto.getBoard_hit() }</span> <span>추천수: <img
-								src="img/thumbup.png" width="30" height="30" id="thumbs"
+							<span>조회수: ${dto.getBoard_hit() }</span> 
+							<span>추천수: <img
+								src="./img/assets/DDAbong.png" width="30" height="30" id="thumbs"
 								onclick="if(${loginCheck } == 0){
 									alert('로그인이 필요합니다');
 							}else {
