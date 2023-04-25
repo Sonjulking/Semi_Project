@@ -11,7 +11,6 @@
 
 <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 
-
 <style type="text/css">
 
 @font-face {
@@ -53,8 +52,8 @@ form {
 }
 
 #img {
-	margin-left: 110px;
-	width: 150px;
+	margin-left: 42px;
+	width: 280px;
 }
 
 
@@ -73,11 +72,9 @@ form {
 		<br>
 		<br>
 		<br>
-	
-		<img id="img" src="${pageContext.request.contextPath}/img/assets/eyes.png">
-		<br>
-		<br>
-		<br>
+		
+		<img id="img"  src="${pageContext.request.contextPath}/img/assets/ram.png">
+		
 		<br>
 		<br>
 		<br>
@@ -86,7 +83,7 @@ form {
 		<br>
 		
 		<div>
-
+	
 		<input type="submit" id="Yesbutton" value="수락"
 		class="nes-btn is-success"
 			formaction="<%=request.getContextPath()%>/matchingAccept.do">
@@ -105,7 +102,7 @@ form {
 	</form>
 	
 	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-	<!-- <script type="text/javascript" src ="/js/yesOrNo.js"></script> -->
+	
 
 	<script type="text/javascript">
 	
@@ -114,6 +111,7 @@ form {
 			document.getElementById("cancel-btn2").click();
 		}, 20000); // 20초 후에 자동 클릭
 	}
+	
 	
 	</script>
 	

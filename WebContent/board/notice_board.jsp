@@ -102,12 +102,6 @@
 		</form>
 		<br>	
 		
-		<input type="button" value="게시글 작성" onclick="if(${loginCheck } == 0){
-						alert('로그인이 필요합니다');
-						location.href='member/login.jsp'
-					}else {
-						location.href='board_write.do'
-					}">
 		<br>
 		<br>
 		
@@ -116,30 +110,30 @@
 			<ul class="pagination">
 				<c:if test="${page != 1 }">
 					<li class="page-item"><a class="page-link"
-						href="${check }page=1&type=legend"><<</a></li>
-				</c:if>
+						href="${check }page=1&type=notice"><<</a></li>
 				<li><a class="page-link"
-					href="${check }page=${page -1}&type=legend"><</a></li>
+					href="${check }page=${page -1}&type=notice"><</a></li>
+				</c:if>
 
 				<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
 					<c:if test="${i == page }">
 						<li class="page-item active" aria-current="page"><a
-							class="page-link pbt" href="${check }page=${i }&type=legend">${i }</a></li>
+							class="page-link pbt" href="${check }page=${i }&type=notice">${i }</a></li>
 					</c:if>
 
 					<c:if test="${i != page }">
 						<li class="page-item nump"><a class="page-link"
-							href="${check }page=${i }&type=legend">${i }</a></li>
+							href="${check }page=${i }&type=notice">${i }</a></li>
 					</c:if>
 				</c:forEach>
 
 				<c:if test="${page != allPage }">
 					<li class="page-item pbt"><a class="page-link"
-						href="${check }page=${page + 1 }&type=legend">></a></li>
-				</c:if>
+						href="${check }page=${page + 1 }&type=notice">></a></li>
 
 				<li class="page-item pbt"><a class="page-link"
-					href="${check }page=${allPage }&type=legend">>></a></li>
+					href="${check }page=${allPage }&type=notice">>></a></li>
+				</c:if>
 			</ul>
 		</nav>
 	</div>

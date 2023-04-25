@@ -116,32 +116,32 @@
 		<%-- 페이징 처리 영역 --%>
 		<nav>
 			<ul class="pagination">
-				<c:if test="${page != 1 }">
-					<li class="page-item"><a class="page-link"
-						href="${check }page=1&type=legend"><<</a></li>
-				</c:if>
-				<li><a class="page-link"
-					href="${check }page=${page -1}&type=legend"><</a></li>
+			 <c:if test="${page != 1 }">
+				<li class="page-item"><a class="page-link"
+					href="${check }page=1&type=free">First</a></li>
+				<li><a class="page-link" href="${check }page=${page -1}&type=free">Previous</a>
+				</li>
+		     </c:if>
 
 				<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
 					<c:if test="${i == page }">
 						<li class="page-item active" aria-current="page"><a
-							class="page-link pbt" href="${check }page=${i }&type=legend">${i }</a></li>
+							class="page-link" href="${check }page=${i }&type=free">${i }</a></li>
 					</c:if>
 
 					<c:if test="${i != page }">
-						<li class="page-item nump"><a class="page-link"
-							href="${check }page=${i }&type=legend">${i }</a></li>
+						<li class="page-item"><a class="page-link"
+							href="${check }page=${i }&type=free">${i }</a></li>
 					</c:if>
 				</c:forEach>
 
-				<c:if test="${page != allPage }">
-					<li class="page-item pbt"><a class="page-link"
-						href="${check }page=${page + 1 }&type=legend">></a></li>
-				</c:if>
+				  <c:if test="${page != allPage }">
+					<li class="page-item"><a class="page-link"
+						href="${check }page=${page + 1 }&type=free">Next</a></li>
 
-				<li class="page-item pbt"><a class="page-link"
-					href="${check }page=${allPage }&type=legend">>></a></li>
+					<li class="page-item"><a class="page-link"
+						href="${check }page=${allPage }&type=free">End</a></li>
+				</c:if>
 			</ul>
 		</nav>
 	</div>
