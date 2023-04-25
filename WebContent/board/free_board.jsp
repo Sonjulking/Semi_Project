@@ -142,6 +142,10 @@
 
 					<li class="page-item"><a class="page-link"
 						href="${check }page=${allPage }&type=free">></a></li>
+
+					<li class="page-item"><a class="page-link"
+						href="${check }page=${allPage }&type=free">>></a></li>
+
 				</c:if>
 			</ul>
 		</nav>

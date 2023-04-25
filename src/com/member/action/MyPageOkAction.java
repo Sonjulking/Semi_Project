@@ -63,10 +63,13 @@ public class MyPageOkAction implements Action {
 		String db_pwd = multi.getParameter("db_pwd").trim();
 
 		String profile_image = multi.getFilesystemName("profile_old");
+		System.out.println("기존 프로필"+ multi.getFilesystemName("profile_old"));
 
 		if (profile_image == null) {
-			profile_image = multi.getParameter("profile_new");
+			profile_image = multi.getFilesystemName("profile_new");
+			System.out.println("고친 프로필"+multi.getFilesystemName("profile_new"));
 		}
+		System.out.println(profile_image);
 
 		MemberDTO dto = new MemberDTO();
 		dto.setMember_id(member_id);
