@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+	background-color: #212529 !important;
+	font-family: "pixel", sans-serif;
+}
+
+.temp-text {
+	position: relative;
+	font-size: 25pt !important;
+	top: -15px;
+}
+
+.temp-con {
+	position: absolute;
+	top: 25px;
+	width: 500px;
+}
+
+.input-temp{
+	width: 200px !important;
+	height: 25px !important;
+}

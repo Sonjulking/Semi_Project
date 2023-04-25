@@ -20,7 +20,7 @@ public class MemberDeleteAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, MessagingException, Exception {
 		//
-		int member_index = Integer.parseInt(request.getParameter("no"));
+		int member_index = Integer.parseInt(request.getParameter("index"));
 		String member_id = request.getParameter("loginId");
 		MemberDAO dao = MemberDAO.getInstance();
 //		dao.updateIndex(member_index);
@@ -34,7 +34,7 @@ public class MemberDeleteAction implements Action {
 		session.setAttribute("LoginCheck", check);
 		if (res > 0) {
 			out.println("<script>");
-			out.println("alert('회원 탈퇴 성공')");
+			out.println("alert('회원 탈퇴 되었습니다.')");
 			out.println("location.href='main.jsp'");
 			out.println("</script>");
 
