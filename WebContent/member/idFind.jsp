@@ -29,27 +29,53 @@
 			<h2>아이디 찾기</h2>
 
 
-			<label for="id_find">아이디 찾기</label><input type="text" name="id_find" placeholder="이메일을 입력하세요">  <a href=""> <i
+			<label for="id_find">아이디 찾기</label><input type="text" id="id_find" name="id_find" placeholder="이메일을 입력하세요">  <a href=""> <i
 				id="site-face" class="fa fa-facebook-square" aria-hidden="true"></i>
 			</a> <a href=""> <i id="site-goo" class="fa fa-google-plus-square"
 				aria-hidden="true"></i>
 			</a>
 
 
-			<button class="login" type="submit">로그인</button>
+			<button class="login" type="submit" onsubmit="check()">이메일 받기</button>
 
 			<h6 class="lostpwd">
-				<a href="/Semi_Prj/member/findPwd.jsp">비밀번호를 잊으셨나요?</a>
+				<a href="/Semi_Project/member/findPwd.jsp">비밀번호를 잊으셨나요?</a>
 			</h6>
 
-			<a href="/Semi_Prj/member/join.jsp"><button class="signup" type="button">회원가입</button></a>
+			<a href="/Semi_Project/member/join.jsp"><button class="signup" type="button">회원가입</button></a>
 
 
 		</div>
 
 	</form>
 	
+ <script type="text/javascript">
+ 
+    function check() {
+    	$.ajax({
+			ContentType: "application/x-www-form-urlencoded; charset=UTF-8",
+			type: "post",
+			url: "/Semi_Project/find_id.do",
+			data: { id: $("#id_find").val() }, /*키 : 밸류 */
+			datatype: "text",
+			success: function(data) {
+				if (id == "") {
+					// set the response data to an element in the DOM
+					alert("이메일을 입력해 주세요");
+					location.href='history.back()';
+					
+				} 
+			},
 
+			error : {
+				alert("데이터 통신 오류입니다.");
+				isChecked = false;
+
+			}
+		});
+    }
+ 
+ </script>
 
 </body>
 
