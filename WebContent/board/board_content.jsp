@@ -173,7 +173,7 @@
 
 			<input type="hidden" id='hidden_nickname' value="${nickname }" />
 
-			<script type="text/javascript">
+	<script type="text/javascript">
 		let member_id = "${member_id }";
 		let writer_id = "${dto.getBoard_writer_id() }";
 		let nickname = "${nickname }";
