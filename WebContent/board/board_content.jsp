@@ -71,12 +71,15 @@
 							</span>
 
 							<%-- 조회수 --%>
-							<span>조회수: ${dto.getBoard_hit() }</span> 
-							
-							<%-- 추천수  티모따봉, 람머스 따봉 중에 고르셈--%>
-							<span>추천수: 
-								<img src="./img/assets/timoDDa.jpeg" width="30" height="30" id="thumbs"
-								onclick="thumbsClick()"> <span class="thumbs"></span>
+
+							<span>조회수: ${dto.getBoard_hit() }</span> <span>추천수: <img
+								src="img/thumbup.png" width="30" height="30" id="thumbs"
+								onclick="if(${loginCheck } == 0){
+									alert('로그인이 필요합니다');
+							}else {
+								thumbsClick();
+							}"><span class="thumbs"></span>
+
 							</span>
 
 						</div>
@@ -118,20 +121,32 @@
 			</c:if>
 			
 			<br> <input type="button" value="글 수정"
-				onclick="if(confirm(${loginCheck } == 0)){
-						alert('로그인이 필요합니다');
-						location.href='member/login.do?board_content=content'
-					}else {
-						location.href='board_modify.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
-					}">
-			<input type="button" value="글 삭제"
-				onclick="if(confirm(${loginCheck } == 0)){
-						alert('로그인이 필요합니다');
-						location.href='member/login.jsp'
-					}else {
-						if(confirm('정말로 삭제하시겠습니까?')) {
-							location.href='board_delete.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
-							}else { retrun;}}">
+
+				    onclick="if(${loginCheck } == 0){
+				            alert('로그인이 필요합니다');
+				            location.href='<%=request.getContextPath() %>/member/login.jsp'
+				        }else {
+				            if('${dto.getBoard_writer_id()}' == '${member_id}') {
+				                location.href='board_modify.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
+				            }else {
+				                alert('본인이 쓴 글이 아닙니다!');
+				            }
+				        }">
+				        
+				<input type="button" value="글 삭제"
+				    onclick="if(${loginCheck } == 0){
+				            alert('로그인이 필요합니다');
+				            location.href='<%=request.getContextPath() %>/member/login.jsp'
+				        }else {
+				            if('${dto.getBoard_writer_id()}' == '${member_id}') {
+				                if(confirm('정말로 삭제하시겠습니까?')) {
+				                location.href='board_delete.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
+				                }else { return;}
+				            }else {
+				                alert('본인이 쓴 글이 아닙니다!');
+				            }
+				        }">
+
 			<input type="button" value="전체목록"
 				onclick="location.href='board_list.do?type=${dto.getBoard_type() }'">
 			<br> <br>
