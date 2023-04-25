@@ -80,16 +80,16 @@
 					<br>
 					
 					<label for="lol" class="game1">&nbsp;
-					<input type="checkbox" name="lol" value="lol">&nbsp;LOL</label> 
+					<input type="checkbox" name="lol" value="lol">&nbsp;리그오브레전드</label> 
 					
 					<br> 
 					
 					<label class="game2" for="battle_ground">&nbsp;
-					<input type="checkbox" name="battle_ground" value="battle_ground">&nbsp;Battleground</label>
+					<input type="checkbox" name="battle_ground" value="battle_ground">&nbsp;배틀그라운드</label>
 					
 					<br> 
 					<label for="overwatch" class="game3">&nbsp;
-					<input type="checkbox" name="overwatch" value="overwatch2">&nbsp;OverWatch2</label>
+					<input type="checkbox" name="overwatch" value="overwatch2">&nbsp;오버워치</label>
 					</td>
 				</tr>
 				
