@@ -71,13 +71,8 @@
 							<div class="item-title">${freeHit.getBoard_title() }</div>
 							<div class="date_writer_con">
 								<div class="date">
-									<c:if test="${empty freeHit.getBoard_update() }">
-                  ${freeHit.getBoard_date() } 
-               </c:if>
-
-									<c:if test="${!empty freeHit.getBoard_update() }">
-                  ${freeHit.getBoard_update() }
-               </c:if>
+									<c:if test="${empty freeHit.getBoard_update() }"> ${freeHit.getBoard_date() }  </c:if>
+									<c:if test="${!empty freeHit.getBoard_update() }"> ${freeHit.getBoard_update() } </c:if>
 								</div>
 								<div class="writer">${freeHit.getBoard_writer_nickname() }</div>
 							</div>

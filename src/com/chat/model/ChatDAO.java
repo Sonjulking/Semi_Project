@@ -45,9 +45,9 @@ public class ChatDAO {
 	// JDBC 방식이 아닌 DBCP 방식으로 DB와 연동 작업 진행
 	public void openConn() {
 		String driver = "com.mysql.cj.jdbc.Driver";
-		String url = "jdbc:mysql://gamemenchu.ciegzzti5gy2.us-west-1.rds.amazonaws.com:3306/semiProject";
+		String url = "jdbc:mysql://kangchan.cf0np4g5gjsu.ap-northeast-2.rds.amazonaws.com:3306/semiProject";
 		String user = "admin";
-		String password = "12345678";
+		String password = "rhrkdcks1997*";
 
 		try {
 			// 1단계 : 오라클 드라이버를 메모리로 로딩 작업 진행.
