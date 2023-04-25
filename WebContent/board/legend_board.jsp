@@ -52,10 +52,11 @@
 
 							<tr>
 								<td>${dto.getBoard_index() }</td>
-								<td><c:if test="${dto.getBoard_heading() == 'humor' }">유머</c:if>
-									<c:if test="${dto.getBoard_heading() == 'life' }">일상</c:if> <c:if
-										test="${dto.getBoard_heading() == 'info' }">정보</c:if> <c:if
-										test="${dto.getBoard_heading() == 'etc1' }">기타</c:if></td>
+								<td>
+									<c:if test="${dto.getBoard_heading() == 'league' }">리그오브레전드</c:if>
+									<c:if test="${dto.getBoard_heading() == 'battle' }">배틀그라운드</c:if> 
+									<c:if test="${dto.getBoard_heading() == 'over' }">오버워치2</c:if> 
+								</td>
 								<td class="board-title"><a
 									href="<%=request.getContextPath()%>/board_content.do?no=${dto.getBoard_index() }&page=${page }&type=${dto.getBoard_type()}">${dto.getBoard_title() }</a>
 								</td>
