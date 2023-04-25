@@ -2,6 +2,7 @@ package com.member.action;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.Properties;
 import java.util.Random;
@@ -37,7 +38,7 @@ public class MemberEmailAction implements Action {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(request.getServletContext()
 				.getRealPath("\\WEB-INF\\classes\\com\\project\\controller\\mapping.properties"));
-		prop.load(fis);
+		prop.load(new InputStreamReader(fis));
 		fis.close();
 
 //		System.out.println(System.getenv("USERPROFILE")); //자기 컴터 이름 궁금하면 주석풀고 해보세요.
@@ -98,6 +99,7 @@ public class MemberEmailAction implements Action {
 		
 		// 임시키 메일 보내기
 		String user = "gamemanchoo@gmail.com";
+
 		String password = "xgbwrtmrplholaqi";// 호스트 패스워드
 
 		// 메일 받을 주소
