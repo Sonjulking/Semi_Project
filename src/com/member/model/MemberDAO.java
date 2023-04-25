@@ -374,6 +374,7 @@ public class MemberDAO {
 					pstmt.setString(4, dto.getPrefer_battle_ground());
 					pstmt.setString(5, dto.getPrefer_overwatch());
 					pstmt.setString(6, dto.getMember_profile());
+					System.out.println(dto.getMember_profile());
 
 					result = pstmt.executeUpdate();
 				} else if(rs.getString("member_pwd") == null) {

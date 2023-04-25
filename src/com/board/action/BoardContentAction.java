@@ -21,6 +21,7 @@ public class BoardContentAction implements Action {
 		
 		int board_no = Integer.parseInt(request.getParameter("no").trim());
 		int page = Integer.parseInt(request.getParameter("page").trim());
+		
 		String  board_type = request.getParameter("type");
 		BoardDAO dao = BoardDAO.getInstance();
 		

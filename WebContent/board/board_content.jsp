@@ -82,7 +82,6 @@
 							}else {
 								thumbsClick();
 							}"><span class="thumbs"></span>
-
 							</span>
 
 						</div>
@@ -122,11 +121,10 @@
 				<span>삭제된 게시물입니다</span>
 			</c:if>
 			
-
 			<br> 
 			<br> 
+			<c:if test="${!empty Page }">
 			<input type="button" value="글 수정" class="modify nes-btn is-success"
-
 
 				    onclick="if(${loginCheck } == 0){
 				            alert('로그인이 필요합니다');
@@ -155,10 +153,10 @@
 				            }
 				        }">
 
-
 			<input type="button" value="전체목록" class="list nes-btn is-primary"
-				onclick="location.href='board_list.do?type=${dto.getBoard_type() }'">
+				onclick="location.href='board_list.do?page=${Page }&type=${dto.getBoard_type() }'">
 			<br> <br>
+			</c:if>
 
 	<br>
 

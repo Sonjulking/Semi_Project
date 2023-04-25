@@ -118,8 +118,8 @@
 			<ul class="pagination">
 			 <c:if test="${page != 1 }">
 				<li class="page-item"><a class="page-link"
-					href="${check }page=1&type=free">First</a></li>
-				<li><a class="page-link" href="${check }page=${page -1}&type=free">Previous</a>
+					href="${check }page=1&type=free"><<</a></li>
+				<li><a class="page-link" href="${check }page=${page -1}&type=free"><</a>
 				</li>
 		     </c:if>
 
@@ -137,10 +137,10 @@
 
 				  <c:if test="${page != allPage }">
 					<li class="page-item"><a class="page-link"
-						href="${check }page=${page + 1 }&type=free">Next</a></li>
+						href="${check }page=${page + 1 }&type=free">></a></li>
 
 					<li class="page-item"><a class="page-link"
-						href="${check }page=${allPage }&type=free">End</a></li>
+						href="${check }page=${allPage }&type=free">>></a></li>
 				</c:if>
 			</ul>
 		</nav>
