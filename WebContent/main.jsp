@@ -266,19 +266,19 @@
 			</c:if>
 
 			<c:if test="${empty etcHit }">
-              <a href="<%=request.getContextPath() %>/main.jsp">
-  				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">5</div>
-					<img src="" class="sumimg" />
-					<div class="title_con">
-						<div class="item-title">야스오 강의</div>
-						<div class="date_writer_con">
-							<div class="date">2023-09-16</div>
-							<div class="writer">실버 판테온</div>
+				<a href="<%=request.getContextPath()%>/main.jsp">
+					<div class="item nes-container is-rounded is-dark">
+						<div class="ranking">5</div>
+						<img src="" class="sumimg" />
+						<div class="title_con">
+							<div class="item-title">야스오 강의</div>
+							<div class="date_writer_con">
+								<div class="date">2023-09-16</div>
+								<div class="writer">실버 판테온</div>
+							</div>
 						</div>
+						<div class="comment">[65]</div>
 					</div>
-					<div class="comment">[65]</div>
-				</div>
 				</a>
 			</c:if>
 		</div>
