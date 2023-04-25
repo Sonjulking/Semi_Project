@@ -21,7 +21,7 @@ h3 {
 .jungmax{
 	display:flex;
 	justify-content: center;
-	height: 530px;
+	height: 560px;
 }
 
 .info {
@@ -38,4 +38,12 @@ h3 {
 
 .modify, .delete, .list {
 	border-radius: 5px;
+}
+.write {
+	border-radius: 5px;
+}
+
+#re_content {
+	resize: none;
+	width: 322px;
 }
