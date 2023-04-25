@@ -102,15 +102,20 @@ public class MyPageOkAction implements Action {
 
 		if (res > 0) {
 			out.println("<script>");
-			out.println("alert('회원 수정 성공!!!')");
+			out.println("alert('회원정보가 수정되었습니다.')");
 			out.println("history.back()");
 			out.println("</script>");
 		} else if (res == -1) {
 			out.println("<script>");
-			out.println("alert('회원 비번 틀림')");
+			out.println("alert('비밀번호를 입력해 주세요')");
 			out.println("history.back()");
 			out.println("</script>");
-		}  else {
+		}  else if (res == 1) {
+			out.println("<script>");
+			out.println("alert('비밀번호가 틀렸습니다.')");
+			out.println("history.back()");
+			out.println("</script>");
+		} else {
 			out.println("<script>");
 			out.println("alert('수정실패')");
 			out.println("history.back()");

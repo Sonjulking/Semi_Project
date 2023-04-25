@@ -121,9 +121,9 @@
 				<c:if test="${page != 1 }">
 					<li class="page-item"><a class="page-link"
 						href="${check }page=1&type=legend"><<</a></li>
-				</c:if>
 				<li><a class="page-link"
 					href="${check }page=${page -1}&type=legend"><</a></li>
+				</c:if>
 
 				<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
 					<c:if test="${i == page }">
@@ -140,10 +140,10 @@
 				<c:if test="${page != allPage }">
 					<li class="page-item pbt"><a class="page-link"
 						href="${check }page=${page + 1 }&type=legend">></a></li>
-				</c:if>
 
 				<li class="page-item pbt"><a class="page-link"
 					href="${check }page=${allPage }&type=legend">>></a></li>
+				</c:if>
 			</ul>
 		</nav>
 	</div>

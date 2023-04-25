@@ -33,6 +33,14 @@ public class findIdAction implements Action {
 				// 메일 받을 주소
 				/* String to_email = m.getEmail(); */
 				String to_email = request.getParameter("id_find");
+				PrintWriter out = response.getWriter();
+
+				if (to_email == null) {
+					out.println("<script>");
+					out.println("alert('이메일을 입력해 주세요')");
+					out.println("history.back()");
+					out.println("</script>");
+				} 
                 
 				MemberDAO dao = MemberDAO.getInstance();
 				int check = dao.emailCheck(to_email);
@@ -92,7 +100,6 @@ public class findIdAction implements Action {
 				 * BCC (Blind Carbon Copy): 이메일 메시지의 숨은 참조 수신자를 나타냅니다. CC와 마찬가지로 선택적으로 지정할 수
 				 * 있지만, 수신자 목록에서 숨겨져 있어 다른 수신자들이 BCC로 지정된 수신자를 볼 수 없습니다.
 				 */
-				PrintWriter out = response.getWriter();
 				try {
 					MimeMessage msg = new MimeMessage(session);
 					msg.setFrom(new InternetAddress(user, "겜만추")); // 보내는 사람
@@ -114,15 +121,15 @@ public class findIdAction implements Action {
 				
 				if (check == 1) {
 					out.println("<script>");
-					out.println("alert('받은메일함과 스팸메일함에서 아이디를 확인하세요~')");
+					out.println("alert('받은메일함과 스팸메일함에서 아이디를 확인해 주세요')");
 					out.println("location.href='member/login.jsp'");
 					out.println("</script>");
 				} else {
 					out.println("<script>");
-					out.println("alert('이메일 틀림')");
+					out.println("alert('가입된 이메일 주소가 아닙니다')");
 					out.println("history.back()");
 					out.println("</script>");
-				}
+				} 
 
 		return null;
 	}

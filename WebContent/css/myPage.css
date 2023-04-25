@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.mypage {
+	color: white! important;
+}
+
+/* #namem, #modify_pwd1, #modify_pwd2, #curr_pwd {
+	width: 250px! important;
+}
+ */
+.modify, .rewrite, .delete {
+	border-radius: 5px;
+}
+

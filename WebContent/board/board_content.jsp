@@ -20,10 +20,12 @@
 </head>
 <body>
 
+
 	<%@ include file="../include/header.jsp"%>
 	<div class="jungmax" align="center">
 		<div class="content nes-container is-dark with-title">
 			<c:set var="dto" value="${content }" />
+			<c:set var="mdto" value="${Cont }"/>
 
 
 			<c:if test="${!empty dto }">
@@ -42,6 +44,7 @@
 						<%-- 글제목 --%>
 						<h1>${dto.getBoard_title() }</h1>
 
+                        <h6>${dto.getBoard_writer_nickname() }</h6>
 
 						<%-- 머리말 --%>
 						<div class="info">
@@ -81,14 +84,41 @@
 						</div>
 					</header>
 
+
+					<div class="text nes-container with-title is-centered">
+							<%-- 글내용 --%>
+							${dto.getBoard_cont() }
+ 					</div>
+
+					<br>
+					
+					<div>
+							<%-- 첨부파일 --%>
+						<span>첨부 파일 : 
+						<c:if test="${!empty dto.getUpload_file() }">
+							<span>
+							<a href="<%=request.getContextPath() %>/fileUpload/${dto.getUpload_file() }"
+									target="_blank">${dto.getUpload_file() }</a> </span>
+							</c:if> 
+							<c:if test="${empty dto.getUpload_file() }">
+								<span> </span>
+							</c:if>
+
+						</span>
+
+					</div>
+					
+					<br>
+					
 				</div>
+
 			</c:if>
-
-
+			
 			<%-- 데이터가 없는 경우 --%>
 			<c:if test="${empty dto }">
 				<span>삭제된 게시물입니다</span>
 			</c:if>
+			
 			<br> <input type="button" value="글 수정"
 				    onclick="if(${loginCheck } == 0){
 				            alert('로그인이 필요합니다');
@@ -118,74 +148,46 @@
 				onclick="location.href='board_list.do?type=${dto.getBoard_type() }'">
 			<br> <br>
 
-			<%-- 댓글 폼 --%>
-			<div>
-				<table cellspacing="0" width="400">
-					<tr>
-						<th>댓글내용</th>
-						<td><textarea rows="5" cols="40" name="re_content"
-								id="re_content"> </textarea></td>
-					</tr>
+	<br>
 
-					<tr>
-						<td colspan="2" align="right"><input type="button"
-							id="replyBtn" value="댓글작성"></td>
-					</tr>
-				</table>
-				<br>
-
-				<h3>
-					댓글 갯수 : <span class="commentCount">0</span>
-				</h3>
-				<div class="list"></div>
-
-
-			</div>
-
-
-			<%-- 데이터가 없는 경우 --%>
-			<c:if test="${empty dto }">
-				<span>삭제된 게시물입니다</span>
-			</c:if>
-			<br>
-
-			<div align="center">
-				<input type="button" class="modify nes-btn is-success" value="글 수정"
-					onclick="location.href='board_modify.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'">&nbsp;&nbsp;
-				<input type="button" class="delete nes-btn is-error" value="글 삭제"
-					onclick="if(confirm('정말로 삭제하시겠습니까?')) {
+	<div align="center">
+		<input type="button" class="modify nes-btn is-success" value="글 수정"
+			onclick="location.href='board_modify.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'">&nbsp;&nbsp;
+		<input type="button" class="delete nes-btn is-error" value="글 삭제"
+			onclick="if(confirm('정말로 삭제하시겠습니까?')) {
 															location.href='board_delete.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
 														}else { retrun; }">&nbsp;&nbsp;
-				<input type="button" class="list nes-btn is-primary" value="전체목록"
-					onclick="location.href='board_list.do?type=${dto.getBoard_type() }'">
-			</div>
+		<input type="button" class="list nes-btn is-primary" value="전체목록"
+			onclick="location.href='board_list.do?type=${dto.getBoard_type() }'">
+	</div>
 
-			<br> <br>
+	<br>
+	<br>
 
-			<%-- 댓글 폼 --%>
-			<div align="center">
-				<table cellspacing="0" width="400">
-					<tr>
-						<th>댓글내용</th>
-						<td><textarea rows="5" cols="40" name="re_content"
-								id="re_content"> </textarea></td>
-					</tr>
+	<%-- 댓글 폼 --%>
+	<div align="center">
+		<table cellspacing="0" width="400">
+			<tr>
+				<th>댓글내용</th>
+				<td><textarea rows="5" cols="40" name="re_content"
+						id="re_content"> </textarea></td>
+			</tr>
 
-					<tr>
-						<td colspan="2" align="right"><input type="button"
-							class="write nes-btn is-success" id="replyBtn" value="댓글작성">
-						</td>
-					</tr>
-				</table>
-				<br>
+			<tr>
+				<td colspan="2" align="right"><input type="button"
+					class="write nes-btn is-success" id="replyBtn" value="댓글작성">
+				</td>
+			</tr>
+		</table>
+		<br>
 
-				<h3>댓글 목록</h3>
-				<div class="list"></div>
+		<h3>댓글 목록</h3>
+		<div class="list"></div>
 
-			</div>
+	</div>
 
 
-			<input type="hidden" id='hidden_nickname' value="${nickname }" />
+	<input type="hidden" id='hidden_nickname' value="${nickname }" />
 
 	<script type="text/javascript">
 		let member_id = "${member_id }";
@@ -195,12 +197,14 @@
 		let type = "${dto.getBoard_type()}";
 	</script>
 
+	<script type="text/javascript"
+		src="<%=request.getContextPath()%>/js/boardContent.min.js"></script>
 
-			<script type="text/javascript"
-				src="<%=request.getContextPath()%>/js/boardContent.min.js"></script>
+	<span class="page_link"></span>
 
-			<span class="page_link"></span>
+	<jsp:include page="../include/footer.jsp"></jsp:include>
 
-			<jsp:include page="../include/footer.jsp"></jsp:include>
+
+
 </body>
 </html>

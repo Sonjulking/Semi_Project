@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.pw-con{
+
+	position: absolute;
+	top:200px;
+	left: 50%;
+	width: 450px;
+	
+	font-family: "pixel", sans-serif;
+
+}
+
+.find-btn{
+	display:block;
+	margin: 0 auto;
+	
+	width: 50%;
+}
