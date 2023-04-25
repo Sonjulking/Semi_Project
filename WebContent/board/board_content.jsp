@@ -20,6 +20,7 @@
 </head>
 <body>
 
+
 	<%@ include file="../include/header.jsp"%>
 	
 	<div class="jungmax" align="center">
@@ -120,9 +121,11 @@
 				<span>삭제된 게시물입니다</span>
 			</c:if>
 			
+
 			<br> 
 			<br> 
 			<input type="button" value="글 수정" class="modify nes-btn is-success"
+
 
 				    onclick="if(${loginCheck } == 0){
 				            alert('로그인이 필요합니다');
@@ -135,7 +138,9 @@
 				            }
 				        }">
 				        
+
 				<input type="button" value="글 삭제" class="delete nes-btn is-error"
+
 				    onclick="if(${loginCheck } == 0){
 				            alert('로그인이 필요합니다');
 				            location.href='<%=request.getContextPath() %>/member/login.jsp'
@@ -148,6 +153,7 @@
 				                alert('본인이 쓴 글이 아닙니다!');
 				            }
 				        }">
+
 
 			<input type="button" value="전체목록" class="list nes-btn is-primary"
 				onclick="location.href='board_list.do?type=${dto.getBoard_type() }'">
