@@ -362,6 +362,8 @@ public class MemberDAO {
 
 			if (rs.next()) {
 				if (curr_pwd.equals(rs.getString("member_pwd"))) {
+					openConn();
+					
 					sql = "update ignore member set member_nickname = ?, member_pwd = ?, prefer_game1 = ? , prefer_game2 = ? , prefer_game3 = ?, member_profile = ?";
 
 					pstmt = con.prepareStatement(sql);
@@ -372,6 +374,7 @@ public class MemberDAO {
 					pstmt.setString(4, dto.getPrefer_battle_ground());
 					pstmt.setString(5, dto.getPrefer_overwatch());
 					pstmt.setString(6, dto.getMember_profile());
+					System.out.println(dto.getMember_profile());
 
 					result = pstmt.executeUpdate();
 				} else if(rs.getString("member_pwd") == null) {
