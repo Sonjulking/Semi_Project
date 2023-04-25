@@ -2,6 +2,7 @@ package com.member.action;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.Properties;
 import java.util.Random;
@@ -34,7 +35,7 @@ public class MemberJoinAction implements Action {
 		Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(request.getServletContext()
 				.getRealPath("\\WEB-INF\\classes\\com\\project\\controller\\mapping.properties"));
-		prop.load(fis);
+		prop.load(new InputStreamReader(fis));
 		fis.close();
 //		System.out.println(System.getenv("USERPROFILE")); //자기 컴터 이름 궁금하면 주석풀고 해보세요.
 		// 시스템안에있는 환경변수중에서 USERPROFILE를 따옵니다. 그게 보통 C:\Users\KangChan 이렇게 나오는데 앞에 3개를
