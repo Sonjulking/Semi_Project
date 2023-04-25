@@ -73,7 +73,7 @@ form {
 		<br>
 		<br>
 		
-		<img id="img"  src="${pageContext.request.contextPath}/img/assets/ram.png">
+		<img id="img"  src="${pageContext.request.contextPath}/img/assets/ramDDA.png">
 		
 		<br>
 		<br>
