@@ -99,6 +99,7 @@ public class MemberEmailAction implements Action {
 		
 		// 임시키 메일 보내기
 		String user = "gamemanchoo@gmail.com";
+
 		String password = "xgbwrtmrplholaqi";// 호스트 패스워드
 
 		// 메일 받을 주소
