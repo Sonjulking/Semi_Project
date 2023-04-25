@@ -88,8 +88,9 @@
 			</c:if>
 
 			<c:if test="${empty freeHit }">
-				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">1</div>
+				<a href="<%=request.getContextPath() %>/main.jsp">
+  				<div class="item nes-container is-rounded is-dark">
+					<div class="ranking">2</div>
 					<img src="" class="sumimg" />
 					<div class="title_con">
 						<div class="item-title">야스오 강의</div>
@@ -100,6 +101,7 @@
 					</div>
 					<div class="comment">[65]</div>
 				</div>
+				</a>
 			</c:if>
 
 
@@ -136,7 +138,8 @@
 
 
 			<c:if test="${empty freeThumbs }">
-				<div class="item nes-container is-rounded is-dark">
+				<a href="<%=request.getContextPath() %>/main.jsp">
+  				<div class="item nes-container is-rounded is-dark">
 					<div class="ranking">2</div>
 					<img src="" class="sumimg" />
 					<div class="title_con">
@@ -148,8 +151,8 @@
 					</div>
 					<div class="comment">[65]</div>
 				</div>
+				</a>
 			</c:if>
-
 
 			<c:set var="legendHit" value="${legend1Hit }" />
 			<c:set var="legendHitComment" value="${legend1HitComment }" />
@@ -180,7 +183,8 @@
 			</c:if>
 
 			<c:if test="${empty legendHit }">
-				<div class="item nes-container is-rounded is-dark">
+				 <a href="<%=request.getContextPath() %>/main.jsp">
+  				<div class="item nes-container is-rounded is-dark">
 					<div class="ranking">3</div>
 					<img src="" class="sumimg" />
 					<div class="title_con">
@@ -192,6 +196,7 @@
 					</div>
 					<div class="comment">[65]</div>
 				</div>
+				</a>
 			</c:if>
 
 			<c:set var="legendThumbs" value="${legend1Thumbs }" />
@@ -223,7 +228,8 @@
 			</c:if>
 
 			<c:if test="${empty legendThumbs }">
-				<div class="item nes-container is-rounded is-dark">
+				 <a href="<%=request.getContextPath() %>/main.jsp">
+  				<div class="item nes-container is-rounded is-dark">
 					<div class="ranking">4</div>
 					<img src="" class="sumimg" />
 					<div class="title_con">
@@ -235,6 +241,7 @@
 					</div>
 					<div class="comment">[65]</div>
 				</div>
+				</a>
 			</c:if>
 
 			<c:set var="etcHit" value="${etc1Hit }" />

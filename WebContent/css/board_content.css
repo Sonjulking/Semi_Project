@@ -12,16 +12,30 @@ h3 {
 	color: white! important;
 }
 
-.modify, .delete, .list, .write {
-	border-radius: 6px;
-}
 
 .content {
 	width: 60%;
+	border-radius: 7px;
 }
 
 .jungmax{
 	display:flex;
 	justify-content: center;
-	flex-direction: column;
+	height: 530px;
+}
+
+.info {
+	height: 50px;
+	font-size: 20px;
+}
+
+.text {
+	background-color: white! important;
+	border-radius: 5px;
+	height: 280px;
+	color: black;
+}
+
+.modify, .delete, .list {
+	border-radius: 5px;
 }

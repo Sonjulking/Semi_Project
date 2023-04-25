@@ -58,9 +58,9 @@ public class MemberDAO {
 	// DB를 연동하는 작업을 진행하는 메서드.
 	public void openConn() {
 		String driver = "com.mysql.cj.jdbc.Driver";
-		String url = "jdbc:mysql://gamemenchu.ciegzzti5gy2.us-west-1.rds.amazonaws.com:3306/semiProject";
+		String url = "jdbc:mysql://kangchan.cf0np4g5gjsu.ap-northeast-2.rds.amazonaws.com:3306/semiProject";
 		String user = "admin";
-		String password = "12345678";
+		String password = "rhrkdcks1997*";
 
 		try {
 			// 1단계 : 오라클 드라이버를 메모리로 로딩 작업 진행.
@@ -111,7 +111,7 @@ public class MemberDAO {
 	            count = rs.getInt(1) + 1;
 	         }
 
-	         sql = "insert ignore into member values(?, ?, ?, ?, ?, 100, now() ,? ,? ,? ,? ,?)";
+	         sql = "insert ignore into member values(?, ?, ?, ?, ?, 100, date_add(now(), interval 9 hour), ? ,? ,? ,? ,?)";
 
 	         pstmt = con.prepareStatement(sql);
 
@@ -374,9 +374,11 @@ public class MemberDAO {
 					pstmt.setString(6, dto.getMember_profile());
 
 					result = pstmt.executeUpdate();
+				} else if(rs.getString("member_pwd") == null) {
+					result = 1;
 				} else {
 					// 비밀번호가 틀린 경우
-					result = -1;
+					result = -1;					
 				}
 			}
 

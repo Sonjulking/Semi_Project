@@ -63,23 +63,25 @@
 			<table border="1" cellspacing="0" width="300">
 				<tr>
 					<th>게시판종류</th>
+					
 					<td>
 						<select name="type" id="board_type">
 						  	<c:if test="${dto.getBoard_type() == 'free'}">
-						   	 	<option value="free">자유게시판</option>
+						   	 	<option value="free" selected>자유게시판</option>
 						    	<option value="legend">레전드게시판</option>
 						    	<option value="etc">ETC</option>
 						  	</c:if>
 						 	<c:if test="${dto.getBoard_type() == 'legend'}">
-						 		<option value="legend">레전드게시판</option>
+						 		<option value="legend" selected>레전드게시판</option>
 						    	<option value="free">자유게시판</option>
 						    	<option value="etc">ETC</option>
 						  </c:if>
 						  	<c:if test="${dto.getBoard_type() == 'etc'}">
-						  		<option value="etc">ETC</option>
+						  		<option value="etc" selected>ETC</option>
 						    	<option value="free">자유게시판</option>
 						    	<option value="legend">레전드게시판</option>
 						  	</c:if>
+						  	
 						</select>
 					</td>
 				</tr>
@@ -89,24 +91,18 @@
 					<td>
 						<select name="heading" id="heading">
 							<option class="board_heading" value="" hidden>말머리를 선택하세요</option>
+								
+							<option class="board_heading1" value="humor" ${dto.getBoard_heading() == 'humor' ? 'selected' : ''}>유머</option>
+							<option class="board_heading1" value="life" ${dto.getBoard_heading() == 'life' ? 'selected' : ''}>일상</option>
+							<option class="board_heading1" value="info" ${dto.getBoard_heading() == 'info' ? 'selected' : ''}>정보</option>
+							<option class="board_heading1" value="etc1" ${dto.getBoard_heading() == 'etc1' ? 'selected' : ''}>기타</option>
 							
-							<c:if test="${dto.getBoard_type() == 'free'}">
-								<option class="board_heading1" value="humor" ${dto.getBoard_heading() == 'humor' ? 'selected' : ''}>유머</option>
-								<option class="board_heading1" value="life" ${dto.getBoard_heading() == 'life' ? 'selected' : ''}>일상</option>
-								<option class="board_heading1" value="info" ${dto.getBoard_heading() == 'info' ? 'selected' : ''}>정보</option>
-								<option class="board_heading1" value="etc1" ${dto.getBoard_heading() == 'etc1' ? 'selected' : ''}>기타</option>
-							</c:if>
+							<option class="board_heading2" value="league" ${dto.getBoard_heading() == 'league' ? 'selected' : ''}>리그오브레전드</option>
+							<option class="board_heading2" value="battle" ${dto.getBoard_heading() == 'battle' ? 'selected' : ''}>배틀그라운드</option>
+							<option class="board_heading2" value="over" ${dto.getBoard_heading() == 'over' ? 'selected' : ''}>오버워치2</option>
 							
-							<c:if test="${dto.getBoard_type() == 'legend'}">
-								<option class="board_heading2" value="league" ${dto.getBoard_heading() == 'league' ? 'selected' : ''}>리그오브레전드</option>
-								<option class="board_heading2" value="battle" ${dto.getBoard_heading() == 'battle' ? 'selected' : ''}>배틀그라운드</option>
-								<option class="board_heading2" value="over" ${dto.getBoard_heading() == 'over' ? 'selected' : ''}>오버워치2</option>
-							</c:if>
-							
-							<c:if test="${dto.getBoard_type() == 'etc'}">
-								<option class="board_heading3" value="police" ${dto.getBoard_heading() == 'police' ? 'selected' : ''}>신고</option>
-								<option class="board_heading3" value="etc2" ${dto.getBoard_heading() == 'etc2' ? 'selected' : ''}>기타</option>
-							</c:if>
+							<option class="board_heading3" value="police" ${dto.getBoard_heading() == 'police' ? 'selected' : ''}>신고</option>
+							<option class="board_heading3" value="etc2" ${dto.getBoard_heading() == 'etc2' ? 'selected' : ''}>기타</option>
 						</select>
 					</td>
 				</tr>

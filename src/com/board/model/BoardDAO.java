@@ -46,9 +46,9 @@ public class BoardDAO {
 	// JDBC 방식이 아닌 DBCP 방식으로 DB와 연동 작업 진행
 	public void openConn() {
 		String driver = "com.mysql.cj.jdbc.Driver";
-		String url = "jdbc:mysql://gamemenchu.ciegzzti5gy2.us-west-1.rds.amazonaws.com:3306/semiProject";
+		String url = "jdbc:mysql://kangchan.cf0np4g5gjsu.ap-northeast-2.rds.amazonaws.com:3306/semiProject";
 		String user = "admin";
-		String password = "12345678";
+		String password = "rhrkdcks1997*";
 
 		try {
 			// 1단계 : 오라클 드라이버를 메모리로 로딩 작업 진행.
@@ -186,7 +186,7 @@ public class BoardDAO {
 				count = rs.getInt(1) + 1;
 			}
 			
-			sql = "insert into "+type+"_board values ('"+type+"', ?, ?, ?, ?, ?, ?, default, ?, default, default, now(), default)";
+			sql = "insert into "+type+"_board values ('"+type+"', ?, ?, ?, ?, ?, ?, default, ?, default, default, date_add(now(), interval 9 hour), default)";
 			
 			pstmt = con.prepareStatement(sql);
 			
@@ -231,12 +231,14 @@ public class BoardDAO {
 			if(rs.next()) {
 				if(rs.getInt("member_point") == 0) {
 					res = -1;
+				} else {
+					openConn();
+					sql = "update member set member_point = member_point - 1 where member_id = ?";
+					pstmt = con.prepareStatement(sql);
+					pstmt.setString(1, id);
+					
+					pstmt.executeUpdate();
 				}
-			} else {
-				
-				sql = "update member set member_point = member_point - 1 where member_id = ?";
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, id);
 			}
 
 	        
@@ -259,7 +261,7 @@ public class BoardDAO {
 			openConn();
 			
 			if(dto.getUpload_file() != null) {
-				sql = "update "+type+"_board set board_type = ?, board_heading = ?, board_title = ?, board_cont = ?, board_update = now(), upload_file = ? where board_index = ?";
+				sql = "update "+type+"_board set board_type = ?, board_heading = ?, board_title = ?, board_cont = ?, board_update = date_add(now(), interval 9 hour), upload_file = ? where board_index = ?";
 				
 				pstmt = con.prepareStatement(sql);
 				
@@ -271,7 +273,7 @@ public class BoardDAO {
 				pstmt.setInt(6, dto.getBoard_index());
 				
 			}else {
-				sql = "update "+type+"_board set board_type = ?, board_heading = ?, board_title = ?, board_cont = ?, board_update = now() where board_index = ?";
+				sql = "update "+type+"_board set board_type = ?, board_heading = ?, board_title = ?, board_cont = ?, board_update = date_add(now(), interval 9 hour) where board_index = ?";
 				
 				pstmt = con.prepareStatement(sql);
 				
@@ -651,8 +653,7 @@ public class BoardDAO {
 				count = rs.getInt(1) + 1;
 			}
 			openConn();
-			
-			sql = "insert into "+type+"_comment values(?, ?, ?, ?, ?, now(), default, default)";	
+			sql = "insert into "+type+"_comment values(?, ?, ?, ?, ?, date_add(now(), interval 9 hour), default, default)";	
 			
 			pstmt = con.prepareStatement(sql);
 			
@@ -701,7 +702,7 @@ public class BoardDAO {
 			
 			if(writer_id.equals(member_id)) {
 				
-				sql = "update "+type+"_comment set comment_cont = ?, comment_update = now() where comment_index = ?";
+				sql = "update "+type+"_comment set comment_cont = ?, comment_update = date_add(now(), interval 9 hour) where comment_index = ?";
 				
 				pstmt = con.prepareStatement(sql);
 				
