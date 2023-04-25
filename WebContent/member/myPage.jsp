@@ -26,10 +26,10 @@
 		<c:set var="dto" value="${memCont}" />
 
 		<%-- enctype : 파일을 업로드하기 위한 속성 --%>
-		<hr width="40%" color="white">
-		<h3>${dto.getMember_nickname() }님의MyPage</h3>
-		<hr width="40%" color="white">
-
+		<br>
+			<h3>${dto.getMember_nickname() }님의MyPage</h3>
+		<br>
+		
 		<form method="post" action="<%=request.getContextPath()%>/myPageOk.do"
 			enctype="multipart/form-data">
 
@@ -88,16 +88,16 @@
 					<br>
 					
 					<label for="lol" class="game1">&nbsp;
-					<input type="checkbox" name="lol" value="lol">&nbsp;LOL</label> 
+					<input type="checkbox" name="lol" value="lol">&nbsp;리그오브레전드</label> 
 					
 					<br> 
 					
 					<label class="game2" for="battle_ground">&nbsp;
-					<input type="checkbox" name="battle_ground" value="battle_ground">&nbsp;Battleground</label>
+					<input type="checkbox" name="battle_ground" value="battle_ground">&nbsp;배틀그라운드</label>
 					
 					<br> 
 					<label for="overwatch" class="game3">&nbsp;
-					<input type="checkbox" name="overwatch" value="overwatch2">&nbsp;OverWatch2</label>
+					<input type="checkbox" name="overwatch" value="overwatch2">&nbsp;오버워치</label>
 					</td>
 				</tr>
 				

@@ -12,57 +12,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/board_modify.css" />
+
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/js/board_modify.js"></script>
 </head>
 <body>
-		<header>
-		<div class="main_header_wrap">
-			<span id="main_logo_text"><a id="logo_link" href="main.jsp">겜만추</a><i class="snes-jp-logo"></i></span>
-		
-			<!-- <img id="logo" src="../WebContent/img/thumbup.png" alt=""> -->
-			<div class="login_wrap">
 
-				<c:if test="${loginCheck == 0 }">
-					<span class="Login"><a href="member/login.jsp" class="nes-text is-primary">Login</a></span>
-					<span class="Join"> / <a href="member/join.jsp" class="nes-text is-success">Join</a></span>
- 					<i class="fa fa-envelope" aria-hidden="true"></i>
-				</c:if>
- 
-				<c:if test="${loginCheck > 0 }">
-				   <c:set var="m_dto" value="${Cont }"/>
-					<span class="Login"><a href="member/logout.jsp" class="nes-text is-warning">Logout</a></span>
-					<span class="Join"> / <a
-						href="<%=request.getContextPath()%>/myPage.do?loginId=${member_id}" class="nes-text is-error">MyPage</a></span>
-				    <a href="<%=request.getContextPath()%>/chat.do"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-				</c:if>
-			</div>
-		</div>
-	</header>
-
-	<nav>
-		<ul class="navcolor nes-container">
-			<li><a href="<%=request.getContextPath()%>/board_list.do?type=free"
-				class="nes-text is-primary">FreeBoard</a></li>
-			<li><a href="<%=request.getContextPath()%>/board_list.do?type=legend" class="nes-text is-success">Legend</a></li>
-			<li><a href="<%=request.getContextPath()%>/board_list.do?type=notice" class="nes-text is-warning">Notice </a></li>
-			<li><a href="<%=request.getContextPath()%>/board_list.do?type=etc" class="nes-text is-error">ETC </a></li>
-		</ul>
-	</nav>
+		<%@ include file="../include/header.jsp"%>
 		
-	<div align="center">
+	<div class="total" align="center">
 		<c:set var="dto" value="${Modify }"/>
-		<hr width="50%" color="lightgray">
-			<h3>${dto.getBoard_writer_nickname() }의 수정페이지</h3>
-		<hr width="50%" color="lightgray">
+		
+		<br>
+			<h2>게시글 수정 페이지</h2>
+		<br>
 		
 		<form method="post" enctype="multipart/form-data" name="f" action="<%=request.getContextPath() %>/board_modify_ok.do?no=${dto.getBoard_index() }&old_type=${old_type }" onsubmit="return check()">
 		<input type="hidden" name="num" value="${dto.getBoard_index() }">
 		<input type="hidden" name="page" value="${Page }">
 		
-			<table border="1" cellspacing="0" width="300">
+			<table class="nes-table is-bordered is-dark my-table" border="1" cellspacing="0">
 				<tr>
-					<th>게시판종류</th>
+					<th class ="my-th-1">게시판종류</th>
 					
 					<td>
 						<select name="type" id="board_type">
@@ -117,7 +91,7 @@
 				</tr>
 				<tr>
 					<th>글 내용</th>
-					<td><textarea rows="7" cols="25" name="cont">${dto.getBoard_cont() }</textarea>
+					<td><textarea class="textcontent" rows="7" cols="25" name="cont">${dto.getBoard_cont() }</textarea>
 				</tr>
 
 				<tr>
@@ -131,8 +105,8 @@
 				
 				<tr>
 					<td colspan="2" align="center">
-						<input type="submit" value="수정완료">&nbsp;
-						<input type="reset" value="초기화">
+						<input type="submit" class="modify nes-btn is-success" value="수정완료">&nbsp;
+						<input type="reset" class="delete nes-btn is-error" value="초기화">
 					</td>
 				</tr>
 				

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.total {
+	color: white! important;
+}
+
+.my-th-1{
+	
+width: 200px !important;
+	
+}
+
+.textcontent {
+	width: 99% !important;
+}
+
+
+.modify, .delete {
+	border-radius: 5px;
+}
