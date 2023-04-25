@@ -79,7 +79,7 @@ h2 {
 				<br>
 				<br>
 			
-				<img id="img" src="${pageContext.request.contextPath}/img/assets/eyes.png"> 
+				<img id="img" src="${pageContext.request.contextPath}/img/assets/timo_R.jpg"> 
 				<br>
 				<br>
 				<br>
