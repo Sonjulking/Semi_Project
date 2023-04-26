@@ -19,17 +19,17 @@ public class FinalDeleteOkAction implements Action {
 			throws IOException, MessagingException, Exception {
 		// 마지막 유저 프로필에서 matching DB만 삭제
 		String member_id = request.getParameter("id").trim();
-		
+
 		MatchingDAO dao = MatchingDAO.getInstance();
-		
+
 		MemberDTO mdto = new MemberDTO();
-		
+
 		mdto.setMember_id(member_id);
-		
-		int check2 = dao.deleteMatching(mdto);
-		
+
+		dao.deleteMatching(mdto);
+
 		PrintWriter out = response.getWriter();
-		
+
 		out.println("<script>");
 		out.println("history.back()");
 		out.println("</script>");
@@ -42,7 +42,6 @@ public class FinalDeleteOkAction implements Action {
 		 */
 		return null;
 
-		
 	}
 
 }
