@@ -123,6 +123,7 @@
 			
 			<br> 
 			<br> 
+			<c:if test="${!empty Page }">
 			<input type="button" value="글 수정" class="modify nes-btn is-success"
 
 				    onclick="if(${loginCheck } == 0){
@@ -155,6 +156,7 @@
 			<input type="button" value="전체목록" class="list nes-btn is-primary"
 				onclick="location.href='board_list.do?page=${Page }&type=${dto.getBoard_type() }'">
 			<br> <br>
+			</c:if>
 
 	<br>
 
