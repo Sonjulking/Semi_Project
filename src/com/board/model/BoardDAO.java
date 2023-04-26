@@ -860,15 +860,14 @@ public class BoardDAO {
     	try {
     		openConn();
     		
-    		sql = "update member set member_point = (select count(*) from board_thumbs where member_id = ?) where member_id = ?";
+    		sql = "update member set member_point = (select count(*) from board_thumbs where board_index = ?) where member_id = ?";
 			
 			pstmt = con.prepareStatement(sql);
 			
-			pstmt.setString(1, id);
+			pstmt.setInt(1, board_no);
 			pstmt.setString(2, id);
 			
 			pstmt.executeUpdate();
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

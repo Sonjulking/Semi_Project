@@ -137,8 +137,6 @@
 				</c:forEach>
 
 				  <c:if test="${page != allPage }">
-					<li class="page-item"><a class="page-link"
-						href="${check }page=${page + 1 }&type=free">>></a></li>
 
 					<li class="page-item"><a class="page-link"
 						href="${check }page=${allPage }&type=free">></a></li>

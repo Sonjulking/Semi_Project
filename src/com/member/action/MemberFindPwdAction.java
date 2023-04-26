@@ -157,13 +157,13 @@ public class MemberFindPwdAction implements Action {
 			out.println("</script>");
 		} else if(id == 0) {
 			out.println("<script>");
-			out.println("alert('아이디 틀림')");
+			out.println("alert('아이디를 다시 입력해 주세요')");
 			out.println("history.back()");
 			out.println("</script>");
 			
 		} else {
 			out.println("<script>");
-			out.println("alert('이메일 틀림')");
+			out.println("alert('이메일을 다시 입력해 주세요')");
 			out.println("history.back()");
 			out.println("</script>");
 		}
