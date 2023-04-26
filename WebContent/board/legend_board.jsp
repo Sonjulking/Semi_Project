@@ -52,10 +52,9 @@
 
 							<tr>
 								<td>${dto.getBoard_index() }</td>
-								<td>
-									<c:if test="${dto.getBoard_heading() == 'league' }">리그오브레전드</c:if>
-									<c:if test="${dto.getBoard_heading() == 'battle' }">배틀그라운드</c:if> 
-									<c:if test="${dto.getBoard_heading() == 'over' }">오버워치2</c:if> 
+								<td><c:if test="${dto.getBoard_heading() == 'league' }">리그오브레전드</c:if>
+									<c:if test="${dto.getBoard_heading() == 'battle' }">배틀그라운드</c:if>
+									<c:if test="${dto.getBoard_heading() == 'over' }">오버워치2</c:if>
 								</td>
 								<td class="board-title"><a
 									href="<%=request.getContextPath()%>/board_content.do?no=${dto.getBoard_index() }&page=${page }&type=${dto.getBoard_type()}">${dto.getBoard_title() }</a>
@@ -104,25 +103,23 @@
 			&nbsp;&nbsp;<input style="margin-bottom: 10px;" type="submit"
 				class="nes-btn is-success" value="검색">
 		</form>
-		<br>	
-		
-		<input type="button" value="게시글 작성" onclick="if(${loginCheck } == 0){
+		<br> <input type="button" value="게시글 작성"
+			onclick="if(${loginCheck } == 0){
 						alert('로그인이 필요합니다');
 						location.href='member/login.jsp'
 					}else {
 						location.href='board_write.do'
 					}">
-		<br>
-		<br>
-		
+		<br> <br>
+
 		<%-- 페이징 처리 영역 --%>
 		<nav>
 			<ul class="pagination">
 				<c:if test="${page != 1 }">
 					<li class="page-item"><a class="page-link"
 						href="${check }page=1&type=legend"><<</a></li>
-				<li><a class="page-link"
-					href="${check }page=${page -1}&type=legend"><</a></li>
+					<li><a class="page-link"
+						href="${check }page=${page -1}&type=legend"><</a></li>
 				</c:if>
 
 				<c:forEach begin="${startBlock }" end="${endBlock }" var="i">
@@ -141,8 +138,8 @@
 					<li class="page-item pbt"><a class="page-link"
 						href="${check }page=${page + 1 }&type=legend">></a></li>
 
-				<li class="page-item pbt"><a class="page-link"
-					href="${check }page=${allPage }&type=legend">>></a></li>
+					<li class="page-item pbt"><a class="page-link"
+						href="${check }page=${allPage }&type=legend">>></a></li>
 				</c:if>
 			</ul>
 		</nav>
