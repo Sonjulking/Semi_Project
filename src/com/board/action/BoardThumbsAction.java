@@ -38,14 +38,17 @@ public class BoardThumbsAction implements Action {
 			dao.thumbsUpdate(loginMem, board_no, board_type);
 			out.println("success");
 			System.out.println("좋아요 성공");
+			dao.thumbscount(board_no, board_type);
+			dao.memberPointUpdate(board_no, board_writer);
+			
 		} else {
 			dao.thumbsDelete(loginMem, board_no, board_type);
 			System.out.println("좋아요 취소 성공");
 			out.println("cancel");
+			dao.thumbscount(board_no, board_type);
+			dao.memberPointUpdate(board_no, board_writer);
+			
 		}
-		dao.thumbscount(board_no, board_type);
-		dao.memberPointUpdate(board_no, board_writer);
-		
 		return null;
 	}
 

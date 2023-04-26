@@ -126,7 +126,7 @@ public class findIdAction implements Action {
 					out.println("</script>");
 				} else {
 					out.println("<script>");
-					out.println("alert('가입된 이메일 주소가 아닙니다')");
+					out.println("alert('이메일을 다시 입력해 주세요')");
 					out.println("history.back()");
 					out.println("</script>");
 				} 
