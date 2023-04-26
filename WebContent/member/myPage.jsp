@@ -45,7 +45,7 @@
 						<th>프로필 사진</th>
 						<td><img width="60" height="60"
 							src="<%=request.getContextPath()%>/img/join/${dto.getMember_profile()}">
-							<input type="file" name="profile_new" value="프로필 이미지 수정">
+							<input type="file" name="profile_new" value="${dto.getMember_profile()}">
 						</td>
 					</tr>
 					<tr>
