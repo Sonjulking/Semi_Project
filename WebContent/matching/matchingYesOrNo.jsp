@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>매칭하시겠습니까?</title>
 
 <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
 

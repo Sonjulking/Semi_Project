@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>기타 게시판</title>
 
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/board.css" />

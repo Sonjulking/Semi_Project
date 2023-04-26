@@ -61,7 +61,7 @@
 </style>
 
 </head>
-<body>
+<body onload="autoClick()">
 
 	<form method="post" id="container" class="nes-container is-rounded">
 	
@@ -123,9 +123,15 @@
 	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 	<script type="text/javascript">
 	
-	$(document).ready(function() {
+	/* $(document).ready(function() {
 		$('#cancel-btn2').trigger('click');
-	});
+	}); */
+	
+	function autoClick() {
+		setTimeout(function() {
+			document.getElementById("cancel-btn2").click();
+		}, 10000); // 40초 후에 자동 클릭
+	}
 	
 	</script>
 
