@@ -8,7 +8,7 @@
 </head>
 <body>
 	<footer id="foot">
-		<p>제작 : 석하림</p>
+		<p>제작 : 고강찬, 기태환, 석하림, 최정민</p>
 		<address>E-Mail : gamemanchoo@gmail.com</address>
 		<p>Copyright &copy; All right reserved</p>
 	</footer>
