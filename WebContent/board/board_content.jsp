@@ -157,9 +157,14 @@
 				onclick="location.href='board_list.do?page=${Page }&type=${dto.getBoard_type() }'">
 			<br> <br>
 			</c:if>
+			</div>
+
+</div>
 
 	<br>
-
+	<br>
+	<br>
+	<br>
 	<%-- 댓글 폼 --%>
 	<div align="center">
 		<table cellspacing="0" width="400">
@@ -201,8 +206,10 @@
 
 	<span class="page_link"></span>
 
-	<jsp:include page="../include/footer.jsp"></jsp:include>
-
+<br>
+<br>
+	<%-- <jsp:include page="../include/footer.jsp"></jsp:include> --%>
+    <%@ include file="/include/footer.jsp"%>
 
 
 </body>
