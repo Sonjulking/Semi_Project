@@ -102,8 +102,8 @@ textarea {
 					<div class="nes-select is-dark">
 						<select name="board_type" id="board_type">
 							<option value="" hidden>게시판선택</option>
-							<option value="free">자유게시판</option>
-							<option value="legend">레전드게시판</option>
+							<option value="free">자유</option>
+							<option value="legend">레전드</option>
 							<option value="etc">ETC</option>
 						</select>
 					</div>
@@ -120,7 +120,7 @@ textarea {
 							<option class="board_heading1" value="info">정보</option>
 							<option class="board_heading1" value="etc1">기타</option>
 
-							<option class="board_heading2" value="league">리그오브레전드</option>
+							<option class="board_heading2" value="league">LOL</option>
 							<option class="board_heading2" value="battle">배틀그라운드</option>
 							<option class="board_heading2" value="over">오버워치2</option>
 
@@ -146,7 +146,7 @@ textarea {
 				<textarea rows="20" cols="130" name="board_cont"></textarea>
 				<br><br>
 		
-				</label> <input type="file" name="upload_file"> <br> <input class="nes-btn is-warning" type="button"
+				<input type="file" name="upload_file"> <br> <input class="nes-btn is-warning" type="button"
 					value="취소"
 					onclick="if(confirm('정말로 취소하시겠습니까?'))
 					                                   {location.href='board_write.do'
@@ -159,55 +159,10 @@ textarea {
 			<br>
 		</div>
 	</div>
+	
 	<%@ include file="../include/footer.jsp"%>
-<<<<<<< HEAD
+	
 	<script type="text/javascript" src="<%=request.getContextPath() %>/js/board_write.js"> </script>
-=======
-	<script type="text/javascript">
-		function check() {
-			if (f.board_type.value == '') {
-				alert('게시판을 선택하세요');
-				return false;
-			}
-		}
-
-		function check() {
-			if (f.board_heading.value == '') {
-				alert('말머리를 선택하세요');
-				return false;
-			}
-		}
-
-		$(function() {
-			$(".board_type").on("change", function() {
-				$(".board_heading1, .board_heading2, .board_heading3").hide();
-
-				let state = $(".board_type option:selected").val();
-				if (state == 'free') {
-					$(".board_heading1").show();
-				} else if (state == 'legend') {
-					$(".board_heading2").show();
-				} else if (state == 'etc') {
-					$(".board_heading3").show();
-				}
-			});
-		});
-		
-		$(function() {
-			$(".board_heading").on("change", function() {
-				$("free, legend, etc").hide();
-
-				let state = $(".board_heading option:selected").val();
-				if (state == 'board_heading1') {
-					$("free").show();
-				} else if (state == 'board_heading2') {
-					$("legend").show();
-				} else if (state == 'board_heading3') {
-					$("etc").show();
-				}
-			});
-		});
-	</script>
->>>>>>> 6360defbe1713b60a53a1a7bc05a9e80dddb1286
+	
 </body>
 </html>

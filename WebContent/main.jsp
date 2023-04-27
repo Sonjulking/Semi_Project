@@ -32,7 +32,10 @@
 
 
 <body>
-
+	
+	<c:set var="freeHit" value="${free1Hit }" />
+	<c:set var="freeHitComment" value="${free1HitComment }" />
+	
 	<%@ include file="include/header.jsp"%>
 
 	<div class="main_wrap">
@@ -56,8 +59,7 @@
 				<input type="hidden" name="hot_thumbs1" value="hot_thumbs1">
 			</form>
 
-			<c:set var="freeHit" value="${free1Hit }" />
-			<c:set var="freeHitComment" value="${free1HitComment }" />
+			
 
 			<p class="box_text title">실시간 인기글</p>
 			<img id="bmo" src="./img/assets/bmo.png"> <a
