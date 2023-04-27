@@ -37,7 +37,7 @@ body {
 .main_box1 {
 	position: absolute;
 	width: 400px;
-	height: 775px;
+	height: 700px;
 	margin-right: 625px;
 }
 
@@ -51,8 +51,6 @@ body {
 
 .main_wrap {
 	padding-top: 50px;
-	padding-left: 350px;
-	padding-right: 350px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -61,6 +59,11 @@ body {
 .main_wrap a {
 	color: aliceblue;
 	text-decoration: none;
+}
+
+.item a {
+	width: 75px;
+	height: 75px;
 }
 
 .item {
@@ -73,6 +76,13 @@ body {
 	padding: 10px;
 	margin: 10px;
 	border-radius: 10px;
+}
+
+.item-title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 180px;
 }
 
 .item:hover {
@@ -92,17 +102,16 @@ body {
 	width: 75px;
 	height: 75px;
 }
-.noimg{
-	
+
+.noimg {
 	position: relative;
-	left: -50px;
-	
 }
+
 .date_writer_con {
 	margin-top: 5px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .date {
@@ -161,7 +170,6 @@ body {
 	text-align: center !important;
 	padding-bottom: 40px !important;
 } */
-
 #match-btn2:hover {
 	width: 139px;
 	height: 50px;
@@ -208,13 +216,12 @@ body {
 	height: 105px;
 }
 
-#joybuttons{
-		width: 80px;
+#joybuttons {
+	width: 80px;
 	height: 80px;
 }
 
 .btn-a {
-	
 	display: inline-block;
 	height: 50px;
 	width: 139px;
@@ -236,6 +243,7 @@ body {
 	width: 139px;
 	height: 50px;
 }
+
 #match-btn2 {
 	width: 139px;
 	height: 50px;
@@ -253,7 +261,6 @@ body {
 	height: 50px;
 }
 
-#thumbs{
-	cursor:pointer;
-
+#thumbs {
+	cursor: pointer;
 }
