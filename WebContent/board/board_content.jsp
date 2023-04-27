@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판 상세 페이지</title>
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 
 <link rel="stylesheet"

@@ -39,7 +39,7 @@ public class FindPwdOkAction implements Action {
 			out.println("</script>");
 		} else {
 			out.println("<script>");
-			out.println("alert('임시 비번 틀림')");
+			out.println("alert('임시 비밀번호를 다시 입력해 주세요')");
 			out.println("history.back()");
 			out.println("</script>");
 		}

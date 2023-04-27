@@ -319,26 +319,6 @@
 	<!-- 매칭 창 팝업 js -->
 	<script type="text/javascript" src="matching/pop.js"></script>
 	<script type="text/javascript" src="matching/pop2.js"></script>
-	<!-- <script type="text/javascript">
-     // set time limit in milliseconds
-     var timeLimit = 1800000; // 30 minutes
-      
-     // submit the form after the specified time and then set a new timer
-     setInterval(function() {
-       document.getElementById("myForm").submit();
-       setTimeout(function() {
-         document.getElementById("myForm1").submit();
-       }, 2000); // wait 2 seconds before submitting the second form
-     }, timeLimit);
-     
-     // submit the form immediately when the page is loaded
-     window.onload = function() {
-       document.getElementById("myForm").submit();
-       setTimeout(function() {
-         document.getElementById("myForm1").submit();
-       }, 2000); // wait 2 seconds before submitting the second form
-     };
-   </script> -->
 	<script type="text/javascript">
      // set time limit in milliseconds
      if(${empty free1Hit}) {        

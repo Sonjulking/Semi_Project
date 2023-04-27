@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시글 작성 페이지</title>
 <!-- <!-- JQuery 라이브러리 CDN -->
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 
