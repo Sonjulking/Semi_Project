@@ -78,7 +78,7 @@
 				<img class="overdot" src="img/assets/overdot2.gif" alt="" title="">
 			</div>
 			<c:if test="${loginCheck == 0 }">
-			<br><br><br>
+			
 				<br>
 				<br>
 				<a type="button" id="match-btn1" class="PleaseLogin btn-a"> <img
@@ -93,7 +93,7 @@
 					 src="img/assets/start.png" alt="">
 				</a>
 			</c:if>
-			<br> <br> <br> <br> <img class="joy"
+			<br> <br> <br>  <img class="joy"
 				id="crossbtn" src="img/assets/joy3.png" alt="" title="">
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<img class="joy" id="joybuttons" src="img/assets/joybuttons2.png"
@@ -156,7 +156,6 @@
    				}
    			});
      	}
-
    </script>
 	<%@ include file="include/footer.jsp"%>
 </body>
