@@ -180,7 +180,7 @@
 	<br>
 	<br>
 	<%-- 댓글 폼 --%>
-	<div align="center">
+	<div class = "white-comment"align="center">
 		<table cellspacing="0" width="400">
 			<tr>
 				<th class="txt1">댓글내용</th>
