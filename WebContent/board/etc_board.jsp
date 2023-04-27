@@ -104,7 +104,9 @@
 		</form>
 		<br>	
 		
-		<input type="button" value="게시글 작성" onclick="if(${loginCheck } == 0){
+		<input type="button" value="게시글 작성" 
+		class="nes-btn is-primary"
+		onclick="if(${loginCheck } == 0){
 						alert('로그인이 필요합니다');
 						location.href='member/login.jsp'
 					}else {
