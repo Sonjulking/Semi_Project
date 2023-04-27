@@ -32,10 +32,10 @@
 
 
 <body>
-	
+
 	<c:set var="freeHit" value="${free1Hit }" />
 	<c:set var="freeHitComment" value="${free1HitComment }" />
-	
+
 	<%@ include file="include/header.jsp"%>
 
 	<div class="main_wrap">
@@ -59,7 +59,7 @@
 				<input type="hidden" name="hot_thumbs1" value="hot_thumbs1">
 			</form>
 
-			
+
 
 			<p class="box_text title">실시간 인기글</p>
 			<img id="bmo" src="./img/assets/bmo.png"> <a
@@ -69,15 +69,22 @@
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">1</div>
 						<c:if test="${empty freeHit.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${freeHit.getUpload_file() }" class="sumimg" />
-                       </c:if>
-					    
-					   <c:if test="${!empty freeHit.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${freeHit.getUpload_file() }" class="sumimg" />
-                        </c:if>
-                        <c:if test="${empty freeHit.getUpload_file()}">
-						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
-                        </c:if>
+							<img
+								src="<%=request.getContextPath()%>/img${freeHit.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+
+						<c:if test="${!empty freeHit.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${freeHit.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+
+
+						<c:if test="${empty freeHit.getUpload_file()}">
+							<img src="<%=request.getContextPath()%>/img/assets/noImage.gif"
+								class="sumimg noimg" />
+						</c:if>
 						<div class="title_con">
 							<div class="item-title">${freeHit.getBoard_title() }</div>
 							<div class="date_writer_con">
@@ -94,19 +101,19 @@
 			</c:if>
 
 			<c:if test="${empty freeHit }">
-				<a href="<%=request.getContextPath() %>/main.jsp">
-  				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">2</div>
-					<img src="img/assets/noImage.gif" class="sumimg noimg" />
-					<div class="title_con">
-						<div class="item-title">야스오 강의</div>
-						<div class="date_writer_con">
-							<div class="date">2023-09-16</div>
-							<div class="writer">실버 판테온</div>
+				<a href="<%=request.getContextPath()%>/main.jsp">
+					<div class="item nes-container is-rounded is-dark">
+						<div class="ranking">2</div>
+						<img src="img/assets/noImage.gif" class="sumimg noimg" />
+						<div class="title_con">
+							<div class="item-title">야스오 강의</div>
+							<div class="date_writer_con">
+								<div class="date">2023-09-16</div>
+								<div class="writer">실버 판테온</div>
+							</div>
 						</div>
+						<div class="comment">[65]</div>
 					</div>
-					<div class="comment">[65]</div>
-				</div>
 				</a>
 			</c:if>
 
@@ -120,17 +127,22 @@
 
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">2</div>
-											   
-					    <c:if test="${empty freeThumbs.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${freeThumbs.getUpload_file() }" class="sumimg" />
-                       </c:if>
-					    
-					   <c:if test="${!empty freeThumbs.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${freeThumbs.getUpload_file() }" class="sumimg" />
-                        </c:if>
-                        <c:if test="${empty freeThumbs.getUpload_file()}">
-						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
-                        </c:if>
+
+						<c:if test="${empty freeThumbs.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${freeThumbs.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+
+						<c:if test="${!empty freeThumbs.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${freeThumbs.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+						<c:if test="${empty freeThumbs.getUpload_file()}">
+							<img src="<%=request.getContextPath()%>/img/assets/noImage.gif"
+								class="sumimg noimg" />
+						</c:if>
 						<div class="title_con">
 							<div class="item-title">${freeThumbs.getBoard_title() }</div>
 							<div class="date_writer_con">
@@ -154,19 +166,19 @@
 
 
 			<c:if test="${empty freeThumbs }">
-				<a href="<%=request.getContextPath() %>/main.jsp">
-  				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">2</div>
-					<img src="img/assets/noImage.gif" class="sumimg noimg" />
-					<div class="title_con">
-						<div class="item-title">야스오 강의</div>
-						<div class="date_writer_con">
-							<div class="date">2023-09-16</div>
-							<div class="writer">실버 판테온</div>
+				<a href="<%=request.getContextPath()%>/main.jsp">
+					<div class="item nes-container is-rounded is-dark">
+						<div class="ranking">2</div>
+						<img src="img/assets/noImage.gif" class="sumimg noimg" />
+						<div class="title_con">
+							<div class="item-title">야스오 강의</div>
+							<div class="date_writer_con">
+								<div class="date">2023-09-16</div>
+								<div class="writer">실버 판테온</div>
+							</div>
 						</div>
+						<div class="comment">[65]</div>
 					</div>
-					<div class="comment">[65]</div>
-				</div>
 				</a>
 			</c:if>
 
@@ -177,18 +189,23 @@
 					href="<%=request.getContextPath() %>/board_content_main.do?type=${legendHit.getBoard_type()}&no=${legendHit.getBoard_index() }">
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">3</div>
-					   
-					    <c:if test="${empty legendHit.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${legendHit.getUpload_file() }" class="sumimg" />
-                       </c:if>
-					    
-					   <c:if test="${!empty legendHit.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${legendHit.getUpload_file() }" class="sumimg" />
-                        </c:if>
-                        <c:if test="${empty legendHit.getUpload_file()}">
-						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
-                        </c:if>
-                        
+
+						<c:if test="${empty legendHit.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${legendHit.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+
+						<c:if test="${!empty legendHit.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${legendHit.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+						<c:if test="${empty legendHit.getUpload_file()}">
+							<img src="<%=request.getContextPath()%>/img/assets/noImage.gif"
+								class="sumimg noimg" />
+						</c:if>
+
 						<div class="title_con">
 							<div class="item-title">${legendHit.getBoard_title() }</div>
 							<div class="date_writer_con">
@@ -210,19 +227,19 @@
 			</c:if>
 
 			<c:if test="${empty legendHit }">
-				 <a href="<%=request.getContextPath() %>/main.jsp">
-  				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">3</div>
-					<img src="img/assets/noImage.gif" class="sumimg noimg" />
-					<div class="title_con">
-						<div class="item-title">야스오 강의</div>
-						<div class="date_writer_con">
-							<div class="date">2023-09-16</div>
-							<div class="writer">실버 판테온</div>
+				<a href="<%=request.getContextPath()%>/main.jsp">
+					<div class="item nes-container is-rounded is-dark">
+						<div class="ranking">3</div>
+						<img src="img/assets/noImage.gif" class="sumimg noimg" />
+						<div class="title_con">
+							<div class="item-title">야스오 강의</div>
+							<div class="date_writer_con">
+								<div class="date">2023-09-16</div>
+								<div class="writer">실버 판테온</div>
+							</div>
 						</div>
+						<div class="comment">[65]</div>
 					</div>
-					<div class="comment">[65]</div>
-				</div>
 				</a>
 			</c:if>
 
@@ -234,15 +251,20 @@
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">4</div>
 						<c:if test="${empty legendThumbs.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${legendThumbs.getUpload_file() }" class="sumimg" />
-                       </c:if>
-					    
-					   <c:if test="${!empty legendThumbs.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${legendThumbs.getUpload_file() }" class="sumimg" />
-                        </c:if>
-                        <c:if test="${empty legendThumbs.getUpload_file()}">
-						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
-                        </c:if>
+							<img
+								src="<%=request.getContextPath()%>/img${legendThumbs.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+
+						<c:if test="${!empty legendThumbs.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${legendThumbs.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+						<c:if test="${empty legendThumbs.getUpload_file()}">
+							<img src="<%=request.getContextPath()%>/img/assets/noImage.gif"
+								class="sumimg noimg" />
+						</c:if>
 						<div class="title_con">
 							<div class="item-title">${legendThumbs.getBoard_title() }</div>
 							<div class="date_writer_con">
@@ -264,19 +286,19 @@
 			</c:if>
 
 			<c:if test="${empty legendThumbs }">
-				 <a href="<%=request.getContextPath() %>/main.jsp">
-  				<div class="item nes-container is-rounded is-dark">
-					<div class="ranking">4</div>
-					<img src="img/assets/noImage.gif" class="sumimg noimg" />
-					<div class="title_con">
-						<div class="item-title">야스오 강의</div>
-						<div class="date_writer_con">
-							<div class="date">2023-09-16</div>
-							<div class="writer">실버 판테온</div>
+				<a href="<%=request.getContextPath()%>/main.jsp">
+					<div class="item nes-container is-rounded is-dark">
+						<div class="ranking">4</div>
+						<img src="img/assets/noImage.gif" class="sumimg noimg" />
+						<div class="title_con">
+							<div class="item-title">야스오 강의</div>
+							<div class="date_writer_con">
+								<div class="date">2023-09-16</div>
+								<div class="writer">실버 판테온</div>
+							</div>
 						</div>
+						<div class="comment">[65]</div>
 					</div>
-					<div class="comment">[65]</div>
-				</div>
 				</a>
 			</c:if>
 
@@ -287,16 +309,21 @@
 					href="<%=request.getContextPath() %>/board_content_main.do?type=${etcHit.getBoard_type()}&no=${etcHit.getBoard_index() }">
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">5</div>
-					  <c:if test="${empty etcHit.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${etcHit.getUpload_file() }" class="sumimg" />
-                       </c:if>
-					    
-					   <c:if test="${!empty etcHit.getBoard_update() }">
-						<img src="<%=request.getContextPath()%>/img${etcHit.getUpload_file() }" class="sumimg" />
-                        </c:if>
-                        <c:if test="${empty etcHit.getUpload_file()}">
-						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
-                        </c:if>
+						<c:if test="${empty etcHit.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${etcHit.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+
+						<c:if test="${!empty etcHit.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${etcHit.getUpload_file() }"
+								class="sumimg" />
+						</c:if>
+						<c:if test="${empty etcHit.getUpload_file()}">
+							<img src="<%=request.getContextPath()%>/img/assets/noImage.gif"
+								class="sumimg noimg" />
+						</c:if>
 
 						<div class="title_con">
 							<div class="item-title">${etcHit.getBoard_title() }</div>
@@ -340,24 +367,28 @@
 			class="pop_post_wrap main_box1 nes-container is-rounded is-dark with-title is-centered">
 			<p class="box_text title">실시간 매칭</p>
 			<img id="dva" src="./img/assets/dva.png">
-			<div>
+			<div><br>
 				<!-- <img class="matching-img" src="../WebContent/img/1.png" /> -->
 				<img class="overdot" src="img/assets/overdot2.gif" alt="" title="">
 			</div>
 			<c:if test="${loginCheck == 0 }">
-			<br><br><br>
+				<br>
+				<br>
 				<br>
 				<br>
 				<a type="button" id="match-btn1" class="PleaseLogin btn-a"> <img
-					 src="img/assets/start.png" alt="">
+					src="img/assets/start.png" alt="">
 				</a>
 			</c:if>
 
 			<c:if test="${loginCheck > 0 }">
 				<br>
 				<br>
+				<br>
+				<br>
+				<br>
 				<a type="button" id="match-btn2" class="matching-btn btn-a"> <img
-					 src="img/assets/start.png" alt="">
+					src="img/assets/start.png" alt="">
 				</a>
 			</c:if>
 			<br> <br> <br> <br> <img class="joy"
@@ -371,12 +402,19 @@
 	<!-- 매칭 창 팝업 js -->
 	<script type="text/javascript" src="matching/pop.js"></script>
 	<script type="text/javascript" src="matching/pop2.js"></script>
+
 	<script type="text/javascript">
-     // set time limit in milliseconds
-     if(${empty free1Hit}) {        
-       $("#myForm").submit();
-     }
-   </script>
+		// Set the refresh interval to 10 seconds
+		var refreshInterval = setInterval(function() {
+			// Submit the first form
+			$("#myForm").submit();
+			// Wait for 5 seconds before submitting the second form
+			setTimeout(function() {
+				$("#myForm1").submit();
+			}, 5000);
+		}, 10000);
+	</script>
+
 	<%@ include file="include/footer.jsp"%>
 </body>
 </html>
