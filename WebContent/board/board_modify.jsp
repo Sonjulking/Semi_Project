@@ -97,7 +97,7 @@
 				<tr>
 					<th>첨부파일</th>
 					<td> 
-						<img src="<%=request.getContextPath() %>/fileUpload${dto.getUpload_file() }" alt="등록된 파일이 없습니다." width="120" height="120" border="0"> 
+						<img src="<%=request.getContextPath() %>/img${dto.getUpload_file() }" alt="등록된 파일이 없습니다." width="120" height="120" border="0"> 
 						<input type="file" name="new_file">
 	            	
 					</td>

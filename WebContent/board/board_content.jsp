@@ -92,20 +92,20 @@
 					<div class="text nes-container with-title is-centered">
 						<%-- 글내용 --%>
 						<c:if test="${empty dto.getUpload_file() }">
-						   
+
 						</c:if>
 						<c:if test="${!empty dto.getUpload_file() }">
-						<c:if test="${empty dto.getBoard_update() }">
-							<img
-								src="<%=request.getContextPath()%>/img${dto.getUpload_file() }"
-								class="contimg" />
-						</c:if>
+							<c:if test="${empty dto.getBoard_update() }">
+								<img
+									src="<%=request.getContextPath()%>/img${dto.getUpload_file() }"
+									class="contimg" />
+							</c:if>
 
-						<c:if test="${!empty dto.getBoard_update() }">
-							<img
-								src="<%=request.getContextPath()%>/img${dto.getUpload_file() }"
-								class="contimg" />
-						</c:if>
+							<c:if test="${!empty dto.getBoard_update() }">
+								<img
+									src="<%=request.getContextPath()%>/img${dto.getUpload_file() }"
+									class="contimg" />
+							</c:if>
 						</c:if>
 						<br> <br> ${dto.getBoard_cont() }
 					</div>
@@ -116,7 +116,7 @@
 						<%-- 첨부파일 --%>
 						<span>첨부 파일 : <c:if test="${!empty dto.getUpload_file() }">
 								<span> <a
-									href="<%=request.getContextPath() %>/fileUpload/${dto.getUpload_file() }"
+									href="<%=request.getContextPath() %>/img${dto.getUpload_file() }"
 									target="_blank">${dto.getUpload_file() }</a>
 								</span>
 							</c:if> <c:if test="${empty dto.getUpload_file() }">
@@ -136,14 +136,12 @@
 			<c:if test="${empty dto }">
 				<span>삭제된 게시물입니다</span>
 			</c:if>
-			
-			<br> 
-			<br> 
+
+			<br> <br>
 			<c:if test="${!empty Page }">
-			<c:if test="${dto.getBoard_type() != 'notice' }">
-				<input type="button" value="글 수정" class="modify nes-btn is-success"
-	
-					    onclick="if(${loginCheck } == 0){
+				<c:if test="${dto.getBoard_type() != 'notice' }">
+					<input type="button" value="글 수정" class="modify nes-btn is-success"
+						onclick="if(${loginCheck } == 0){
 					            alert('로그인이 필요합니다');
 					            location.href='<%=request.getContextPath() %>/member/login.jsp'
 					        }else {
@@ -153,11 +151,10 @@
 					                alert('본인이 쓴 글이 아닙니다!');
 					            }
 					        }">
-					        
-	
+
+
 					<input type="button" value="글 삭제" class="delete nes-btn is-error"
-	
-					    onclick="if(${loginCheck } == 0){
+						onclick="if(${loginCheck } == 0){
 					            alert('로그인이 필요합니다');
 					            location.href='<%=request.getContextPath() %>/member/login.jsp'
 					        }else {
@@ -169,11 +166,12 @@
 					                alert('본인이 쓴 글이 아닙니다!');
 					            }
 					        }">
-	
-				<input type="button" value="전체목록" class="list nes-btn is-primary"
-					onclick="location.href='board_list.do?page=${Page }&type=${dto.getBoard_type() }'">
-			</c:if>
-			<br> <br>
+
+					<input type="button" value="전체목록" class="list nes-btn is-primary"
+						onclick="location.href='board_list.do?page=${Page }&type=${dto.getBoard_type() }'">
+				</c:if>
+				<br>
+				<br>
 			</c:if>
 		</div>
 
@@ -184,7 +182,7 @@
 	<br>
 	<br>
 	<%-- 댓글 폼 --%>
-	<div align="center">
+	<div align="center" class="white-comment">
 		<c:if test="${dto.getBoard_type() != 'notice' }">
 			<table cellspacing="0" width="400">
 				<tr>
@@ -192,25 +190,26 @@
 					<td><textarea rows="5" cols="40" name="re_content"
 							id="re_content"> </textarea></td>
 				</tr>
-	
+
 				<tr>
 					<td colspan="2">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<span>댓글수 : <span class="commentCount"></span> </span>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;
-					<input type="button" class="write nes-btn is-success" id="replyBtn" value="댓글작성">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>댓글수
+							: <span class="commentCount"></span>
+					</span>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp; <input type="button"
+						class="write nes-btn is-success" id="replyBtn" value="댓글작성">
 					</td>
 				</tr>
 			</table>
 			<br>
-		
-	
+
+
 			<div class="list"></div>
 		</c:if>
 	</div>
-	
-	
+
+
 	<input type="hidden" id='hidden_nickname' value="${nickname }" />
 
 
@@ -222,11 +221,14 @@
 		let type = "${dto.getBoard_type()}";
 	</script>
 
-		<script type="text/javascript"
-			src="<%=request.getContextPath()%>/js/boardContent.min.js"></script>
-
-		<span class="page_link"></span> <br> <br>
-		<%-- <jsp:include page="../include/footer.jsp"></jsp:include> --%>
-		<%@ include file="/include/footer.jsp"%>
+	<script type="text/javascript"
+		src="<%=request.getContextPath()%>/js/boardContent.min.js"></script>
+	<div style="text-align: center;">
+		<span class="page_link page-comment"></span>
+	</div>
+	<br>
+	<br>
+	<%-- <jsp:include page="../include/footer.jsp"></jsp:include> --%>
+	<%@ include file="/include/footer.jsp"%>
 </body>
 </html>
