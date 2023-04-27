@@ -22,11 +22,11 @@
 
 
 	<%@ include file="../include/header.jsp"%>
-	
+
 	<div class="jungmax" align="center">
 		<div class="content nes-container is-dark with-title">
 			<c:set var="dto" value="${content }" />
-			<c:set var="mdto" value="${Cont }"/>
+			<c:set var="mdto" value="${Cont }" />
 
 
 			<c:if test="${!empty dto }">
@@ -45,7 +45,7 @@
 						<%-- 글제목 --%>
 						<h1>${dto.getBoard_title() }</h1>
 
-                        <h6>${dto.getBoard_writer_nickname() }</h6>
+						<h6>${dto.getBoard_writer_nickname() }</h6>
 
 						<%-- 머리말 --%>
 						<div class="info">
@@ -74,14 +74,15 @@
 
 							<%-- 조회수 --%>
 
-							<span>조회수: ${dto.getBoard_hit() }</span> 
-							<span>추천수: <img
-								src="./img/assets/DDAbong.png" width="30" height="30" id="thumbs"
+							<span>조회수: ${dto.getBoard_hit() }</span> <span>추천수: <img
+								src="./img/assets/DDAbong.png" width="30" height="30"
+								id="thumbs"
 								onclick="if(${loginCheck } == 0){
 									alert('로그인이 필요합니다');
 							}else {
 								thumbsClick();
-							}"><span class="thumbs"></span>
+							}"><span
+								class="thumbs"></span>
 							</span>
 
 						</div>
@@ -89,33 +90,48 @@
 
 
 					<div class="text nes-container with-title is-centered">
-							<%-- 글내용 --%>
-							${dto.getBoard_cont() }
- 					</div>
+						<%-- 글내용 --%>
+						<c:if test="${empty dto.getUpload_file() }">
+						   
+						</c:if>
+						<c:if test="${!empty dto.getUpload_file() }">
+						<c:if test="${empty dto.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${dto.getUpload_file() }"
+								class="contimg" />
+						</c:if>
+
+						<c:if test="${!empty dto.getBoard_update() }">
+							<img
+								src="<%=request.getContextPath()%>/img${dto.getUpload_file() }"
+								class="contimg" />
+						</c:if>
+						</c:if>
+						<br> <br> ${dto.getBoard_cont() }
+					</div>
 
 					<br>
-					
+
 					<div>
-							<%-- 첨부파일 --%>
-						<span>첨부 파일 : 
-						<c:if test="${!empty dto.getUpload_file() }">
-							<span>
-							<a href="<%=request.getContextPath() %>/fileUpload/${dto.getUpload_file() }"
-									target="_blank">${dto.getUpload_file() }</a> </span>
-							</c:if> 
-							<c:if test="${empty dto.getUpload_file() }">
+						<%-- 첨부파일 --%>
+						<span>첨부 파일 : <c:if test="${!empty dto.getUpload_file() }">
+								<span> <a
+									href="<%=request.getContextPath() %>/fileUpload/${dto.getUpload_file() }"
+									target="_blank">${dto.getUpload_file() }</a>
+								</span>
+							</c:if> <c:if test="${empty dto.getUpload_file() }">
 								<span> </span>
 							</c:if>
 
 						</span>
 
 					</div>
-					
-					
+
+
 				</div>
 
 			</c:if>
-			
+
 			<%-- 데이터가 없는 경우 --%>
 			<c:if test="${empty dto }">
 				<span>삭제된 게시물입니다</span>
@@ -159,9 +175,9 @@
 			</c:if>
 			<br> <br>
 			</c:if>
-			</div>
+		</div>
 
-</div>
+	</div>
 
 	<br>
 	<br>
@@ -197,6 +213,7 @@
 	
 	<input type="hidden" id='hidden_nickname' value="${nickname }" />
 
+
 	<script type="text/javascript">
 		let member_id = "${member_id }";
 		let writer_id = "${dto.getBoard_writer_id() }";
@@ -205,17 +222,11 @@
 		let type = "${dto.getBoard_type()}";
 	</script>
 
-	<script type="text/javascript"
-		src="<%=request.getContextPath()%>/js/boardContent.min.js"></script>
+		<script type="text/javascript"
+			src="<%=request.getContextPath()%>/js/boardContent.min.js"></script>
 
-	<span class="page_link"></span>
-
-<br>
-<br>
-
-	<%-- <jsp:include page="../include/footer.jsp"></jsp:include> --%>
-    <%@ include file="/include/footer.jsp"%>
-
-
+		<span class="page_link"></span> <br> <br>
+		<%-- <jsp:include page="../include/footer.jsp"></jsp:include> --%>
+		<%@ include file="/include/footer.jsp"%>
 </body>
 </html>
