@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+.join-con {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	width: 450px;
+	font-family: "pixel", sans-serif;
+}
+
+.input-wd {
+	width: 250px !important;
+}
+
+#pixeldva {
+	display: inline-block;
+	position: relative;
+	left: 5px;
+	width: 105px;
+	height: 100px;
+}
+
+.snes-jp-logo {
+	width: 300px;
+	height: 300px;
+}
+
+.join-wrap {
+	display: flex;
+	justify-content: space-around;
+}
+
+.pwd-wrap {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+}
+
+.join-text {
+	position: relative;
+	font-size: 25pt !important;
+	left:100px;
+	top: -15px;
+}
+
+/* 스타일 시트 */
+@font-face {
+	font-family: "pixel"; /* 사용하고 싶은 font-family명을 지정 */
+	src: url("./font/neodgm.woff") format("opentype"); /* 폰트파일 불러오기 */
+}
+
+body {
+	background-color: #212529 !important;
+}
+
+/* 로고 및 텍스트 영역 */
+.container1 {
+	position: fixed;
+	transform: translate(+260px, +200px);
+	width: 450px;
+	font-family: "pixel", sans-serif;
+	color: white;
+}
+
+.container1 .text1 {
+	margin-left: 5px;
+	font-size: 22px;
+}
+/* 제목  */
+.title {
+	font-size: 100px;
+}
+/* 커비 */
+.nes-kirby {
+	position: relative;
+	display: inline-block;
+	transform: translate(+15px, +20px);
+}
+
+/* 로그인 컨테이너 영역 */
+.container2 {
+	position: fixed;
+	transform: translate(+330%, +30%);
+	margin: 50px auto;
+	width: 300px;
+	padding: 20px;
+	font-family: "pixel", sans-serif;
+}
+
+title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+/* 아이디 비밀번호 라벨 */
+.userID {
+	margin: 0px;
+}
+
+.userPWD {
+	margin: 0px;
+}
+
+/* 로그인 버튼 */
+.login {
+	width: 60%;
+	margin-bottom: 10px;
+}
+
+/* 회원가입 버튼 */
+.signup {
+	width: 40%;
+}
+
+/* 비밀번호 잊음 */
+.lostpwd {
+	text-align: center;
+	margin-bottom: 10px;
+}

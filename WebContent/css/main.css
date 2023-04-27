@@ -37,7 +37,7 @@ body {
 .main_box1 {
 	position: absolute;
 	width: 400px;
-	height: 675px;
+	height: 775px;
 	margin-right: 625px;
 }
 
@@ -92,7 +92,12 @@ body {
 	width: 75px;
 	height: 75px;
 }
-
+.noimg{
+	
+	position: relative;
+	left: -50px;
+	
+}
 .date_writer_con {
 	margin-top: 5px;
 	display: flex;
@@ -199,13 +204,13 @@ body {
 }
 
 #crossbtn {
-	width: 100px;
-	height: 100px;
+	width: 105px;
+	height: 105px;
 }
 
 #joybuttons{
-		width: 75px;
-	height: 75px;
+		width: 80px;
+	height: 80px;
 }
 
 .btn-a {
@@ -246,4 +251,9 @@ body {
 	background-color: rgb(172, 172, 172);
 	width: 139px;
 	height: 50px;
+}
+
+#thumbs{
+	cursor:pointer;
+
 }

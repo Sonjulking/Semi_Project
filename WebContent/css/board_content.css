@@ -3,25 +3,30 @@
 @font-face {
 	font-family: "pixel"; /* 사용하고 싶은 font-family명을 지정 */
 	src: url("./font/neodgm.woff") format("opentype"); /* 폰트파일 불러오기 */
-}  
+}
+
+/* .content {
+	width: 60%; border-radius : 7px;
+	color: white ! important;
+	border-radius: 7px;
+} */
+.contborder {
+	color: white ! important;
+	border: 1px solid aliceblue;
+}
+
 .content {
-	color: white! important;
+	color: white ! important;
 }
 
 h3 {
-	color: white! important;
+	color: white ! important;
 }
 
-
-.content {
-	width: 60%;
-	border-radius: 7px;
-}
-
-.jungmax{
-	display:flex;
+.jungmax {
+	display: flex;
 	justify-content: center;
-	height: 560px;
+	/* 	height: 560px; */
 }
 
 .info {
@@ -30,15 +35,16 @@ h3 {
 }
 
 .text {
-	background-color: white! important;
+	background-color: white ! important;
 	border-radius: 5px;
-	height: 280px;
+	/* height: 0%; */
 	color: black;
 }
 
 .modify, .delete, .list {
 	border-radius: 5px;
 }
+
 .write {
 	border-radius: 5px;
 }
@@ -46,4 +52,13 @@ h3 {
 #re_content {
 	resize: none;
 	width: 322px;
+}
+
+.contimg {
+	width: 75%;
+	height: 75%;
+}
+
+.white-comment {
+	color: aliceblue;
 }

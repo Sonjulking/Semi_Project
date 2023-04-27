@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.pw-con{
+
+	position: absolute;
+	top:10px;
+	left: 40%;
+	width: 450px;
+	
+	font-family: "pixel", sans-serif;
+
+}
+
+.find-btn{
+	display:block;
+	margin: 0 auto;
+	width: 50%;
+}
+
+.btnbtn{
+	border-radius: 5px;
+}
