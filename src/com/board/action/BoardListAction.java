@@ -1,16 +1,14 @@
 package com.board.action;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.board.model.BoardDAO;
 import com.board.model.BoardDTO;
-import com.board.model.CommentDTO;
 import com.project.controller.Action;
 import com.project.controller.ActionForward;
 
@@ -56,11 +54,18 @@ public class BoardListAction implements Action {
 		int endBlock = (((page - 1) / block) * block) + block;
 		
 		
+		
 		BoardDAO dao = BoardDAO.getInstance();
 		String board_type = request.getParameter("type");
 		System.out.println(board_type);
 		//StringTokenizer st = new StringTokenizer(board_type, "'");
-		System.out.println(board_type);
+		
+		
+		
+		HashMap<Integer, Integer> commentList = dao.listCommentCount(board_type);
+		request.setAttribute("CommentList", commentList);
+		
+		
 
 		totalRecord = dao.getBoardCount(board_type);
 		// 전체 게시물의 수를 한 페이지당 보여질 게시물의 수로 나누어 주어야 함

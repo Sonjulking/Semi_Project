@@ -124,37 +124,39 @@
 			<br> 
 			<br> 
 			<c:if test="${!empty Page }">
-			<input type="button" value="글 수정" class="modify nes-btn is-success"
-
-				    onclick="if(${loginCheck } == 0){
-				            alert('로그인이 필요합니다');
-				            location.href='<%=request.getContextPath() %>/member/login.jsp'
-				        }else {
-				            if('${dto.getBoard_writer_id()}' == '${member_id}') {
-				                location.href='board_modify.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
-				            }else {
-				                alert('본인이 쓴 글이 아닙니다!');
-				            }
-				        }">
-				        
-
-				<input type="button" value="글 삭제" class="delete nes-btn is-error"
-
-				    onclick="if(${loginCheck } == 0){
-				            alert('로그인이 필요합니다');
-				            location.href='<%=request.getContextPath() %>/member/login.jsp'
-				        }else {
-				            if('${dto.getBoard_writer_id()}' == '${member_id}') {
-				                if(confirm('정말로 삭제하시겠습니까?')) {
-				                location.href='board_delete.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
-				                }else { return;}
-				            }else {
-				                alert('본인이 쓴 글이 아닙니다!');
-				            }
-				        }">
-
-			<input type="button" value="전체목록" class="list nes-btn is-primary"
-				onclick="location.href='board_list.do?page=${Page }&type=${dto.getBoard_type() }'">
+			<c:if test="${dto.getBoard_type() != 'notice' }">
+				<input type="button" value="글 수정" class="modify nes-btn is-success"
+	
+					    onclick="if(${loginCheck } == 0){
+					            alert('로그인이 필요합니다');
+					            location.href='<%=request.getContextPath() %>/member/login.jsp'
+					        }else {
+					            if('${dto.getBoard_writer_id()}' == '${member_id}') {
+					                location.href='board_modify.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
+					            }else {
+					                alert('본인이 쓴 글이 아닙니다!');
+					            }
+					        }">
+					        
+	
+					<input type="button" value="글 삭제" class="delete nes-btn is-error"
+	
+					    onclick="if(${loginCheck } == 0){
+					            alert('로그인이 필요합니다');
+					            location.href='<%=request.getContextPath() %>/member/login.jsp'
+					        }else {
+					            if('${dto.getBoard_writer_id()}' == '${member_id}') {
+					                if(confirm('정말로 삭제하시겠습니까?')) {
+					                location.href='board_delete.do?no=${dto.getBoard_index() }&page=${Page }&type=${dto.getBoard_type() }'
+					                }else { return;}
+					            }else {
+					                alert('본인이 쓴 글이 아닙니다!');
+					            }
+					        }">
+	
+				<input type="button" value="전체목록" class="list nes-btn is-primary"
+					onclick="location.href='board_list.do?page=${Page }&type=${dto.getBoard_type() }'">
+			</c:if>
 			<br> <br>
 			</c:if>
 			</div>
@@ -167,30 +169,32 @@
 	<br>
 	<%-- 댓글 폼 --%>
 	<div align="center">
-		<table cellspacing="0" width="400">
-			<tr>
-				<th class="txt1">댓글내용</th>
-				<td><textarea rows="5" cols="40" name="re_content"
-						id="re_content"> </textarea></td>
-			</tr>
-
-			<tr>
-				<td colspan="2">
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<span>댓글수 : <span class="commentCount"></span> </span>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;
-				<input type="button" class="write nes-btn is-success" id="replyBtn" value="댓글작성">
-				</td>
-			</tr>
-		</table>
-		<br>
-
-		<div class="list"></div>
-
+		<c:if test="${dto.getBoard_type() != 'notice' }">
+			<table cellspacing="0" width="400">
+				<tr>
+					<th class="txt1">댓글내용</th>
+					<td><textarea rows="5" cols="40" name="re_content"
+							id="re_content"> </textarea></td>
+				</tr>
+	
+				<tr>
+					<td colspan="2">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span>댓글수 : <span class="commentCount"></span> </span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;
+					<input type="button" class="write nes-btn is-success" id="replyBtn" value="댓글작성">
+					</td>
+				</tr>
+			</table>
+			<br>
+		
+	
+			<div class="list"></div>
+		</c:if>
 	</div>
-
-
+	
+	
 	<input type="hidden" id='hidden_nickname' value="${nickname }" />
 
 	<script type="text/javascript">
@@ -208,6 +212,7 @@
 
 <br>
 <br>
+
 	<%-- <jsp:include page="../include/footer.jsp"></jsp:include> --%>
     <%@ include file="/include/footer.jsp"%>
 

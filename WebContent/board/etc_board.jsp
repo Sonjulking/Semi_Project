@@ -57,6 +57,14 @@
 								</td>
 								<td class="board-title"><a
 									href="<%=request.getContextPath()%>/board_content.do?no=${dto.getBoard_index() }&page=${page }&type=${dto.getBoard_type()}">${dto.getBoard_title() }</a>
+									<span class="comment1">
+										<c:if test="${empty CommentList.get(dto.getBoard_index()) }">
+										 (0)
+										</c:if>
+										<c:if test="${!empty CommentList.get(dto.getBoard_index()) }">								
+										  (${CommentList.get(dto.getBoard_index()) })
+										</c:if>
+									</span>
 								</td>
 								<td>${dto.getBoard_writer_nickname() }</td>
 								<td>${dto.getBoard_hit() }</td>

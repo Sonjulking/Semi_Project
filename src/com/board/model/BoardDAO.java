@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class BoardDAO {
@@ -171,7 +172,9 @@ public class BoardDAO {
 	
 	public int insertBoard(BoardDTO dto, String type) {
 		
-		int result = 0, count = 0;
+		
+		int count = 0, result = 0;
+		
 		
 		try {
 			openConn();
@@ -1039,6 +1042,9 @@ public class BoardDAO {
     }
     
     
+    
+    
+    
  // 댓글 총 페이지 수 조회
     public int[] getReplyTotalPage(int no, String type, int pageSize) {
         
@@ -1064,6 +1070,32 @@ public class BoardDAO {
 
         return result ;
     }
+
+	public HashMap<Integer, Integer> listCommentCount(String type) {
+		
+	    HashMap<Integer, Integer> comment = new HashMap<Integer, Integer>();
+	    
+	    
+	    try {
+            openConn();
+
+            sql = "SELECT COUNT(comment_index), board_comment_index FROM "+type+"_comment GROUP BY board_comment_index;";
+            pstmt = con.prepareStatement(sql);
+            
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+               comment.put(rs.getInt("board_comment_index"), rs.getInt("count(comment_index)")); 
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            closeConn(rs, pstmt, con);
+        }
+		
+		
+		return comment;
+	}
     
 }   
     
