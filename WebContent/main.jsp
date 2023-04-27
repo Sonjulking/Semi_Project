@@ -66,7 +66,16 @@
 
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">1</div>
-						<img src="${freeHit.getUpload_file() }" class="sumimg" />
+						<c:if test="${empty freeHit.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${freeHit.getUpload_file() }" class="sumimg" />
+                       </c:if>
+					    
+					   <c:if test="${!empty freeHit.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${freeHit.getUpload_file() }" class="sumimg" />
+                        </c:if>
+                        <c:if test="${empty freeHit.getUpload_file()}">
+						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
+                        </c:if>
 						<div class="title_con">
 							<div class="item-title">${freeHit.getBoard_title() }</div>
 							<div class="date_writer_con">
@@ -86,7 +95,7 @@
 				<a href="<%=request.getContextPath() %>/main.jsp">
   				<div class="item nes-container is-rounded is-dark">
 					<div class="ranking">2</div>
-					<img src="" class="sumimg" />
+					<img src="img/assets/noImage.gif" class="sumimg noimg" />
 					<div class="title_con">
 						<div class="item-title">야스오 강의</div>
 						<div class="date_writer_con">
@@ -109,7 +118,17 @@
 
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">2</div>
-						<img src="${freeThumbs.getUpload_file() }" class="sumimg" />
+											   
+					    <c:if test="${empty freeThumbs.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${freeThumbs.getUpload_file() }" class="sumimg" />
+                       </c:if>
+					    
+					   <c:if test="${!empty freeThumbs.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${freeThumbs.getUpload_file() }" class="sumimg" />
+                        </c:if>
+                        <c:if test="${empty freeThumbs.getUpload_file()}">
+						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
+                        </c:if>
 						<div class="title_con">
 							<div class="item-title">${freeThumbs.getBoard_title() }</div>
 							<div class="date_writer_con">
@@ -136,7 +155,7 @@
 				<a href="<%=request.getContextPath() %>/main.jsp">
   				<div class="item nes-container is-rounded is-dark">
 					<div class="ranking">2</div>
-					<img src="" class="sumimg" />
+					<img src="img/assets/noImage.gif" class="sumimg noimg" />
 					<div class="title_con">
 						<div class="item-title">야스오 강의</div>
 						<div class="date_writer_con">
@@ -156,7 +175,18 @@
 					href="<%=request.getContextPath() %>/board_content_main.do?type=${legendHit.getBoard_type()}&no=${legendHit.getBoard_index() }">
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">3</div>
-						<img src="${legendHit.getUpload_file() }" class="sumimg" />
+					   
+					    <c:if test="${empty legendHit.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${legendHit.getUpload_file() }" class="sumimg" />
+                       </c:if>
+					    
+					   <c:if test="${!empty legendHit.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${legendHit.getUpload_file() }" class="sumimg" />
+                        </c:if>
+                        <c:if test="${empty legendHit.getUpload_file()}">
+						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
+                        </c:if>
+                        
 						<div class="title_con">
 							<div class="item-title">${legendHit.getBoard_title() }</div>
 							<div class="date_writer_con">
@@ -181,7 +211,7 @@
 				 <a href="<%=request.getContextPath() %>/main.jsp">
   				<div class="item nes-container is-rounded is-dark">
 					<div class="ranking">3</div>
-					<img src="" class="sumimg" />
+					<img src="img/assets/noImage.gif" class="sumimg noimg" />
 					<div class="title_con">
 						<div class="item-title">야스오 강의</div>
 						<div class="date_writer_con">
@@ -201,7 +231,16 @@
 					href="<%=request.getContextPath() %>/board_content_main.do?type=${legendThumbs.getBoard_type()}&no=${legendThumbs.getBoard_index() }">
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">4</div>
-						<img src="${legendThumbs.getUpload_file() }" class="sumimg" />
+						<c:if test="${empty legendThumbs.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${legendThumbs.getUpload_file() }" class="sumimg" />
+                       </c:if>
+					    
+					   <c:if test="${!empty legendThumbs.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${legendThumbs.getUpload_file() }" class="sumimg" />
+                        </c:if>
+                        <c:if test="${empty legendThumbs.getUpload_file()}">
+						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
+                        </c:if>
 						<div class="title_con">
 							<div class="item-title">${legendThumbs.getBoard_title() }</div>
 							<div class="date_writer_con">
@@ -226,7 +265,7 @@
 				 <a href="<%=request.getContextPath() %>/main.jsp">
   				<div class="item nes-container is-rounded is-dark">
 					<div class="ranking">4</div>
-					<img src="" class="sumimg" />
+					<img src="img/assets/noImage.gif" class="sumimg noimg" />
 					<div class="title_con">
 						<div class="item-title">야스오 강의</div>
 						<div class="date_writer_con">
@@ -246,7 +285,17 @@
 					href="<%=request.getContextPath() %>/board_content_main.do?type=${etcHit.getBoard_type()}&no=${etcHit.getBoard_index() }">
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">5</div>
-						<img src="" class="sumimg" />
+					  <c:if test="${empty etcHit.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${etcHit.getUpload_file() }" class="sumimg" />
+                       </c:if>
+					    
+					   <c:if test="${!empty etcHit.getBoard_update() }">
+						<img src="<%=request.getContextPath()%>/img${etcHit.getUpload_file() }" class="sumimg" />
+                        </c:if>
+                        <c:if test="${empty etcHit.getUpload_file()}">
+						<img src="<%=request.getContextPath()%>/img/assets/noImage.gif" class="sumimg noimg" />
+                        </c:if>
+
 						<div class="title_con">
 							<div class="item-title">${etcHit.getBoard_title() }</div>
 							<div class="date_writer_con">
@@ -271,7 +320,7 @@
 				<a href="<%=request.getContextPath()%>/main.jsp">
 					<div class="item nes-container is-rounded is-dark">
 						<div class="ranking">5</div>
-						<img src="" class="sumimg" />
+						<img src="img/assets/noImage.gif" class="sumimg noimg" />
 						<div class="title_con">
 							<div class="item-title">야스오 강의</div>
 							<div class="date_writer_con">
@@ -294,10 +343,11 @@
 				<img class="overdot" src="img/assets/overdot2.gif" alt="" title="">
 			</div>
 			<c:if test="${loginCheck == 0 }">
+			<br><br><br>
 				<br>
 				<br>
 				<a type="button" id="match-btn1" class="PleaseLogin btn-a"> <img
-					id="start-btn1" src="img/assets/start.png" alt="">
+					 src="img/assets/start.png" alt="">
 				</a>
 			</c:if>
 
@@ -305,7 +355,7 @@
 				<br>
 				<br>
 				<a type="button" id="match-btn2" class="matching-btn btn-a"> <img
-					id="start-btn2" src="img/assets/start.png" alt="">
+					 src="img/assets/start.png" alt="">
 				</a>
 			</c:if>
 			<br> <br> <br> <br> <img class="joy"
