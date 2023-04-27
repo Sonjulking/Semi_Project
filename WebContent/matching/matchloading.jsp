@@ -141,10 +141,10 @@ h2 {
 				datatype : "jsp",
 				success : function(data) {
 					if (data == 1) { // 나중에 alert는 삭제해도 될듯하다. 유저가 많으면 검색을 더 많이해야하니 매칭 주기를 1.5초 정도로 줄이는게 좋아보임
-						alert("매칭잡힘!" + data);
+						alert("매칭잡힘!");
 						location.href = "./matching/matchingYesOrNo.jsp";
 					} else {
-						alert("매칭안잡힘!" + data);
+						alert("매칭안잡힘!");
 					}
 				},
 
