@@ -123,7 +123,6 @@ public class BoardWriteOkAction implements Action {
 			
 			int check = dao.insertBoard(dto, board_type);
 			
-			
 			if (check > 0) {
 				out.println("<script>");
 				out.println("alert('게시글 추가 성공')");

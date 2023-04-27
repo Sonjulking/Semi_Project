@@ -207,3 +207,10 @@ td>a:active {
 	width : 120px;
 	height : 120px;
 }
+
+.comment1 {
+	color: rgb(255, 145, 163);
+	position: relative;
+	
+	font-size: 10pt;
+}
