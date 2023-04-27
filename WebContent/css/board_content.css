@@ -3,23 +3,23 @@
 @font-face {
 	font-family: "pixel"; /* 사용하고 싶은 font-family명을 지정 */
 	src: url("./font/neodgm.woff") format("opentype"); /* 폰트파일 불러오기 */
-}  
+}
+
 .content {
-	color: white! important;
+	color: white ! important;
 }
 
 h3 {
-	color: white! important;
+	color: white ! important;
 }
-
 
 .content {
 	width: 60%;
 	border-radius: 7px;
 }
 
-.jungmax{
-	display:flex;
+.jungmax {
+	display: flex;
 	justify-content: center;
 	height: 560px;
 }
@@ -30,7 +30,7 @@ h3 {
 }
 
 .text {
-	background-color: white! important;
+	background-color: white ! important;
 	border-radius: 5px;
 	height: 280px;
 	color: black;
@@ -39,6 +39,7 @@ h3 {
 .modify, .delete, .list {
 	border-radius: 5px;
 }
+
 .write {
 	border-radius: 5px;
 }
@@ -46,4 +47,8 @@ h3 {
 #re_content {
 	resize: none;
 	width: 322px;
+}
+
+.white-comment {
+	color: aliceblue;
 }
